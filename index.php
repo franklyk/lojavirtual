@@ -11,8 +11,9 @@
     // $home = new Core\ConfigController();
     // $home->loadPage();
 
-    require './core/ConfigController.php';
-    $home = new ConfigController();
+    // require './core/ConfigController.php';
+    require './vendor/autoload.php';
+    $home = new Core\ConfigController();
     $home->loadPage();
 
 ?>
