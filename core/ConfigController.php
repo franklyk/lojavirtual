@@ -52,10 +52,6 @@ class ConfigController
             $this->urlMethod = METHODE;
             $this->urlParameter = '';
         }
-
-        echo "Controller: {$this->urlController} <br> <br>";
-        echo "Metodo: {$this->urlMethod} <br> <br>";
-        echo "Parâmetro: {$this->urlParameter} <br> <br>";
     }
 
     private function cleanUrl(): void
@@ -99,10 +95,13 @@ class ConfigController
         // $cart = new Cart();
         // $cart->index();
 
-        echo "Carregar a Página: {$this->urlController}<br>";
-
+        // Este trecho evita erros quando estamos em um servidor LINUX pois ele nao reconhece a troca de letra para minuscula
+        // echo "Carregar a Página: {$this->urlController}<br>";
         $this->urlController = ucwords($this->urlController);
-        echo "Carregar a Página Corrigida: {$this->urlController}<br>";
+        // echo "Carregar a Página Corrigida: {$this->urlController}<br>";
+
+
+
 
         $this->classLoad = "\\App\\str\\Controllers\\" . $this->urlController;
         
