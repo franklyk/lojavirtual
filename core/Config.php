@@ -19,8 +19,8 @@
             // define('DBNAME', 'lojavirtual');
             // define('PORT', 3306);
 
-            // define('EMAILADM', 'contato@lojavirtual.com');
-            // define('ADM', 'LojaVirtual');
+            define('EMAILADM', 'contato@lojavirtual.com');
+            define('ADM', 'LojaVirtual');
         }
     }
 
