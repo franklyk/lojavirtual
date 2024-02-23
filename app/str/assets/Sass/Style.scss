@@ -4,7 +4,6 @@
 @import "LibScss/paterns";
 
 
-
 .form-add-product {
     width: 50%;
 }
@@ -32,24 +31,9 @@
                 justify-content: center;
                 width: 100%;
             }
-    
-    
         }
     }
 }
-
-
-// .field-image {
-//     align-items: center;
-//     box-shadow: $box-shadow;
-//     display: flex;
-//     justify-content: center;
-
-//     .input-image {
-//         display: none;
-//     }
-// }
-
 
 /* Início conteúdo */
 /* Início navbar */
@@ -60,18 +44,15 @@
     justify-content: space-between;
     padding: 10px;
     position: relative;
-
     .logo {
         cursor: pointer;
         width: 200px;
     }
-
     .avatar {
         img {
             cursor: pointer;
         }
     }
-
     .dropdown-menu {
         background: var(--site-color);
         display: none;
@@ -81,22 +62,18 @@
         top: 88px;
         width: 200px;
         z-index: 1;
-
         .item {
             border-bottom: $border;
             cursor: pointer;
             padding: 10px;
             transition: 0.3s;
-
             &:hover {
                 background: var(--second-bg-color);
-
                 a {
                     color: var(--active-color);
                 }
             }
         }
-
         a {
             color: var(--third-color);
             margin: 10px;
@@ -110,8 +87,6 @@
 /* Inicio Row */
 
 /* Início Formulário */
-
-
 
 .wrapper-form {
     // border: $border;
@@ -129,35 +104,31 @@
 
 .form-login {
     width: 500px;
-
-    div {
-        margin-bottom: 20px;
+    .form-header-login{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .title-content{
+            background: var(--site-color);
+            text-align: center;
+            width: 100%;
+            span{
+                color: var(--active-color);
+                font-size: 1.7rem;
+            }
+        }
     }
-
-    .checkbox {
-        color: var(--second-bg-color);
-    }
-
-    .signup-link {
+    .signup-link{
+        padding: 10px 0;
         a {
-            color: var(--second-bg-color);
-
-            &:hover {
-                color: var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            &:hover{
                 text-decoration: underline;
             }
         }
     }
-}
-
-.row.button {
-    align-items: center;
-    display: flex;
-    gap: 5px;
-    justify-content: space-between;
-    padding: 10px;
-    position: relative;
-    margin: 30px auto;
 }
 
 /* Fim Login */
@@ -174,7 +145,6 @@
 }
 
 .start-site {
-    // @include config();
     display: grid;
     gap: 30px;
     grid-template-columns: repeat(auto-fit, minmax(350px, auto));

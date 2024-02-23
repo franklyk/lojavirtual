@@ -9,6 +9,8 @@ abstract class Config
         define('URL', 'http://localhost/lojavirtual/');
         define('URLADM', 'http://localhost/lojavirtual/adm/');
 
+        define('TITLE', 'Loja Virtual');
+
         define('CONTROLLER', 'Home');
         define('METHODE', 'index');
         define('CONTROLLERERRO', 'Erro');

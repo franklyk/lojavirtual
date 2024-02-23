@@ -100,9 +100,6 @@ class ConfigController extends config
         $this->urlController = ucwords($this->urlController);
         // echo "Carregar a Página Corrigida: {$this->urlController}<br>";
 
-
-
-
         // $this->classLoad = "\\App\\str\\Controllers\\" . $this->urlController;
 
         // $classPage = new $this->classLoad();

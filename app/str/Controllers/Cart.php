@@ -1,6 +1,6 @@
 <?php 
 
-    namespace App\str\Controllers;
+    namespace App\adm\Controllers;
 
 class Cart
 {

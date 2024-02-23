@@ -1,27 +1,27 @@
 :root {
     --active-color: #d4def7;
     --bg-color: #edebebbd;
-    --danger-color: #d2322d;
-    --danger-color-second: #a56a6f;
+    --danger-color: #fd0800;
+    --danger-color-second: #fd080054;
     --fifth-color: #000;
     --fourth-bg-color: #131b38;
     --fourth-color: #fff;
     --info-color: #047a9e;
-    --info-color-second: #67868d;
+    --info-color-second: #67868d54;
     --main-bg-color: #6d374d;
     --main-color: #ebeef6;
     --second-color: #a7a2a254;
-    --primary-color: #0088cc;
-    --primary-color-second: #7c90af;
+    --primary-color: #03abff;
+    --primary-color-second: #03abff54;
     --second-bg-color: #ebebeb;
     --site-color: #4f0025;
     --sixth-color: #222;
-    --success-color: #47a447;
-    --success-color-second: #80b49c;
+    --success-color: #009e00;
+    --success-color-second: #009e0054;
     --third-bg-color: #3a7afe;
     --third-color: #9D4040;
-    --warning-color: #d2691e;
-    --warning-color-second: #c86e3a;
+    --warning-color: #ff5e00;
+    --warning-color-second: #ff5e0060;
 }
 
 $font-title: sans-serif;
@@ -151,7 +151,6 @@ li {
         margin: 10px auto 0 auto;
         position: relative;
         padding: 20px;
-
         .form-header {
             background: var(--site-color);
             margin-bottom: 20px;
@@ -249,7 +248,7 @@ li {
 /* Inicio alerta */
 
 .alert-danger {
-    // background-color: var(--danger-color-second);
+    background-color: var(--danger-color-second);
     color: var(--danger-color);
     margin: 10px 0;
     border-radius: 4px;
@@ -258,7 +257,7 @@ li {
 }
 
 .alert-info {
-    // background-color: var(--info-color-second);
+    background-color: var(--info-color-second);
     color: var(--info-color);
     margin: 10px 0;
     border-radius: 4px;
@@ -267,7 +266,7 @@ li {
 }
 
 .alert-primary {
-    // background-color: var(--primary-color-second);
+    background-color: var(--primary-color-second);
     color: var(--primary-color);
     margin: 10px 0;
     border-radius: 4px;
@@ -276,7 +275,7 @@ li {
 }
 
 .alert-success {
-    // background-color: var(--success-color-second);
+    background-color: var(--success-color-second);
     color: var(--success-color);
     margin: 10px 0;
     border-radius: 4px;
@@ -285,7 +284,7 @@ li {
 }
 
 .alert-warning {
-    // background-color: var(--warning-color-second);
+    background-color: var(--warning-color-second);  
     color: var(--warning-color);
     margin: 10px 0;
     border-radius: 4px;

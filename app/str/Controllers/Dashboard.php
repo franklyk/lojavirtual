@@ -8,7 +8,6 @@
 
         public function index():void
         {
-            echo " Dashboard <br><br>";
 
             $this->data = "Bem-vindo";
 
