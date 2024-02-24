@@ -3,7 +3,6 @@ if (isset($this->data['form'])) {
     $valorForm = $this->data['form'];
     // var_dump($this->data['form']);
 }
-
 ?>
 
 <div class="content">
@@ -36,6 +35,9 @@ if (isset($this->data['form'])) {
                             if (isset($valorForm['email'])) {
                                 $email = $valorForm['email'];
                             }
+                            if(isset($_COOKIE['email_login'])){
+                                $email = $_COOKIE['email_login'];
+                            }
                             ?>
                             <div>
                                 <div class="field-data data-name">
@@ -50,18 +52,22 @@ if (isset($this->data['form'])) {
                             if (isset($valorForm['password'])) {
                                 $password = $valorForm['password'];
                             }
+                            if(isset($_COOKIE['pass_login'])){
+                                $password = $_COOKIE['pass_login'];
+                            }
                             ?>
                             <div>
                                 <div class="field-data data-name">
                                     <input type="password" name="password" id="password" value="<?php echo $password;?>" class="input-data font-medium radius" required><br><br>
-                                    <label for="passowrd" class="label-input">Senha:</label><br>
+                                    <label for="password" class="label-input">Senha:</label><br>
+                                    <i class="icon fa-regular fa-eye" id="eye-view-pass" onclick="showPass()"></i>
                                 </div>
                             </div>
                         </div>
 
                         <div class="row-input">
-                            <div>
-                                <input type="checkbox" name="remember" id="remember">
+                            <div class="pass-save">
+                                <input type="checkbox" name="remember" id="remember" checked>
                                 <label for="remember">Salvar Senha</label>
                             </div>
                         </div>
@@ -72,7 +78,9 @@ if (isset($this->data['form'])) {
 
                         <div class="row-input">
 
-                            <button type="submit" class="btn btn-warning radius" name="SendLogin" id="SendLogin" value="Cancelar">Cancelar</button>
+
+                        
+                            <button type="reset" class="btn btn-warning radius" name="CancelLogin" id="CancelLogin" value="Cancelar">Cancelar</button>
                             <button type="submit" class="btn btn-success radius" name="SendLogin" id="SendLogin" value="Acessar">Acessar</button>
                         </div>
                     </form>

@@ -4,8 +4,23 @@ if(window.history.replaceState){
     window.history.replaceState(null, null, window.location.href);
 } 
 
+
+function showPass(){
+    let password = document.getElementById('password');
+    let btnShowPass = document.getElementById('eye-view-pass');
+
+    if(password.type === 'password'){
+        password.setAttribute('type', 'text');
+        btnShowPass.classList.replace('fa-eye', 'fa-eye-slash'); 
+    }else{
+        password.setAttribute('type', 'password');
+        btnShowPass.classList.replace('fa-eye-slash', 'fa-eye'); 
+    }
+}
+
 const formLogin = document.getElementById('form-login');
 if (formLogin) {
+    
     formLogin.addEventListener("submit", async (e) => {
         var email = document.querySelector('#email').value;
         if (email === "") {
@@ -20,6 +35,7 @@ if (formLogin) {
         }
 
         var password = document.querySelector('#password').value;
+
         if (password === "") {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p class='alert-danger'>Necessário preencher campo Senha!</p>";
@@ -30,8 +46,6 @@ if (formLogin) {
         } else {
             document.getElementById("msg").innerHTML = "<p></p>";
         }
-
-
     })
 }
 

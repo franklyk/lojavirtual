@@ -60,7 +60,7 @@ class ConfigLoadPag
 
     private function pagePrivate():void
     {
-        $this->listPgPrivate = ["Dashboard", "Cart", "AddProducts"];
+        $this->listPgPrivate = ["Dashboard", "Cart", "AddProducts", "Logout"];
 
         if(in_array($this->urlController, $this->listPgPrivate)){
             $this->verifyLogin();
