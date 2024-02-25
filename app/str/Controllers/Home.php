@@ -3,13 +3,19 @@
 
 class Home
 {
+    private string|null $data = null;
 
     public function index():void
     {
-        echo "Controller <br> <br>";
-        echo "Página Home <br> <br> ";
-
         
+        
+        $this->loadPage();
+    }
+    private function loadPage():void
+    {
+        $loadView = new \Core\ConfigView("str/Views/home/home", $this->data);
+        $loadView->loadView();
+
     }
 }
 

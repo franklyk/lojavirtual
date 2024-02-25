@@ -49,7 +49,7 @@ class ConfigController extends config
             }
         } else {
             $this->urlController = $this->slugController(CONTROLLER);
-            var_dump($this->urlController);
+            // var_dump($this->urlController);
             $this->urlMethode = $this->slugMethode(METHODE);
             $this->urlParameter = '';
         }

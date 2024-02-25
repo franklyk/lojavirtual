@@ -387,6 +387,33 @@ li {
   word-wrap: break-word;
 }
 
+.container {
+  height: calc(100% - 88px);
+}
+.container .front-site {
+  height: 100%;
+  margin: 0 auto;
+  width: 80%;
+}
+.container .front-site .banner-container {
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+}
+.container .front-site .banner-container .banner-description {
+  width: 50%;
+}
+.container .front-site .banner-container .banner-description h1 {
+  font-size: 60px;
+  margin-top: 70px;
+}
+.container .front-site .banner-container .banner-description p {
+  font-size: 20px;
+}
+.container .front-site .banner-container .banner-image {
+  margin-top: 70px;
+}
+
 .form-add-product {
   width: 50%;
 }

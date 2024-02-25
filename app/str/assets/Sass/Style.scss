@@ -4,6 +4,45 @@
 @import "LibScss/paterns";
 
 
+.container {
+    height: calc(100% - 88px);
+
+    // width: 100vw;
+    .front-site {
+
+        height: 100%;
+        margin: 0 auto;
+        width: 80%;
+
+        .banner-container {
+
+            // align-items: center;
+            display: flex;
+            height: 100%;
+
+            justify-content: space-evenly;
+            // width: 80%;
+            .banner-description{
+                width: 50%;
+                h1{
+                    font-size: 60px;
+                    margin-top: 70px;
+                }
+                p{
+                    font-size: 20px;
+                }
+            }
+            .banner-image{
+                margin-top: 70px;
+            }
+        }
+
+    }
+}
+
+
+
+
 .form-add-product {
     width: 50%;
 }
@@ -14,15 +53,18 @@
 
 .form-edit-image {
     width: 500px;
-    .row-input{
+
+    .row-input {
         .data-image {
             border: $border;
             height: 280px;
             padding: 10px;
-            .input-data{
+
+            .input-data {
                 display: none;
             }
-            .label-input{
+
+            .label-input {
                 border: $border;
                 align-items: center;
                 cursor: pointer;
@@ -44,15 +86,19 @@
     justify-content: space-between;
     padding: 10px;
     position: relative;
+
+    // z-index: 1;
     .logo {
         cursor: pointer;
         width: 200px;
     }
+
     .avatar {
         img {
             cursor: pointer;
         }
     }
+
     .dropdown-menu {
         background: var(--site-color);
         display: none;
@@ -62,18 +108,22 @@
         top: 88px;
         width: 200px;
         z-index: 1;
+
         .item {
             border-bottom: $border;
             cursor: pointer;
             padding: 10px;
             transition: 0.3s;
+
             &:hover {
                 background: var(--second-bg-color);
+
                 a {
                     color: var(--active-color);
                 }
             }
         }
+
         a {
             color: var(--third-color);
             margin: 10px;
@@ -104,27 +154,33 @@
 
 .form-login {
     width: 500px;
-    .form-header-login{
+
+    .form-header-login {
         align-items: center;
         display: flex;
         flex-direction: column;
         gap: 10px;
-        .title-content{
+
+        .title-content {
             background: var(--site-color);
             text-align: center;
             width: 100%;
-            span{
+
+            span {
                 color: var(--active-color);
                 font-size: 1.7rem;
             }
         }
     }
-    .signup-link{
+
+    .signup-link {
         padding: 10px 0;
+
         a {
             color: var(--primary-color);
             text-decoration: none;
-            &:hover{
+
+            &:hover {
                 text-decoration: underline;
             }
         }
@@ -221,59 +277,6 @@
 // }
 
 /* Fim cadastrar produtos */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
