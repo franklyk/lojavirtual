@@ -49,7 +49,7 @@ class ConfigLoadPag
 
     private function pagePublic(): void
     {
-        $this->listPgPublic = ["Home", "Login", "Erro"];
+        $this->listPgPublic = ["Home", "Login", "Erro", "ValBannerHome", "EditBannerHome", "EditBackgroundBanner"];
 
         if(in_array($this->urlController, $this->listPgPublic)){
             $this->classLoad = "\\App\\str\\Controllers\\" . $this->slugController($this->urlController);

@@ -4,41 +4,224 @@
 @import "LibScss/paterns";
 
 
-.container {
-    height: calc(100% - 88px);
 
-    // width: 100vw;
-    .front-site {
+.content-home-edit {
+    
+    // position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100vw;
+    // z-index: -1;
+}
 
+.banner-home-edit {
+    
+    height: 100%;
+    margin: 0 auto;
+    width: 80%
+}
+
+.banner-container-edit {
+    
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    height: 100%;
+
+}
+
+.banner-description-edit {
+    
+
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .banner-title-edit {
+        
+
+        font-size: 50px;
+        font-weight: 300;
+        margin-top: 70px;
+    }
+}
+
+.add-cart-edit {
+    
+
+    width: 200px;
+
+    .add-cart-link-edit {
+        
+
+        align-items: center;
+        display: flex;
+        gap: 5px;
+    }
+
+    .add-img-edit {
+        
+
+        cursor: pointer;
+        width: 50px;
+    }
+
+    .add-text-edit {
+        
+
+        color: var(--site-color);
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+
+.banner-image-edit {
+    
+
+    width: 100%;
+}
+
+.form-edit-content-home {
+    
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 50px auto 200px auto;
+    width: 80%;
+
+    input {
+        display: none;
+    }
+}
+.content-link{
+    margin: 20px auto;
+    width: 80vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.content-home {
+    background-image: url("../../assets/images/banners/banner-bg.jpg");
+    background-position: right;
+    background-size: cover;
+    margin-bottom: 500px;
+    height: 100%;
+    width: 100vw;
+
+    .banner-home {
         height: 100%;
         margin: 0 auto;
         width: 80%;
 
         .banner-container {
-
-            // align-items: center;
-            display: flex;
+            // 
+            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
             height: 100%;
 
-            justify-content: space-evenly;
-            // width: 80%;
-            .banner-description{
-                width: 50%;
-                h1{
-                    font-size: 60px;
+            .banner-description {
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .banner-title {
+                    font-size: 50px;
+                    font-weight: 300;
                     margin-top: 70px;
                 }
-                p{
+
+                .banner-text {
+                    color: var(--second-color);
                     font-size: 20px;
                 }
+
+
+                .add-cart {
+                    width: 200px;
+
+                    .add-cart-link {
+                        align-items: center;
+                        display: flex;
+                        gap: 5px;
+                    }
+
+                    .add-img {
+                        cursor: pointer;
+                        width: 50px;
+                    }
+
+                    .add-text {
+                        color: var(--site-color);
+                        cursor: pointer;
+                        font-size: 15px;
+                        font-weight: 600;
+                    }
+                }
             }
-            .banner-image{
-                margin-top: 70px;
+
+            .banner-image {
+                width: 100%;
             }
         }
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -145,7 +328,7 @@
 }
 
 // .form{
-//     @include config();
+//     
 // }
 
 /* Fim Formulario */
@@ -232,12 +415,12 @@
     }
 
     .img-product {
-        // @include config();
+        // 
         grid-area: img-product;
     }
 
     .title-product {
-        // @include config();
+        // 
         background: var(--second-color);
         color: var(--site-color);
         font-size: 1.5rem;
@@ -246,7 +429,7 @@
     }
 
     .discount-product {
-        // @include config();
+        // 
         background: var(--danger-color);
         color: var(--fourth-color);
         font-size: 0.9rem;
@@ -257,7 +440,7 @@
     }
 
     .price-product {
-        // @include config();
+        // 
         background: var(--success-color-second);
         color: var(--second-bg-color);
         font-size: 1.5rem;
@@ -290,7 +473,7 @@
 }
 
 .flex div {
-    @include config();
+    
     flex: 1 1 300px;
     margin: 10px;
 }
