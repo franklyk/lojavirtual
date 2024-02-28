@@ -199,9 +199,9 @@ if (formLogin) {
     })
 }
 
-// if ('#msg') {
-//     setTimeout(() => {
-//         document.getElementById("msg").innerHTML = "<p style='display:none'></p>";
-//     }, 3000);
-// }
+if ('#msg') {
+    setTimeout(() => {
+        document.getElementById("msg").innerHTML = "<p style='display:none'></p>";
+    }, 3000);
+}
 

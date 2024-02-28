@@ -2,11 +2,11 @@
 
 namespace App\str\Models\helper;
 
-if(!defined('KLKSK8')){
-    $urlRedirect = "http://localhost/kwservice/adm/login/index";
-    header("Location: $urlRedirect");
-    die("Erro: Página não encontrada!<br>");
-}
+// if(!defined('KLKSK8')){
+//     $urlRedirect = "http://localhost/kwservice/adm/login/index";
+//     header("Location: $urlRedirect");
+//     die("Erro: Página não encontrada!<br>");
+// }
 
 
 use PDO;
@@ -27,7 +27,7 @@ class StrUploadImgRes
     private $newImage;
     private bool $result;
     private $imgResize;
-    
+
     function getResult(): bool
     {
         return $this->result;
@@ -40,7 +40,7 @@ class StrUploadImgRes
         $this->name = $name;
         $this->width = $width;
         $this->height = $height;
-        
+
 
         // var_dump($this->imageData);
 
@@ -49,38 +49,37 @@ class StrUploadImgRes
 
     private function valDirectory(): void
     {
-        if((file_exists($this->directory)) and (!is_dir($this->directory))){
+        if ((file_exists($this->directory)) and (!is_dir($this->directory))) {
             $this->createDir();
-        }elseif(!file_exists($this->directory)){
+        } elseif (!file_exists($this->directory)) {
             $this->createDir();
-        }else{
+        } else {
             $this->uploadFile();
         }
-        
     }
 
     private function createDir(): void
     {
         mkdir($this->directory, 0755);
-        if(!file_exists($this->directory)){
+        if (!file_exists($this->directory)) {
             $_SESSION['msg'] = "<p style='color: #ff0;'>Falha de upload! Tente novamente!</p>";
             $this->result = false;
-        }else{
+        } else {
             $this->uploadFile();
         }
     }
 
     private function uploadFile(): void
     {
-        switch($this->imageData['type']){
+        switch ($this->imageData['type']) {
             case 'image/jpeg':
-                case 'image/pjpeg':
-                    $this->uploadFileJpeg();
-                    break;
+            case 'image/pjpeg':
+                $this->uploadFileJpeg();
+                break;
             case 'image/png':
-                case 'image/x-png':
-                    $this->uploadFilePng();
-                    break;
+            case 'image/x-png':
+                $this->uploadFilePng();
+                break;
             default:
                 $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Necessário selecionar uma imagem JPG ou PNG!</p>";
                 $this->result = false;
@@ -96,26 +95,26 @@ class StrUploadImgRes
         $this->resImg();
 
         //Enviar a imagem para o servidor
-        if(imagejpeg($this->imgResize, $this->directory . $this->name, 100)){
+        if (imagejpeg($this->imgResize, $this->directory . $this->name, 100)) {
             $_SESSION['msg'] = "<p style='color: #d88;'>Upload da imagem realizado com sucesso!</p>";
             $this->result = true;
-        }else{
+        } else {
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Falha no upload! Tente novamente!</p>";
             $this->result = false;
         }
     }
-    
+
     private function uploadFilePng(): void
     {
         $this->newImage = imagecreatefrompng($this->imageData['tmp_name']);
-        
+
         $this->resImg();
 
         //Enviar a imagem para o servidor
-        if(imagepng($this->imgResize, $this->directory . $this->name, 1)){
+        if (imagepng($this->imgResize, $this->directory . $this->name, 1)) {
             $_SESSION['msg'] = "<p style='color: #d88;'>Upload da imagem realizado com sucesso!</p>";
             $this->result = true;
-        }else{
+        } else {
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Falha no upload! Tente novamente!</p>";
             $this->result = false;
         }
@@ -135,5 +134,4 @@ class StrUploadImgRes
         //Copiar e redimensionar parte da imagem enviada pelo usuário e interpola com a imagem tamanho modelo
         imagecopyresampled($this->imgResize, $this->newImage, 0, 0, 0, 0, $this->width, $this->height, $width_original, $height_original);
     }
-    
 }

@@ -48,7 +48,7 @@ class ValBannerHome
                 $this->data['form'] = $viewProfImg->getResultBd();
                 $this->viewEditProfImg();
             } else {
-                $urlRedirect = URLADM . "login/index";
+                $urlRedirect = URL . "login/index";
                 header("Location: $urlRedirect");
             }
             */
@@ -90,7 +90,7 @@ class ValBannerHome
                 $editProfImg->update($this->dataForm);
 
                 if($editProfImg->getResult()){
-                    $urlRedirect = URLADM . "view-profile/index";
+                    $urlRedirect = URL . "view-profile/index";
                     header("Location: $urlRedirect");
                 }else{
                     $this->data['form'] = $this->dataForm;
@@ -98,7 +98,7 @@ class ValBannerHome
                 }
             } else{
                 $_SESSION['msg'] = "<p style='color:#f00;'>Erro: Usuário não encontrado!</p><br>";
-                $urlRedirect = URLADM . "login/index";
+                $urlRedirect = URL . "login/index";
                 header("Location: $urlRedirect");
             }*/
     }

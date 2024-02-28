@@ -2,11 +2,11 @@
 
 namespace App\str\Models\helper;
 
-if(!defined('KLKSK8')){
-    $urlRedirect = "http://localhost/kwservice/adm/login/index";
-    header("Location: $urlRedirect");
-    die("Erro: Página não encontrada!<br>");
-}
+// if(!defined('KLKSK8')){
+//     $urlRedirect = "http://localhost/kwservice/adm/login/index";
+//     header("Location: $urlRedirect");
+//     die("Erro: Página não encontrada!<br>");
+// }
 
 
 use PDO;
