@@ -102,6 +102,33 @@
     width: 80vw;
 }
 
+/*EDITAR IMAGENS*/
+
+.content-edit-image{
+    // @include config();
+    // background: rgba(6, 6, 6, 0.424);
+    height: 100%;
+    #view-image{
+        // @include config();
+        align-items: center;
+        box-shadow: $box-shadow;
+        display: flex;
+        height: 80%;
+        justify-content: center;
+        margin: 0 auto 20px auto;
+        width: 80%;
+    }
+    #form-edit-background{
+        // @include config();
+        margin: auto;
+        text-align: center;
+        width: 300px;
+        input[type=file]{
+            display: none;
+        }
+    }
+}
+
 
 
 

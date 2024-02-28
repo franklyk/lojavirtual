@@ -22,6 +22,9 @@
     --third-color: #9D4040;
     --warning-color: #ff5e00;
     --warning-color-second: #ff5e0060;
+
+
+    --shadow-color: #0000002c;
 }
 
 $font-title: sans-serif;
@@ -30,7 +33,7 @@ $border: 0.75px solid var(--second-color);
 
 $border-light: 0.75px solid var(--second-color);
 
-$box-shadow: 10px 10px 20px 5px var(--second-color);
+$box-shadow: 10px 10px 20px 5px var(--shadow-color);
 
 $textShadow: 1px 1px 1px var(--site-color);
 

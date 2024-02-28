@@ -12,7 +12,7 @@ if (window.history.replaceState) {
 //     var filePath = new_image.value;
     
     
-    // var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+//     var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
 //     if(!allowedExtensions.exec(filePath)){
 
 //         new_image.value = '';
@@ -39,6 +39,46 @@ if (window.history.replaceState) {
 //     // readAsDataUrl - Retorna os dados do formato blob com uma URL de dados - Blob representa um arquivo
 //     reader.readAsDataURL(new_image.files[0]);
 // }
+
+
+
+function inputFileValImg(){
+    //Recebe o valor do campo
+    var bannerBackground = document.querySelector('#banner_background')
+    var filePath = bannerBackground.value;
+    
+    
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+    if(!allowedExtensions.exec(filePath)){
+
+        bannerBackground.value = '';
+
+        document.getElementById("msg").innerHTML = "<p class='alert-danger'>Necessário selecionar uma imagem JPG ou PNG</p>";
+        return;
+    }else{
+        previewImage(bannerBackground)
+        document.getElementById("msg").innerHTML = "<p></p>";
+        return
+    }
+}
+
+function previewImage(new_image){
+    console.log(new_image);
+
+    if((new_image.files) && (new_image.files[0])){
+        console.log(new_image.files);
+
+        //new FileReader() Serve para ler o conteúdo do arquivo
+        var reader = new FileReader();
+        // onload (Dispara quando qualquer elemento tiver sido carregado)
+        reader.onload = function(e){
+            document.getElementById('view-image').innerHTML = "<img src='"+ e.target.result +"' alt='imagem'style='max-width: 100%; max-height: 100%'>"
+        }
+
+    }
+    // readAsDataUrl - Retorna os dados do formato blob com uma URL de dados - Blob representa um arquivo
+    reader.readAsDataURL(new_image.files[0]);
+}
 
 
 
