@@ -8,7 +8,6 @@ class Home
     public function index():void
     {
         
-        
         $this->loadPage();
     }
     private function loadPage():void
