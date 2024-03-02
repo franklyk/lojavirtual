@@ -19,7 +19,7 @@ class StrLogin
     public function login(array $data = null): void
     {
         $this->data = $data;
-
+        // var_dump($this->data);
         $viewUser = new \App\str\Models\helper\StrRead();
         $viewUser->fullRead("SELECT id, name, email, password, str_sits_user_id FROM str_users WHERE email =:email", "email={$this->data['email']}");
 

@@ -5223,8 +5223,8 @@ input[type=submit].btn-block {
 
 .alert-danger {
     color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb
+    /* background-color: #f8d7da; */
+    border-color: #f5c6cb;
 }
 
 .alert-danger hr {
@@ -5237,8 +5237,8 @@ input[type=submit].btn-block {
 
 .alert-light {
     color: #818182;
-    background-color: #fefefe;
-    border-color: #fdfdfe
+    /* background-color: #fefefe; */
+    border-color: #fdfdfe;
 }
 
 .alert-light hr {

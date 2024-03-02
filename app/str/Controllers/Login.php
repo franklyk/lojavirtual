@@ -18,9 +18,9 @@
                 $valLogin = new \App\str\Models\StrLogin();
                 $valLogin->login($this->dataForm);
                 if($valLogin->getResult()){
-                    if(!empty($this->dataForm['remember'])){
-                        setcookie("email_login", $this->dataForm['email'], time() + 3600, "/", "", false, false);
-                        setcookie("pass_login",  $this->dataForm['password'], time() + 3600, "/", "", false, false);
+                    if(!empty($this->dataForm['selector'])){
+                        // setcookie("email_login", $this->dataForm['email'], time() + 3600, "/", "", false, false);
+                        // setcookie("pass_login",  $this->dataForm['password'], time() + 3600, "/", "", false, false);
                     }
 
                     $urlRedirect = URL . "Dashboard/index";

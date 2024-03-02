@@ -99,6 +99,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="<?php echo URL ?>app/str/assets/Js/gmaps.min.js"></script>
 	<script src="<?php echo URL ?>app/str/assets/Js/main.js"></script>
+	<script src="<?php echo URL ?>app/str/assets/Js/str_script.js"></script>
 </body>
 
 </html>
