@@ -18,12 +18,7 @@ class Home
 
         $this->loadPage();
     }
-
-
-    
-    
-
-    
+ 
     private function loadPage():void
     {
         $loadView = new \Core\ConfigView("str/Views/home/home", $this->data);
