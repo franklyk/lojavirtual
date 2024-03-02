@@ -11,7 +11,7 @@ $id = '';
 if (isset($valorForm['id'])) {
     $id = $valorForm['id'];
 }
-if ((!empty($valorForm['banner_background']) and (file_exists("app/str/assets/images/banners/" . $valorForm['banner_background'])))) {
+if ((!empty($valorForm['banner_background']) and (file_exists("app/str/assets/images/banner/" . $valorForm['banner_background'])))) {
     $background = $valorForm['banner_background'];
 }else{
     $background = "imgexemple.png";

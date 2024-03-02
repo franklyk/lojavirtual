@@ -11,7 +11,7 @@
         {
             if(file_exists('app/' .$this->nameView . '.php')){
                 include 'app/str/Views/include/head.php';  
-                // include 'app/str/Views/include/navbar.php';
+                include 'app/str/Views/include/navbar.php';
                 // include 'app/str/Views/include/menu.php';
                 include 'app/' .$this->nameView . '.php';
                 include 'app/str/Views/include/footer.php';

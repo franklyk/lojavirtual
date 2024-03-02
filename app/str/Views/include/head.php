@@ -5,9 +5,21 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
     <link rel="shortcut icon" href="<?php echo URL; ?>app/str/assets/images/icon/favicon.ico" type="image/x-icon">
-    <!-- <link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/Style.css"> -->
+
+    <link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/linearicons.css">
+	<link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/themify-icons.css">
+	<link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/bootstrap.css">
+	<link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/owl.carousel.css">
+	<link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/nice-select.css">
+	<link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/nouislider.min.css">
+	<link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/ion.rangeSlider.css" />
+	<link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/ion.rangeSlider.skinFlat.css" />
+	<link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/magnific-popup.css">
+    <link rel="stylesheet" href="<?php echo URL ?>app/str/assets/Css/Style.css">
+
     <title><?php echo TITLE ?></title>
 </head>
 

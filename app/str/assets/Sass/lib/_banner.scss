@@ -1,7 +1,7 @@
 /* banner area css
 ============================================================================================ */
 .banner-area {
-	background: url(../img/banner/banner-bg.jpg) center no-repeat;
+	background-image: url() center no-repeat;
 	background-size: cover;
 	position: relative;
 	.fullscreen {
@@ -41,9 +41,10 @@
 			padding-left: 0;
 		}
 		h1 {
+			color: $pfont;
 			font-size: 60px;
 			line-height: 66px;
-			font-weight: 700;
+			font-weight: 100;
 			margin-bottom: 30px;
 			@media (max-width: 767px) {
 				font-size: 35px;

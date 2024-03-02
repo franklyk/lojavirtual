@@ -66,6 +66,7 @@
   margin-bottom: 50px;
 }
 .section-title h1 {
+  color: #777777;
   font-size: 36px;
 }
 .section-title p {
@@ -139,6 +140,22 @@
 .primary-btn:hover:before {
   left: 180px;
   opacity: 0.3;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffba00;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 10px;
 }
 
 body {
@@ -1456,7 +1473,7 @@ h1, h2, h3, h4, h5, h6 {
 /* banner area css
 ============================================================================================ */
 .banner-area {
-  background: url(../img/banner/banner-bg.jpg) center no-repeat;
+  background-image: url() center no-repeat;
   background-size: cover;
   position: relative;
 }
@@ -1508,9 +1525,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .banner-area .banner-content h1 {
+  color: #777777;
   font-size: 60px;
   line-height: 66px;
-  font-weight: 700;
+  font-weight: 100;
   margin-bottom: 30px;
 }
 @media (max-width: 767px) {
@@ -1665,6 +1683,9 @@ h1, h2, h3, h4, h5, h6 {
 .single-features {
   text-align: center;
   border-right: 1px solid #eeeeee;
+}
+.single-features h6 {
+  color: #777777;
 }
 @media (max-width: 991px) {
   .single-features {
@@ -1859,6 +1880,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 .single-product .product-details h6 {
+  color: #777777;
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -1953,7 +1975,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .exclusive-deal-area .exclusive-left {
   position: realtive;
-  background: url(../img/exclusive.jpg) center no-repeat;
   background-size: cover;
   text-align: center;
   padding: 275px 0;
@@ -2025,11 +2046,11 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
 }
 .exclusive-deal-area .exclusive-left .clock_sec .clock-wrap .clockinner {
-  color: #222222;
+  color: #777777;
   border-right: 1px solid #eee;
 }
 .exclusive-deal-area .exclusive-left .clock_sec .clock-wrap .clockinner h1 {
-  color: #222222;
+  color: #777777;
   margin-bottom: 0;
 }
 .exclusive-deal-area .exclusive-left .primary-btn {
@@ -2099,6 +2120,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 .exclusive-deal-area .exclusive-right .product-details h4 {
+  color: #777777;
   font-size: 24px;
   text-transform: uppercase;
 }

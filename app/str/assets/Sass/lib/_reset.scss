@@ -1,3 +1,30 @@
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    width: 10px;
+
+    // &:hover {
+    //     background: var(--site-color);
+    // }
+}
+
+::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    // border: 2px solid var(--site-color);
+    border-radius: 5px;
+    cursor: pointer;
+    width: 10px;
+
+    // &:hover {
+    //     background: var(--main-color);
+    // }
+}
+
+
 body {
 	line-height: 24px;
 	font-size: 14px;
@@ -51,3 +78,4 @@ button:focus {
 .overflow-hidden {
 	overflow: hidden;
 }
+

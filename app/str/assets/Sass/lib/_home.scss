@@ -44,6 +44,9 @@
 }
 
 .single-features {
+	h6{
+		color: $pfont;
+	}
 	text-align: center;
 	border-right: 1px solid #eeeeee;
 	@media (max-width: 991px) {
@@ -208,6 +211,7 @@
 	}
 	.product-details {
 		h6 {
+			color: $pfont;
 			font-size: 16px;
 			text-transform: uppercase;
 		}
@@ -302,7 +306,6 @@
 	background: #f9f9ff;
 	.exclusive-left {
 		position: realtive;
-		background: url(../img/exclusive.jpg) center no-repeat;
 		background-size: cover;
 		text-align: center;
 		padding: 275px 0;
@@ -357,10 +360,10 @@
 				padding: 18px 0;
 				border-radius: 5px;
 				.clockinner {
-					color: $title-color;
+					color: $pfont;
 					border-right: 1px solid #eee;
 					h1 {
-						color: $title-color;
+						color: $pfont;
 						margin-bottom: 0;
 					}
 				}
@@ -420,6 +423,7 @@
 		}
 		.product-details {
 			h4 {
+				color: $pfont;
 				font-size: 24px;
 				text-transform: uppercase;
 			}
