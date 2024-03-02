@@ -1,18 +1,6 @@
-
-// including variables and mixins
-@import "lib/variables";
-@import "lib/mixins";
-@import "lib/predefine";
-@import "lib/reset";
-
-
-// Custom Scss 
+// @import "lib/breakpoints";
 @import "lib/elements";
-@import "lib/header";
-@import "lib/banner";
-@import "lib/home";
-@import "lib/common";
-@import "lib/product";
-@import "lib/blog";
-@import "lib/contact";
-@import "lib/footer";
+@import "lib/mixins";
+// @import "lib/reset";
+@import "lib/variables";
+@import "lib/vendors";

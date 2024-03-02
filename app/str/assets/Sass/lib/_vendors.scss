@@ -1,9 +1,60 @@
-/*!
- * Bootstrap v4.1.3 (https://getbootstrap.com/)
- * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+
+/* START DINAMIC MESSAGE */
+
+#msg {
+    text-align: center;
+    width: 100%;
+
+}
+
+.alert-danger {
+    // background-color: var(--danger-color-second);
+    color: var(--danger-color);
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 12px 7px;
+    text-align: center;
+}
+
+.alert-info {
+    // background-color: var(--info-color-second);
+    color: var(--info-color);
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 12px 7px;
+    text-align: center;
+}
+
+.alert-primary {
+    // background-color: var(--primary-color-second);
+    color: var(--primary-color);
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 12px 7px;
+    text-align: center;
+}
+
+.alert-success {
+    // background-color: var(--success-color-second);
+    color: var(--success-color);
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 12px 7px;
+    text-align: center;
+}
+
+.alert-warning {
+    // background-color: var(--warning-color-second);  
+    color: var(--warning-color);
+    margin: 10px 0;
+    border-radius: 4px;
+    padding: 12px 7px;
+    text-align: center;
+}
+
+/* END DINAMIC MESSAGE */
+
+/* START CONTENT */
 
 :root {
     --blue: #007bff;
@@ -9310,5 +9361,3 @@ a.text-dark:hover {
         border-color: #dee2e6
     }
 }
-
-/*# sourceMappingURL=bootstrap.min.css.map */

@@ -1,23 +1,5 @@
 
-//    Font Family
-
-$primary-font	            : 'Roboto', sans-serif;
-$title-font                 : 'Poppins', sans-serif;
-
-/*--------------------------- Color variations ----------------------*/
-
-$primary-color	            : #ffba00;
-$primary-color2	            : #ff6c00;
-$primary-color3	            : #828bb3;
-$title-color	            : #222222;
-$text-color		            : #777777;
-$baseColor                  : #c5322d; 
-$dip                        : #222222;
-$pfont                      : #777777;
-$white			            : #fff;
-$black			            : #000;
-$offwhite                   : #fcfcfc;
-
+/* COLORS */
 
 :root {
     --active-color: #d4def7;
@@ -43,15 +25,29 @@ $offwhite                   : #fcfcfc;
     --third-color: #9D4040;
     --warning-color: #ff5e00;
     --warning-color-second: #ff5e0060;
+}
 
+.gradient-bg {
+    background-image: -moz-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
+    background-image: -webkit-linear-gradient(45deg,
+            rgb(246, 70, 61) 0%,
+            rgb(246, 57, 141) 45%,
+            rgb(245, 44, 220) 100%);
+    background-image: -ms-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
+}
+
+.gradient-color {
+    background: -moz-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
+    background: -webkit-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
+    background: -ms-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
+    // -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
-/*--------------------------- Fonts ----------------------*/
-
-@import url('https://fonts.googleapis.com/css?family=Poppins:500,700|Roboto:400,500');
 
 
-
-
+/* FONTS */
+$primary-font	            : 'Roboto', sans-serif;
+$title-font                 : 'Poppins', sans-serif;
 

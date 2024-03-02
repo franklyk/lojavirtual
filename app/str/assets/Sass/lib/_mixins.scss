@@ -1,6 +1,10 @@
 
 //    Mixins
 
+@mixin config(){
+  border: 1px solid black;
+}
+
 @mixin transition($args: all 0.3s ease 0s) {
   -webkit-transition: $args;
      -moz-transition: $args;
