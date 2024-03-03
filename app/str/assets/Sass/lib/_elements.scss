@@ -1,15 +1,6 @@
-/* START ELMENNTS */
-.container {
-    height: 100%;
-    width: 100%;
-}
 
-.row-input {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-}
+@import "vendors";
+
+/* START ELMENNTS */
 
 /* END ELMENNTS */

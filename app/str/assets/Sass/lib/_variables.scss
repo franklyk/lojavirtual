@@ -1,8 +1,8 @@
-
+@import "breakpoints";
 /* COLORS */
 
 :root {
-    --active-color: #d4def7;
+    --active-color: #ffffff;
     --bg-color: #edebebbd;
     --danger-color: #fd0800;
     --danger-color-second: #fd080054;
@@ -11,8 +11,8 @@
     --fourth-color: #fff;
     --info-color: #047a9e;
     --info-color-second: #67868d54;
-    --main-bg-color: #6d374d;
-    --main-color: #ebeef6;
+    --main-bg-color: #690000ce;
+    --main-color: #b4b7bc;
     --primary-color: #03abff;
     --primary-color-second: #03abff54;
     --second-bg-color: #ebebeb;
@@ -25,29 +25,9 @@
     --third-color: #9D4040;
     --warning-color: #ff5e00;
     --warning-color-second: #ff5e0060;
-}
-
-.gradient-bg {
-    background-image: -moz-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
-    background-image: -webkit-linear-gradient(45deg,
-            rgb(246, 70, 61) 0%,
-            rgb(246, 57, 141) 45%,
-            rgb(245, 44, 220) 100%);
-    background-image: -ms-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
-}
-
-.gradient-color {
-    background: -moz-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
-    background: -webkit-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
-    background: -ms-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
-    // -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    
 }
 
 
-
-
-/* FONTS */
-$primary-font	            : 'Roboto', sans-serif;
-$title-font                 : 'Poppins', sans-serif;
+$box_shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.12);  
 

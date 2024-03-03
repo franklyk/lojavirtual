@@ -1,69 +1,47 @@
-
 <!-- Start Header Area -->
-<header class="header_area sticky-header">
-	<div class="main_menu">
-		<nav class="navbar navbar-expand-lg navbar-light main_box">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<a class="navbar-brand logo_h" href="index.html"><img src="<?php echo URL ?>app/str/assets/images/logo/logo.png" alt="" width="200"></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-				 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-					<ul class="nav navbar-nav menu_nav ml-auto">
-						<li class="nav-item active"><a class="nav-link" href="<?php echo URL ?>home/index">Home</a></li>
-						<li class="nav-item submenu dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-							 aria-expanded="false">Shop</a>
-							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="category.html">Shop Category</a></li>
-								<li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-								<li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-								<li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
-								<li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-							</ul>
-						</li>
-						<li class="nav-item submenu dropdown">
-							<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-							 aria-expanded="false">Blog</a>
-							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-								<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-							</ul>
-						</li>
-						<li class="nav-item submenu dropdown">
-							<a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-							 aria-expanded="false">Pages</a>
-							<ul class="dropdown-menu">
-								<li class="nav-item"><a class="nav-link" href="<?php echo URL ?>login/index">Login</a></li>
-								<li class="nav-item"><a class="nav-link" href="tracking.html">Tracking</a></li>
-								<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-							</ul>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
-						<li class="nav-item">
-							<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
-						</li>
-					</ul>
+<div class="container">
+	<nav class="navbar ">
+		<div class="logo">
+			<a href=""><img src="<?php echo URL ?>app/str/assets/images/logo/logo.png" alt="LOJA VIRTUAL"></a>
+		</div>
+
+		<div class="menu-container">
+			<div class="avatar">
+				<img src="<?php echo URL ?>app/str/assets/images/users/user.png" alt="Usuario">
+			</div>
+			<div class="btn-menu">
+				<span class="bars"></span>
+				<span class="bars"></span>
+				<span class="bars"></span>
+			</div> 
+				
+			
+			<div class="dropdown-menu setting active">
+				<div class="item">
+					<span class="fa-solid fa-user"></span> <a href="<?php echo URL ?>">Home</a>
+				</div>
+				<div class="item">
+					<span class="fa-solid fa-user"></span> <a href="<?php echo URL ?>">Ofertas</a>
+				</div>
+				<div class="item">
+					<span class="fa-solid fa-user"></span> <a href="<?php echo URL ?>">Categorias</a>
+				</div>
+				<div class="item">
+					<span class="fa-solid fa-gear"></span> <a href="<?php echo URL ?>">Carrinho</a>
+				</div>
+				<div class="item">
+					<span class="fa-solid fa-gear"></span> <a href="<?php echo URL ?>">Pesquisar</a>
+				</div>
+				<div class="item">
+					<span class="fa-solid fa-gear"></span> <a href="<?php echo URL ?>">Login</a>
+				</div>
+				<div class="item">
+					<span class="fa-solid fa-gear"></span> <a href="<?php echo URL ?>">Sair</a>
 				</div>
 			</div>
-		</nav>
-	</div>
-	<div class="search_input" id="search_input_box">
-		<div class="container">
-			<form class="d-flex justify-content-between">
-				<input type="text" class="form-control" id="search_input" placeholder="Search Here">
-				<button type="submit" class="btn"></button>
-				<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
-			</form>
+
 		</div>
-	</div>
-</header>
+
+	</nav>
+</div>
 <!-- End Header Area -->

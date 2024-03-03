@@ -14,7 +14,7 @@
                 include 'app/str/Views/include/navbar.php';
                 // include 'app/str/Views/include/menu.php';
                 include 'app/' .$this->nameView . '.php';
-                include 'app/str/Views/include/footer.php';
+                // include 'app/str/Views/include/footer.php';
             }else {
                 die("ConfigView - Por Favor tente novamente! Se o problema persistir, entre em contato com o administrador em " . EMAILADM);
             }

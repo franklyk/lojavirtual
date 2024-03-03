@@ -1,27 +1,4 @@
-
-
-/* SCROLL BAR */
-
-// ::-webkit-scrollbar{
-//     width: 10px;
-// }
-// ::-webkit-scrollbar-track{
-//     background: transparent;
-//     width: 10px;
-//     &:hover{
-//         background: $white;
-//     }
-// }
-// ::-webkit-scrollbar-thumb{
-//     background: $white-light;
-//     border: 1px solid #9b9b9ef6;
-//     border-radius: 1px;
-//     cursor: pointer;
-//     width: 10px;
-//     &:hover{
-//         background: #8d8b8b88;
-//     }
-// }
+@import "variables";
 
 /* Reset */
 *{
