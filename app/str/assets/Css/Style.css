@@ -209,41 +209,35 @@ ul, li {
   width: 100%;
   z-index: 1;
 }
-
-.logo {
+.navbar .logo {
   width: 200px;
 }
-
-.search {
+.navbar .search {
   width: 50%;
 }
-
-.form-search {
+.navbar .form-search {
   display: grid;
   gap: 10px;
   grid-template-columns: 80% 20%;
   padding: 10px;
   width: 100%;
 }
-.form-search input {
+.navbar .form-search input {
   font-size: 20px;
 }
-
-.menu-container {
+.navbar .menu-container {
   align-items: center;
   display: flex;
   justify-content: end;
 }
-
-.avatar {
+.navbar .avatar {
   cursor: pointer;
   position: relative;
 }
-.avatar img {
+.navbar .avatar img {
   width: 50px;
 }
-
-.btn-menu {
+.navbar .btn-menu {
   background: transparent;
   cursor: pointer;
   display: flex;
@@ -254,7 +248,7 @@ ul, li {
   margin: 0 25px;
   width: 40px;
 }
-.btn-menu .bars {
+.navbar .btn-menu .bars {
   width: 40px;
   height: 2px;
   background-color: var(--main-color);
@@ -262,15 +256,14 @@ ul, li {
   transform-origin: center;
   transition: 1s;
 }
-
-.dropdown-menu {
+.navbar .dropdown-menu {
   background-color: var(--site-color);
   position: absolute;
   right: 0;
   top: 100%;
   width: 0;
 }
-.dropdown-menu .item {
+.navbar .dropdown-menu .item {
   align-items: center;
   border-bottom: 1px solid var(--main-color);
   cursor: pointer;
@@ -279,18 +272,32 @@ ul, li {
   padding: 10px;
   transition: 0.2s;
 }
-.dropdown-menu .item:hover {
+.navbar .dropdown-menu .item:hover {
   background: var(--main-color);
   color: var(--site-color);
 }
-.dropdown-menu .item:hover a {
+.navbar .dropdown-menu .item:hover a {
   color: var(--site-color);
 }
-.dropdown-menu .item span {
+.navbar .dropdown-menu .item span {
   margin-right: 15px;
 }
-.dropdown-menu .item a {
+.navbar .dropdown-menu .item a {
   color: var(--main-color);
+}
+
+.content {
+  background-image: url(../../images/banner/banner_bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.content .row {
+  display: flex;
+}
+.content .banner-container {
+  height: 100%;
+  width: 100%;
 }
 
 .footer {

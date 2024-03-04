@@ -37,8 +37,14 @@ if (!empty($valorForm['banner_text'])) {
 // var_dump($banner_text);
 
 ?>
-<div class="container">
-	<div class="wrapper w-100 h-100" >
+<div class="content">
+	<div class="wrapper">
+		<div class="row">
+			<div class="banner-container">
+
+
+			</div>
+		</div>
 
 	</div>
 </div>
