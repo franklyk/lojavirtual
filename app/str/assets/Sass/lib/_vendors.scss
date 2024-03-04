@@ -80,7 +80,35 @@
 }
 
 /* END DINAMIC MESSAGE */
+/* START BTN */
+.btn {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 10px 15px;
+}
 
+.btn-success {
+    background-color: var(--success-color);
+    color: var(--active-color);
+    transition: .2s;
+    &:hover{
+        background: var(--success-color-second);
+        color: var(--success-color);
+    }
+}
+
+.btn-dark{
+    background-color: var(--sixth-color);
+    border: 0.25px solid var();
+    color: var(--active-color);
+    transition: .2s;
+    &:hover{
+        background: var(--success-color-second);
+        color: var(--success-color);
+    }
+}
+
+/* END BTN */
 /* START CONTENT */
 
 .gradient-bg {
@@ -98,104 +126,6 @@
     background: -ms-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
     // -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.container {
-    width: 100%;
-}
-
-.wrapper {
-    width: 100%;
-}
-
-.navbar {
-    align-items: center;
-    background-color: var(--site-color);
-    box-shadow: $box_shadow;
-    color: var(--main-color);
-    display: flex;
-    justify-content: space-between;
-    position: sticky;
-    padding: 5px 15px;
-    font-size: 17px;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.logo {
-    width: 200px;
-}
-
-.menu-container {
-    // @include config();
-    align-items: center;
-    display: flex;
-    justify-content: end;
-    width: 280px;
-}
-
-.avatar {
-    cursor: pointer;
-    position: relative;
-    img{
-        width: 50px
-    }
-}
-
-.btn-menu {
-    // @include config();
-    background: transparent;
-    // border: 0.75px solid var(--main-color);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    height: 40px;
-    justify-content: space-evenly;
-    margin: 0 25px;
-    width: 40px;
-    .bars {
-        width: 40px;
-        height: 2px;
-        background-color: var(--main-color);
-        display: block;
-        // margin:8px auto;
-        transform-origin: center;
-        transition: 1s;
-    }
-}
-
-.dropdown-menu {
-    background-color: var(--site-color);
-    border-radius: 7px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    position: absolute;
-    right: 0;
-    top: 100%;
-    width: 280px;
-
-    &.active {
-        display: block;
-    }
-
-    .item {
-        align-items: center;
-        border-bottom: 1px solid var(--main-color);
-        cursor: pointer;
-        display: flex;
-        font-size: 18px;
-        padding: 10px;
-
-        span {
-            margin-right: 15px;
-
-        }
-
-        a {
-            color: var(--main-color);
-        }
-    }
 }
 
 .row-input {

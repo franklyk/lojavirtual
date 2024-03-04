@@ -3,10 +3,10 @@
 
 :root {
     --active-color: #ffffff;
-    --bg-color: #edebebbd;
+    --bg-color: #5c5c5c;
     --danger-color: #fd0800;
     --danger-color-second: #fd080054;
-    --fifth-color: #000;
+    --fifth-color: #000000e1;
     --fourth-bg-color: #131b38;
     --fourth-color: #fff;
     --info-color: #047a9e;
@@ -17,10 +17,10 @@
     --primary-color-second: #03abff54;
     --second-bg-color: #ebebeb;
     --second-color: #000000a5;
-    --site-color: #4f0025;
+    --site-color: #6e6700eb;
     --sixth-color: #222;
     --success-color: #009e00;
-    --success-color-second: #009e0054;
+    --success-color-second: #4ef54e;
     --third-bg-color: #3a7afe;
     --third-color: #9D4040;
     --warning-color: #ff5e00;
@@ -30,4 +30,8 @@
 
 
 $box_shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.12);  
+
+$text_shadow: 1px 1px 1px #ffffff5a;
+
+$text_shadow_dark:  4px 4px 3px #8e8e8e44;
 

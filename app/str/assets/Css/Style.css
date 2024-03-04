@@ -1,10 +1,10 @@
 /* COLORS */
 :root {
   --active-color: #ffffff;
-  --bg-color: #edebebbd;
+  --bg-color: #5c5c5c;
   --danger-color: #fd0800;
   --danger-color-second: #fd080054;
-  --fifth-color: #000;
+  --fifth-color: #000000e1;
   --fourth-bg-color: #131b38;
   --fourth-color: #fff;
   --info-color: #047a9e;
@@ -15,10 +15,10 @@
   --primary-color-second: #03abff54;
   --second-bg-color: #ebebeb;
   --second-color: #000000a5;
-  --site-color: #4f0025;
+  --site-color: #6e6700eb;
   --sixth-color: #222;
   --success-color: #009e00;
-  --success-color-second: #009e0054;
+  --success-color-second: #4ef54e;
   --third-bg-color: #3a7afe;
   --third-color: #9D4040;
   --warning-color: #ff5e00;
@@ -133,6 +133,35 @@ ul, li {
 }
 
 /* END DINAMIC MESSAGE */
+/* START BTN */
+.btn {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 10px 15px;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: var(--active-color);
+  transition: 0.2s;
+}
+.btn-success:hover {
+  background: var(--success-color-second);
+  color: var(--success-color);
+}
+
+.btn-dark {
+  background-color: var(--sixth-color);
+  border: 0.25px solid var();
+  color: var(--active-color);
+  transition: 0.2s;
+}
+.btn-dark:hover {
+  background: var(--success-color-second);
+  color: var(--success-color);
+}
+
+/* END BTN */
 /* START CONTENT */
 .gradient-bg {
   background-image: -moz-linear-gradient(45deg, rgb(246, 70, 61) 0%, rgb(246, 57, 141) 45%, rgb(245, 44, 220) 100%);
@@ -147,6 +176,16 @@ ul, li {
   -webkit-text-fill-color: transparent;
 }
 
+.row-input {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* END CONTENT */
+/* START ELMENNTS */
 .container {
   width: 100%;
 }
@@ -161,6 +200,7 @@ ul, li {
   box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.12);
   color: var(--main-color);
   display: flex;
+  gap: 20px;
   justify-content: space-between;
   position: sticky;
   padding: 5px 15px;
@@ -174,11 +214,25 @@ ul, li {
   width: 200px;
 }
 
+.search {
+  width: 50%;
+}
+
+.form-search {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 80% 20%;
+  padding: 10px;
+  width: 100%;
+}
+.form-search input {
+  font-size: 20px;
+}
+
 .menu-container {
   align-items: center;
   display: flex;
   justify-content: end;
-  width: 280px;
 }
 
 .avatar {
@@ -211,15 +265,10 @@ ul, li {
 
 .dropdown-menu {
   background-color: var(--site-color);
-  border-radius: 7px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   position: absolute;
   right: 0;
   top: 100%;
-  width: 280px;
-}
-.dropdown-menu.active {
-  display: block;
+  width: 0;
 }
 .dropdown-menu .item {
   align-items: center;
@@ -228,6 +277,14 @@ ul, li {
   display: flex;
   font-size: 18px;
   padding: 10px;
+  transition: 0.2s;
+}
+.dropdown-menu .item:hover {
+  background: var(--main-color);
+  color: var(--site-color);
+}
+.dropdown-menu .item:hover a {
+  color: var(--site-color);
 }
 .dropdown-menu .item span {
   margin-right: 15px;
@@ -236,16 +293,55 @@ ul, li {
   color: var(--main-color);
 }
 
-.row-input {
+.footer {
+  background: var(--fifth-color);
+  padding: 30px;
+}
+.footer .row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
   gap: 10px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  margin: auto;
+  width: 90%;
+}
+.footer .row .footer-space {
+  color: var(--site-color);
+  display: grid;
+}
+.footer .row .footer-space span {
+  font-size: 25px;
+  font-weight: 700;
+  text-shadow: 4px 4px 3px rgba(142, 142, 142, 0.2666666667);
+}
+.footer .row .footer-space p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3529411765);
+}
+.footer .row .footer-space .icons {
+  font-size: 15px;
+}
+.footer .row .footer-space .input-news {
+  display: flex;
   width: 100%;
 }
+.footer .row .footer-space .input-news input[type=text] {
+  background: transparent;
+  border: 0.25px solid rgba(142, 142, 142, 0.2666666667);
+  color: rgba(142, 142, 142, 0.2666666667);
+  font-size: 20px;
+  padding-left: 10px;
+  width: 90%;
+}
+.footer .footer-bottom {
+  color: var(--site-color);
+  margin: 50px auto 10px auto;
+  max-width: 70%;
+  text-align: center;
+}
 
-/* END CONTENT */
-/* START ELMENNTS */
 /* END ELMENNTS */
 
 /*# sourceMappingURL=Style.css.map */
