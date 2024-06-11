@@ -1,12 +1,15 @@
 import './bootstrap';
 
+import './custom';
+
+import './countdown';
 
 
-$(() => {
-    setTimeout(() => {
-        alert('jQuery triggered via app.js')
-    }, 2500);
-});
+// $(() => {
+//     setTimeout(() => {
+//         alert('jQuery triggered via app.js')
+//     }, 2500);
+// });
 
 
 

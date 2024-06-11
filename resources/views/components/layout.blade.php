@@ -16,19 +16,17 @@
 
 <body>
     <header class=" container-fluid bg-white border border-dark shadow-lg px-6 py-3">
-        <nav class="items-center flex justify-between ">
-            <x-logo />
-
-            <x-menu />
-
-        </nav>
-
-        <x-forms.form action="" class="w-full">
-            <x-forms.input type="search" :label="false" name="search" />
-        </x-forms.form>
-
+        <x-navbar />
+        
     </header>
-    <x-dropdown />
+    <main class="container mx-auto">
+        <x-menu-dropdown />
+
+
+
+        {{ $slot }}
+    </main>
+
 
 </body>
 

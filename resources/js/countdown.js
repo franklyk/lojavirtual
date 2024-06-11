@@ -1,4 +1,4 @@
-window.alert("Carregou Countdown!");
+// window.alert("Carregou Countdown!");
 
 
 

@@ -25,7 +25,7 @@
 
         @if ($type == 'search')
             
-            <x-forms.btns.btn-success class="" type="submit"><i class="text-xl font-bold bi bi-search"></i></x-forms.btns.btn-success>
+            <x-btns.btn-success type="submit"><i class="text-xl font-bold bi bi-search"></i></x-btns.btn-success>
         @endif
 
         {{ $slot }}
