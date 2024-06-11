@@ -4,6 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 @vite('resources/js/app.js')
+{{-- 
+<script type="module">
+    $('body').html('<h1>Hello World!</h1>');
+</script> --}}
 
 <title>{{ env('APP_NAME') }}</title>
 
@@ -27,5 +31,6 @@
     <x-dropdown />
 
 </body>
+
 
 </html>

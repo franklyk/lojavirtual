@@ -4,6 +4,13 @@ import '../css/app.css';
 
 import '../sass/app.scss';
 
+
+import $ from 'jquery';
+window.$ = $;
+
+// import './custom';
+
+
 import axios from 'axios';
 window.axios = axios;
 
