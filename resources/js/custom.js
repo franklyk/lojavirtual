@@ -1,4 +1,4 @@
-
+window.alert("Carregou custom!");
 
 // $('#btn-search').on('click',
 //     function () {

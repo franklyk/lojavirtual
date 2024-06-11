@@ -8,7 +8,9 @@ import '../sass/app.scss';
 import $ from 'jquery';
 window.$ = $;
 
-// import './custom';
+import './custom';
+
+import './countdown';
 
 
 import axios from 'axios';
