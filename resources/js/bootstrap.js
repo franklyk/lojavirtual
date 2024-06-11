@@ -1,4 +1,7 @@
 
+import '../css/app.css';
+
+
 import '../sass/app.scss';
 
 import axios from 'axios';
