@@ -23,7 +23,7 @@
 
 
         <div class="p-6">
-            <x-image image="/images/banners/banner_img.png" width="w-full"/>
+            <x-images.image image="/images/banners/banner_img.png" width="w-full"/>
         </div>
 
 

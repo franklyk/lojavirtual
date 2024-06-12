@@ -10,11 +10,11 @@
 <div {{$attributes($defaults)}}>
 
     <div>
-        <x-user />
+        <x-images.img-user />
     </div>
 
     <div>
-        <x-icon icon="bi bi-list cursor-pointer overflow-x-hidden " id="btn-menu"/>
+        <x-images.icon icon="bi bi-list cursor-pointer overflow-x-hidden " id="btn-menu"/>
     </div>
 
 </div>

@@ -16,17 +16,14 @@
 
 <body>
     <header class=" container-fluid bg-white border border-dark shadow-lg px-6 py-3">
-        <x-navbar />
+        <x-mains.navbar />
         
     </header>
-    <main class="container mx-auto">
-        <x-menu-dropdown />
+    
+    <x-mains.menu-dropdown />
 
 
-
-        {{ $slot }}
-    </main>
-
+    {{ $slot }}
 
 </body>
 

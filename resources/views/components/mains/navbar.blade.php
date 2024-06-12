@@ -1,6 +1,6 @@
 <nav class="items-center flex justify-between ">
-    <x-logo />
+    <x-images.logo />
 
-    <x-menu />
+    <x-mains.menu />
 
 </nav>

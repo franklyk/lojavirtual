@@ -8,5 +8,5 @@
 
 @endphp
 <div {{$attributes($defaults)}}>
-    <x-image image="/images/logo/logo.png" width="w-full" />
+    <x-images.image image="/images/logo/logo.png" width="w-full" />
 </div>
