@@ -15,13 +15,16 @@
 
 @endphp
 
-
 <div>
     @if ($label)
         <x-forms.label :$name :$label />
     @endif
 
     <div {{ $attributes($defaults) }}>
+
+        @if($type == 'file')
+            
+        @endif
 
         @if ($type == 'search')
             
@@ -33,6 +36,3 @@
     </div>
     <x-forms.error :error="$errors->first($name)" />
 </div>
-
-
-{{-- bi bi-search --}}

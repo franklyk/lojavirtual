@@ -1,11 +1,15 @@
-@props(['label', 'name', 'type'])
+@props(['label', 'name', 'type' => ''])
 
 @php
 
-    $classes = 'rounded-lg bg-white/10 border border-neutral-400 px-5 w-full outline-none';
+    $classes = 'rounded-lg bg-white/10 border border-neutral-400 px-5 w-full outline-none ';
+
+    if($type == 'file'){
+        $classes = 'hidden';
+    }
 
     $defaults = [
-        'type' => 'text',
+        'type' => $type,
         'id' => $name,
         'name' => $name,
         'class' => $classes,
