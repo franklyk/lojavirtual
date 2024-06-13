@@ -1,4 +1,4 @@
-@props(['type' => 'a'])
+@props(['type' => 'a', 'link'])
 
 @php
 
@@ -11,7 +11,7 @@
 @endphp
 
 @if ($type == 'a')
-    <a {{ $attributes($defaults) }}>
+    <a href="{{ $link }}" {{ $attributes($defaults) }}>
         {{ $slot }}
     </a>
 @else
