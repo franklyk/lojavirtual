@@ -1,12 +1,12 @@
-window.alert ("carregou");
+// window.alert ("carregou");
 //Permitir o retorno do navegador ao formulário após erro
 if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
 
-const inputFile = document.querySelector('#img_prod');
-const pictureImage = document.querySelector('.picture_image');
-const pictureImageElement = '<i class="fa fa-camera"></i>';
+const inputFile = document.querySelector('#img_banner');
+const pictureImage = document.querySelector('#image_banner');
+const pictureImageElement = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i> ';
 pictureImage.innerHTML = pictureImageElement;
 
 inputFile.addEventListener('change', function(e){
@@ -37,9 +37,9 @@ inputFile.addEventListener('change', function(e){
 })
 
 
-const inputFileDetail1 = document.querySelector('#img_prod_detail1');
-const pictureImageDetail1 = document.querySelector('.picture_image_detail1');
-const pictureImageElementDetail1 = '<i class="fa fa-camera"></i>';
+const inputFileDetail1 = document.querySelector('#img_back');
+const pictureImageDetail1 = document.querySelector('#image_back');
+const pictureImageElementDetail1 = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i> ';
 pictureImageDetail1.innerHTML = pictureImageElementDetail1;
 
 inputFileDetail1.addEventListener('change', function(e){

@@ -4,6 +4,8 @@ import './custom';
 
 import './countdown';
 
+import './formatescript';
+
 
 // $(() => {
 //     setTimeout(() => {

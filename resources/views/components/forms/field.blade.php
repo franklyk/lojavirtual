@@ -10,7 +10,6 @@
     }
 
     if ($type == 'file') {
-        $classes .= '';
     }
 
     $defaults = [
@@ -29,10 +28,7 @@
 
         @if ($type == 'file')
 
-            <div class="h-52 w-52 mx-auto">
-                <label for="{{ $name }}" class="flex items-center justify-center border border-black w-full h-full"> <i class="text-gray-200 text-7xl bi bi-camera-fill"></i> </label>
-                
-            </div>
+            
         @endif
 
         @if ($type == 'search')
