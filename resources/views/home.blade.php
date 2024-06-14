@@ -1,4 +1,4 @@
-<x-mains.layout>
+<x-auth.layout-guest>
     
         <x-forms.form action="" class="w-10/12 my-6 mx-auto">
             <x-forms.input type="search" :label="false" name="search" />
@@ -11,4 +11,4 @@
     
         </main>
 
-</x-mains.layout>
+</x-auth.layout-guest>

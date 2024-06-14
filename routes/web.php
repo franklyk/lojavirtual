@@ -8,4 +8,4 @@ Route::get('/', function () {
 });
 
 Route::get('/banner-create',[BannerController::class, 'create'])->name('banner.create');
-Route::post('/banner',[BannerController::class, 'post']);
+Route::post('/banner',[BannerController::class, 'store']);
