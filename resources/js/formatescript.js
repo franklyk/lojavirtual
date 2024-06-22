@@ -4,280 +4,359 @@ if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
 
-const inputFile = document.querySelector('#img_banner');
-const pictureImage = document.querySelector('#image_banner');
-const pictureImageElement = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i> ';
-pictureImage.innerHTML = pictureImageElement;
+// function hide(e) {
+//     e.currentTarget.style.visibility = "hidden";
+//     console.log(e.currentTarget);
+//     // Quando essa função é usada como um event
+//     // handler: this === e.currentTarget
+//   }
+  
+//   var ps = document.getElementsByTagName("p");
+  
+//   for (var i = 0; i < ps.length; i++) {
+//     // console: print the clicked <p> element
+//     ps[i].addEventListener("click", hide, false);
+//   }
+//   // console: print <body>
+//   document.body.addEventListener("click", hide, false);
+  
+//   // Clique e faça os parágrafos desaparecerem
+  
 
-inputFile.addEventListener('change', function(e){
+
+
+const formEdit = document.querySelector('[data-id="form-edit"]');
+
+const labelBanner = document.querySelector('[data-labelbanner="labelbanner"]');
+const inputBanner = document.querySelector('[data-imagebanner="imagebanner"]');
+
+const labelBackground = document.querySelector('[data-labelbackground="labelbackground"]');
+const inputBackground = document.querySelector('[data-imagebackground="imagebackground"]');
+
+
+if(formEdit){
+    inputBanner.addEventListener('change', function(e){
     const inputTarget = e.target;
     const file = inputTarget.files[0];
-
+    
     if(file){
         const reader = new FileReader();
-
-
+        
         reader.addEventListener('load', function(e){
-            const readertTarget = e.target;
-
+            const readerTarget = e.target;
+            
+            
             const img = document.createElement('img');
-
-            img.src = readertTarget.result;
-
-            img.classList.add('picture_img');
-            pictureImage.innerHTML = '';
-            pictureImage.appendChild(img);
+            
+            img.src = readerTarget.result;
+            
+            // img.classList.add('picture_img');
+            labelBanner.innerHTML = '';
+            labelBanner.innerHTML = "<img src='"+ e.target.result +"'>";
+            // labelImage.appendChild(img);
         });
+        reader.readAsDataURL(file);
 
-        reader.readAsDataURL(file)
-    }else{
-        pictureImage.innerHTML = pictureImageElement;
+        console.log(reader);
     }
-
-})
-
-
-const inputFileDetail1 = document.querySelector('#img_back');
-const pictureImageDetail1 = document.querySelector('#image_back');
-const pictureImageElementDetail1 = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i> ';
-pictureImageDetail1.innerHTML = pictureImageElementDetail1;
-
-inputFileDetail1.addEventListener('change', function(e){
-    const inputTarget = e.target;
-    const file = inputTarget.files[0];
-
-    if(file){
-        const reader = new FileReader();
-
-
-        reader.addEventListener('load', function(e){
-            const readertTarget = e.target;
-
-            const img = document.createElement('img');
-
-            img.src = readertTarget.result;
-
-            img.classList.add('picture_img');
-            pictureImageDetail1.innerHTML = '';
-            pictureImageDetail1.appendChild(img);
-        });
-
-        reader.readAsDataURL(file)
-    }else{
-        pictureImageDetail1.innerHTML = pictureImageElementDetail1;
-    }
-
-})
-
-const inputFileDetail2 = document.querySelector('#img_prod_detail2');
-const pictureImageDetail2 = document.querySelector('.picture_image_detail2');
-const pictureImageElementDetail2 = '<i class="fa fa-camera"></i>';
-pictureImageDetail2.innerHTML = pictureImageElementDetail2;
-
-inputFileDetail2.addEventListener('change', function(e){
-    const inputTarget = e.target;
-    const file = inputTarget.files[0];
-
-    if(file){
-        const reader = new FileReader();
-
-
-        reader.addEventListener('load', function(e){
-            const readertTarget = e.target;
-
-            const img = document.createElement('img');
-
-            img.src = readertTarget.result;
-
-            img.classList.add('picture_img');
-            pictureImageDetail2.innerHTML = '';
-            pictureImageDetail2.appendChild(img);
-        });
-
-        reader.readAsDataURL(file)
-    }else{
-        pictureImageDetail2.innerHTML = pictureImageElementDetail2;
-    }
-
-})
-
-const inputFileDetail3 = document.querySelector('#img_prod_detail3');
-const pictureImageDetail3 = document.querySelector('.picture_image_detail3');
-const pictureImageElementDetail3 = '<i class="fa fa-camera"></i>';
-pictureImageDetail3.innerHTML = pictureImageElementDetail3;
-
-inputFileDetail3.addEventListener('change', function(e){
-    const inputTarget = e.target;
-    const file = inputTarget.files[0];
-
-    if(file){
-        const reader = new FileReader();
-
-
-        reader.addEventListener('load', function(e){
-            const readertTarget = e.target;
-
-            const img = document.createElement('img');
-
-            img.src = readertTarget.result;
-
-            img.classList.add('picture_img');
-            pictureImageDetail3.innerHTML = '';
-            pictureImageDetail3.appendChild(img);
-        });
-
-        reader.readAsDataURL(file)
-    }else{
-        pictureImageDetail3.innerHTML = pictureImageElementDetail3;
-    }
-
-})
-
-const inputFileDetail4 = document.querySelector('#img_prod_detail4');
-const pictureImageDetail4 = document.querySelector('.picture_image_detail4');
-const pictureImageElementDetail4 = '<i class="fa fa-camera"></i>';
-pictureImageDetail4.innerHTML = pictureImageElementDetail4;
-
-inputFileDetail4.addEventListener('change', function(e){
-    const inputTarget = e.target;
-    const file = inputTarget.files[0];
-
-    if(file){
-        const reader = new FileReader();
-
-
-        reader.addEventListener('load', function(e){
-            const readertTarget = e.target;
-
-            const img = document.createElement('img');
-
-            img.src = readertTarget.result;
-
-            img.classList.add('picture_img');
-            pictureImageDetail4.innerHTML = '';
-            pictureImageDetail4.appendChild(img);
-        });
-
-        reader.readAsDataURL(file)
-    }else{
-        pictureImageDetail4.innerHTML = pictureImageElementDetail4;
-    }
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const formLogin = document.getElementById('form-login');
-if (formLogin) {
-
-    formLogin.addEventListener("submit", async (e) => {
-        var email = document.querySelector('#email').value;
-        if (email === "") {
-            e.preventDefault();
-            document.getElementById("msg").innerHTML = "<p class='alert-danger'>Necessário preencher campo E-mail!</p>";
-            setTimeout(() => {
-                document.getElementById("msg").innerHTML = "<p style='display:none'></p>";
-            }, 3000);
-            return;
-        } else {
-            document.getElementById("msg").innerHTML = "<p></p>";
-        }
-
-        var password = document.querySelector('#password').value;
-
-        if (password === "") {
-            e.preventDefault();
-            document.getElementById("msg").innerHTML = "<p class='alert-danger'>Necessário preencher campo Senha!</p>";
-            setTimeout(() => {
-                document.getElementById("msg").innerHTML = "<p style='display:none'></p>";
-            }, 3000);
-            return;
-        } else {
-            document.getElementById("msg").innerHTML = "<p></p>";
-        }
     })
-}
+    inputBackground.addEventListener('change', function(e){
+        const inputTarget = e.target;
+        const file = inputTarget.files[0];
+        
+        if(file){
+            const reader = new FileReader();
+            
+            reader.addEventListener('load', function(e){
+                const readerTarget = e.target;
+                
+                
+                const img = document.createElement('img');
+                
+                img.src = readerTarget.result;
+                
+                // img.classList.add('picture_img');
+                labelBackground.innerHTML = '';
+                labelBackground.innerHTML = "<img src='"+ e.target.result +"'>";
+                // labelImage.appendChild(img);
+            });
+            reader.readAsDataURL(file);
 
-function inputFileValImg(){
-    //Recebe o valor do campo
-    var bannerBackground = document.querySelector('#banner_background')
-    var filePath = bannerBackground.value;
-    
-    
-    var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
-    if(!allowedExtensions.exec(filePath)){
-
-        bannerBackground.value = '';
-
-        document.getElementById("msg").innerHTML = "<p class='alert-danger'>Necessário selecionar uma imagem JPG ou PNG</p>";
-        return;
-    }else{
-        previewImage(bannerBackground)
-        document.getElementById("msg").innerHTML = "<p></p>";
-        return
-    }
-}
-
-function previewImage(new_image){
-    console.log(new_image);
-
-    if((new_image.files) && (new_image.files[0])){
-        console.log(new_image.files);
-
-        //new FileReader() Serve para ler o conteúdo do arquivo
-        var reader = new FileReader();
-        // onload (Dispara quando qualquer elemento tiver sido carregado)
-        reader.onload = function(e){
-            document.getElementById('view-image').innerHTML = "<img src='"+ e.target.result +"' alt='imagem'style='max-width: 100%; max-height: 100%'>"
+            console.log(reader);
         }
-
-    }
-    // readAsDataUrl - Retorna os dados do formato blob com uma URL de dados - Blob representa um arquivo
-    reader.readAsDataURL(new_image.files[0]);
+        
+    });
 }
 
+// const formBanner = document.getElementById('form-banner');
+// if(formBanner){
 
-function showPass() {
-    let password = document.getElementById('password');
-    let btnShowPass = document.getElementById('eye-view-pass');
+//     const inputBanner = document.querySelector('#img_banner');
+//     const pictureBanner = document.querySelector('#image_banner');
+//     const pictureReplaceBanner = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i> ';
 
-    if (password.type === 'password') {
-        password.setAttribute('type', 'text');
-        btnShowPass.classList.replace('fa-eye', 'fa-eye-slash');
-    } else {
-        password.setAttribute('type', 'password');
-        btnShowPass.classList.replace('fa-eye-slash', 'fa-eye');
-    }
-}
+//     pictureBanner.innerHTML = pictureReplaceBanner;
+    
+//     inputBanner.addEventListener('change', function(e){
+//         const inputTarget = e.target;
+//         const file = inputTarget.files[0];
+    
+//         if(file){
+//             const reader = new FileReader();
+        
+//             reader.addEventListener('load', function(e){
+//                 const readertTarget = e.target;
+    
+//                 const img = document.createElement('img');
+    
+//                 img.src = readertTarget.result;
+    
+//                 img.classList.add('picture_img');
+//                 pictureBanner.innerHTML = '';
+//                 pictureBanner.appendChild(img);
+//             });
+    
+//             reader.readAsDataURL(file)
+            
+//             return
 
-if ('#msg') {
-    setTimeout(() => {
-        document.getElementById("msg").innerHTML = "<p style='display:none'></p>";
-    }, 3000);
-}
+//         }else{
+//             pictureBanner.innerHTML = pictureReplaceBanner;
+//         }
+//     })
+    
+    
+//     const inputBackground = document.querySelector('#img_background');
+//     const pictureBackground = document.querySelector('#image_background');
+//     const pictureReplaceBackground = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i> ';
+
+//     pictureBackground.innerHTML = pictureReplaceBackground;
+    
+//     inputBackground.addEventListener('change', function(e){
+//         const inputTarget = e.target;
+//         const file = inputTarget.files[0];
+    
+//         if(file){
+//             const reader = new FileReader();
+    
+//             reader.addEventListener('load', function(e){
+//                 const readertTarget = e.target;
+    
+//                 const img = document.createElement('img');
+    
+//                 img.src = readertTarget.result;
+    
+//                 img.classList.add('picture_img');
+//                 pictureBackground.innerHTML = '';
+//                 pictureBackground.appendChild(img);
+//             });
+    
+//             reader.readAsDataURL(file)
+//             return
+            
+//         }else{
+//             pictureBackground.innerHTML = pictureBackground;
+//         }
+//     })
+// }
+
+
+
+// const formBannerEdit = document.getElementById('form-banner-edit');
+// if(formBannerEdit){
+     
+//     const inputBannerEdit = document.querySelector('#img_banner_edit');
+//     const pictureBannerEdit = document.querySelector('#image_banner_edit');
+//     const pictureReplaceBannerEdit = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i> ';
+
+
+//     pictureBannerEdit.innerHTML = pictureReplaceBannerEdit;
+    
+//     inputBannerEdit.addEventListener('change', function(e){
+//         const inputTarget = e.target;
+//         const file = inputTarget.files[0];
+    
+//         if(file){
+//             const reader = new FileReader();
+    
+    
+//             reader.addEventListener('load', function(e){
+//                 const readertTarget = e.target;
+    
+//                 const img = document.createElement('img');
+    
+//                 img.src = readertTarget.result;
+    
+//                 img.classList.add('picture_img');
+//                 pictureBannerEdit.innerHTML = '';
+//                 pictureBannerEdit.appendChild(img);
+//             });
+    
+//             reader.readAsDataURL(file)
+//             return
+//         }else{
+//             pictureBannerEdit.innerHTML = pictureReplaceBannerEdit;
+//         }
+    
+//     })
+
+
+//     const inputBackgroundEdit = document.querySelector('#img_background_edit');
+//     const pictureBackgroundEdit = document.querySelector('#image_background_edit');
+//     const pictureReplaceBackgroundEdit = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i> ';
+//     if(pictureBackgroundEdit){
+//         pictureBackgroundEdit.innerHTML = pictureReplaceBackgroundEdit;
+        
+//         inputBackgroundEdit.addEventListener('change', function(e){
+//             const inputTarget = e.target;
+//             const file = inputTarget.files[0];
+        
+//             if(file){
+//                 const reader = new FileReader();
+        
+//                 reader.addEventListener('load', function(e){
+//                     const readertTarget = e.target;
+        
+//                     const img = document.createElement('img');
+        
+//                     img.src = readertTarget.result;
+        
+//                     img.classList.add('picture_img');
+//                     pictureBackgroundEdit.innerHTML = '';
+//                     pictureBackgroundEdit.appendChild(img);
+//                 });
+        
+//                 reader.readAsDataURL(file)
+
+//             }else{
+//                 pictureBackgroundEdit.innerHTML = pictureReplaceBackgroundEdit;
+//             }
+//         })
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const formLogin = document.getElementById('form-login');
+// if (formLogin) {
+
+//     formLogin.addEventListener("submit", async (e) => {
+//         var email = document.querySelector('#email').value;
+//         if (email === "") {
+//             e.preventDefault();
+//             document.getElementById("msg").innerHTML = "<p class='alert-danger'>Necessário preencher campo E-mail!</p>";
+//             setTimeout(() => {
+//                 document.getElementById("msg").innerHTML = "<p style='display:none'></p>";
+//             }, 3000);
+//             return;
+//         } else {
+//             document.getElementById("msg").innerHTML = "<p></p>";
+//         }
+
+//         var password = document.querySelector('#password').value;
+
+//         if (password === "") {
+//             e.preventDefault();
+//             document.getElementById("msg").innerHTML = "<p class='alert-danger'>Necessário preencher campo Senha!</p>";
+//             setTimeout(() => {
+//                 document.getElementById("msg").innerHTML = "<p style='display:none'></p>";
+//             }, 3000);
+//             return;
+//         } else {
+//             document.getElementById("msg").innerHTML = "<p></p>";
+//         }
+//     })
+// }
+
+// function inputFileValImg(){
+//     //Recebe o valor do campo
+//     var bannerBackground = document.querySelector('#banner_background')
+//     var filePath = bannerBackground.value;
+    
+    
+//     var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+//     if(!allowedExtensions.exec(filePath)){
+
+//         bannerBackground.value = '';
+
+//         document.getElementById("msg").innerHTML = "<p class='alert-danger'>Necessário selecionar uma imagem JPG ou PNG</p>";
+//         return;
+//     }else{
+//         previewImage(bannerBackground)
+//         document.getElementById("msg").innerHTML = "<p></p>";
+//         return
+//     }
+// }
+
+
+// function showPass() {
+//     let password = document.getElementById('password');
+//     let btnShowPass = document.getElementById('eye-view-pass');
+
+//     if (password.type === 'password') {
+//         password.setAttribute('type', 'text');
+//         btnShowPass.classList.replace('fa-eye', 'fa-eye-slash');
+//     } else {
+//         password.setAttribute('type', 'password');
+//         btnShowPass.classList.replace('fa-eye-slash', 'fa-eye');
+//     }
+// }
+
+// if ('#msg') {
+//     setTimeout(() => {
+//         document.getElementById("msg").innerHTML = "<p style='display:none'></p>";
+//     }, 3000);
+// }
 
 
 

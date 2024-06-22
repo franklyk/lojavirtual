@@ -10,12 +10,12 @@
 
 @endphp
 
-<a href="/{{ $link }}">
+<a href="{{__( '/'.$link)}}">
 
     <div {{ $attributes($defaults) }}>
 
         <i class="{{ $icon }}"></i>
 
-        <span>{{ $link }}</span>
+        <span>{{ $slot }}</span>
     </div>
 </a>

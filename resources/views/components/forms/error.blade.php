@@ -1,7 +1,10 @@
 @props(['name'])
 
-@if ('errors')
-    @error('name')
-        <p class="mt-2 text-xs text-red-500 font-semibold">{{ $message }}</p>
-    @enderror
+
+@if ($errors->any())
+    <span>
+        @foreach ($errors->all() as $error)
+            <p>{{ $error }}</p>
+        @endforeach
+    </span>
 @endif

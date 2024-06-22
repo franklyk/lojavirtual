@@ -1,3 +1,5 @@
+@props(['name' => ''])
+
 @php
 
     $classes = 'block w-10/12 mx-auto space-y-6';
@@ -8,6 +10,12 @@
 @endphp
 
 <form {{ $attributes($defaults) }}>
+
+    <span class="text-red-500 font-bold ">
+        <x-forms.error :error="$errors->first($name)" />
+
+    </span>
+
     @if ($attributes->get('method', 'GET') != 'GET')
         @csrf
 

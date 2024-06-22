@@ -2,7 +2,11 @@
 
     <x-mains.page-heading>Create</x-mains.page-heading>
 
-    <x-forms.form action="/banner" method="post" enctype="multipart/form-data" class="md:w-3/5">
+
+    <x-forms.error />
+
+
+    <x-forms.form  enctype="multipart/form-data" action="/banner" method="post" class="md:w-3/5" id="form-banner">
 
 
         <div class="md:flex justify-center gap-6">
@@ -19,12 +23,12 @@
 
             <div>
                 <div class="h-72 w-72 mx-auto border border-gray-400 rounded-md">
-                    <label for="img_back" class="cursor-pointer flex items-center justify-center w-full h-full p-4"
-                        id="image_back">
+                    <label for="img_background" class="cursor-pointer flex items-center justify-center w-full h-full p-4"
+                        id="image_background">
                     </label>
                 </div>
                 <div class="w-72 mx-auto mb-3">
-                    <x-forms.input name="img_back" label="Background" type="file" class="h-52 w-52 mx-auto" />
+                    <x-forms.input name="img_background" label="Background" type="file" class="h-52 w-52 mx-auto" />
                 </div>
             </div>
         </div>
@@ -35,7 +39,7 @@
 
         <div class="flex gap-6 justify-end">
             <x-btns.btn-success type="submit">Cadastrar</x-btns.btn-success>
-            <x-btns.btn-warning type="submit">Cancelar</x-btns.btn-warning>
+            <x-btns.btn-warning type="reset">Limpar</x-btns.btn-warning>
         </div>
 
     </x-forms.form>

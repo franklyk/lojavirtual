@@ -38,5 +38,4 @@
         {{ $slot }}
 
     </div>
-    <x-forms.error :error="$errors->first($name)" />
 </div>

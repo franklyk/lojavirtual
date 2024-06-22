@@ -3,6 +3,7 @@
 @php
 
     $classes = 'rounded-md bg-white/10 border border-neutral-400 px-5 py-2 w-full outline-none ';
+    
 
     if($type == 'file'){
         $classes = 'hidden';

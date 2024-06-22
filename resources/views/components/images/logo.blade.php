@@ -7,6 +7,8 @@
     ];
 
 @endphp
-<div {{$attributes($defaults)}}>
+<a href="/">
+    <div {{$attributes($defaults)}}>
     <x-images.image image="/images/logo/logo.png" width="w-full" />
 </div>
+</a>
