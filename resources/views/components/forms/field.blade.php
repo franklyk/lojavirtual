@@ -15,7 +15,7 @@
 
 @endphp
 
-<div>
+<div class="autoGrid">
 
     @if ($label)
         <x-forms.label :$name :$label :$type/>

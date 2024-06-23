@@ -6,7 +6,11 @@ export default {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      gridAutoColumns:{
+        auto: 'minmax(250px, auto)',
+      }
+    },
   },
   plugins: [],
 }
