@@ -6,7 +6,7 @@
     <x-forms.error />
 
 
-    <x-forms.form  enctype="multipart/form-data" action="/banner" method="post" class="md:w-3/5" id="form-banner">
+    <x-forms.form  enctype="multipart/form-data" action="/banners" method="post" class="md:w-3/5" id="form-banner-add">
 
 
         <div class="md:flex justify-center gap-6">

@@ -4,24 +4,73 @@ if (window.history.replaceState) {
     window.history.replaceState(null, null, window.location.href);
 }
 
-// function hide(e) {
-//     e.currentTarget.style.visibility = "hidden";
-//     console.log(e.currentTarget);
-//     // Quando essa função é usada como um event
-//     // handler: this === e.currentTarget
-//   }
-  
-//   var ps = document.getElementsByTagName("p");
-  
-//   for (var i = 0; i < ps.length; i++) {
-//     // console: print the clicked <p> element
-//     ps[i].addEventListener("click", hide, false);
-//   }
-//   // console: print <body>
-//   document.body.addEventListener("click", hide, false);
-  
-//   // Clique e faça os parágrafos desaparecerem
-  
+const formBannerAdd = document.querySelector('#form-banner-add');
+if(formBannerAdd){
+
+    const inputImgBanner = document.querySelector('#img_banner');
+    const labelImageBanner = document.querySelector('#image_banner');
+    const replaceImageBanner = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i>';
+
+    labelImageBanner.innerHTML = replaceImageBanner;
+    
+    inputImgBanner.addEventListener('change', function(e){
+        const inputTarget = e.target;
+        const file = inputTarget.files[0];
+    
+        if(file){
+            const reader = new FileReader();
+    
+            reader.addEventListener('load', function(e){
+                const readertTarget = e.target;
+    
+                const img = document.createElement('img');
+    
+                img.src = readertTarget.result;
+    
+                img.classList.add('picture_img');
+                labelImageBanner.innerHTML = '';
+                labelImageBanner.appendChild(img);
+            });
+    
+            reader.readAsDataURL(file)
+
+        }else{
+            labelImageBanner.innerHTML = replaceImageBanner;
+        }
+    })
+    const inputBackground = document.querySelector('#img_background');
+    const labelImageBackground = document.querySelector('#image_background');
+    const replaceImageBackground = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i>';
+
+    labelImageBackground.innerHTML = replaceImageBackground;
+    
+    inputBackground.addEventListener('change', function(e){
+        const inputTarget = e.target;
+        const file = inputTarget.files[0];
+    
+        if(file){
+            const reader = new FileReader();
+    
+            reader.addEventListener('load', function(e){
+                const readertTarget = e.target;
+    
+                const img = document.createElement('img');
+    
+                img.src = readertTarget.result;
+    
+                img.classList.add('picture_img');
+                labelImageBackground.innerHTML = '';
+                labelImageBackground.appendChild(img);
+            });
+    
+            reader.readAsDataURL(file)
+
+        }else{
+            labelImageBackground.innerHTML = replaceImageBackground;
+        }
+    })
+
+}
 
 
 
