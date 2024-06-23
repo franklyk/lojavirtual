@@ -1,6 +1,11 @@
 <nav class="items-center flex justify-between ">
+
+
     <x-images.logo />
 
-    <x-mains.menu />
+    @guest()
+        <x-mains.menu />
+    @endguest
+
 
 </nav>

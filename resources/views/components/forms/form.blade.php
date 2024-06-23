@@ -2,7 +2,7 @@
 
 @php
 
-    $classes = 'block  md:w-10/12 w-full mx-auto px-6 py-6 space-y-6';
+    $classes = 'block  md:w-10/12 w-full mx-auto px-6 py-6';
     $defaults = [
         'class' => $classes, 
         'method' => 'GET',

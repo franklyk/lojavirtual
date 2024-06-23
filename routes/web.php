@@ -1,11 +1,17 @@
 <?php
 
 use App\Http\Controllers\BannerController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RegisterUserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/dashboard', DashboardController::class);
+
+
 
 
 Route::get('/banners/create',[BannerController::class, 'create']);
@@ -17,3 +23,11 @@ Route::get('/products/create',[ProductController::class, 'create']);
 Route::post('/products',[ProductController::class, 'store']);
 Route::get('/products/{product}/edit',[ProductController::class, 'edit']);
 Route::put('/products/{product}',[ProductController::class, 'update']);
+
+Route::get('/register', [RegisterUserController::class, 'create']);
+Route::post('/register', [RegisterUserController::class, 'store']);
+
+Route::get('/login/create', [RegisterUserController::class, 'create'])->name('login');
+Route::post('/login', [RegisterUserController::class, 'store']);
+
+

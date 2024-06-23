@@ -20,7 +20,7 @@
         
     </header>
     
-    <x-mains.menu-dropdown />
+    {{-- <x-mains.menu-dropdown /> --}}
 
 
     {{ $slot }}

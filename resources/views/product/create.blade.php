@@ -32,13 +32,13 @@
             <x-forms.input type="text" name="description" label="Descrição" />
         </div>
 
-        <div class="md:grid gap-6 grid-flow-col auto-cols-[minmax(200px,_auto)]">
+        <div class="block md:grid gap-6 grid-flow-col auto-cols-[minmax(200px,_auto)]">
             <x-forms.input type="text" name="title" label="Produto" />
             <x-forms.input type="text" name="description" label="Descrição" />
             <x-forms.input type="text" name="description" label="Descrição" />
         </div>
 
-        <div class="md:grid gap-6 grid-flow-col auto-cols-[minmax(200px,_auto)]">
+        <div class="block md:grid gap-6 grid-flow-col auto-cols-[minmax(200px,_auto)]">
             <x-forms.input type="text" name="title" label="Produto" />
             <x-forms.input type="text" name="description" label="Descrição" />
             <x-forms.input type="text" name="description" label="Descrição" />

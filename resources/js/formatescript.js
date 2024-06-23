@@ -137,6 +137,48 @@ if(formEdit){
     });
 }
 
+
+
+const formAddUser = document.querySelector('#form-add-user');
+if(formAddUser){
+
+    const inputImgUser = document.querySelector('#img_user');
+    const labelImageuser = document.querySelector('#image_user');
+    const replaceImageUser = '<i class="text-gray-200 text-7xl bi bi-camera-fill"></i>';
+
+    labelImageuser.innerHTML = replaceImageUser;
+    
+    inputImgUser.addEventListener('change', function(e){
+        const inputTarget = e.target;
+        const file = inputTarget.files[0];
+    
+        if(file){
+            const reader = new FileReader();
+    
+            reader.addEventListener('load', function(e){
+                const readertTarget = e.target;
+    
+                const img = document.createElement('img');
+    
+                img.src = readertTarget.result;
+    
+                img.classList.add('rounded-full');
+                labelImageuser.innerHTML = '';
+                labelImageuser.appendChild(img);
+            });
+    
+            reader.readAsDataURL(file)
+
+        }else{
+            labelImageuser.innerHTML = replaceImageUser;
+        }
+    })
+
+
+}
+
+
+
 // const formBanner = document.getElementById('form-banner');
 // if(formBanner){
 
