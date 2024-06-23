@@ -24,8 +24,7 @@
 
 
     {{ $slot }}
-
-    <script src="resources/js/formatescript.js"></script>
+    
 </body>
 
 </html>

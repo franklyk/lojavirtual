@@ -18,7 +18,11 @@
     ];
 @endphp
 
-<x-forms.field :$label :$name >
+
+
+
+
+<x-forms.field :$label :$name :$type>
 
     <input {{ $attributes($defaults) }}>
 </x-forms.field>

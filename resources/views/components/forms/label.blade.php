@@ -1,4 +1,4 @@
-@props(['label'])
+@props(['label', 'name'])
 
 @php
     
@@ -10,4 +10,4 @@
 
 @endphp
 
-<label {{ $attributes($defaults)}}>{{ $label }}</label>
+<label for="{{ $name }}" {{ $attributes($defaults)}}>{{ $label }}</label>

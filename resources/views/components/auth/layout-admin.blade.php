@@ -26,10 +26,7 @@
     {{ $slot }}
 
     <x-auth.footer-admin />
-
-
-    {{-- <script src="{{asset('/resources/js/formatescript.js')}}"></script> --}}
-    {{-- <script src="{{asset('/js/formatescript.js')}}"></script> --}}
+    
 </body>
 
 

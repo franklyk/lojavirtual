@@ -1,4 +1,4 @@
-@props(['label', 'name', 'type' => '', 'icon'])
+@props(['label', 'name', 'type' => ''])
 
 
 @php
@@ -7,9 +7,6 @@
 
     if ($type == 'search') {
         $classes .= ' flex gap-2';
-    }
-
-    if ($type == 'file') {
     }
 
     $defaults = [
@@ -21,15 +18,10 @@
 <div>
 
     @if ($label)
-        <x-forms.label :$name :$label />
+        <x-forms.label :$name :$label :$type/>
     @endif
 
     <div {{ $attributes($defaults) }}>
-
-        @if ($type == 'file')
-
-            
-        @endif
 
         @if ($type == 'search')
             <x-btns.btn-success type="submit"><i class="text-xl font-bold bi bi-search"></i></x-btns.btn-success>
