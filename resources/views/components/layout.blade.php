@@ -11,44 +11,54 @@
 </head>
 
 <body>
+    {{-- START HEADER --}}
     <header class=" container-fluid bg-white border border-dark shadow-lg px-6 py-3">
-        <nav class="items-center flex justify-between ">
-
-            <x-images.logo />
-
-            <div class="flex gap-6 h-10 justify-center border border-black">
-                <p class="m-auto">{{ $user->email }}</p>
-                @php
-                    if ($user->img_user) {
-                        $image = $user->img_user;
-                    } else {
-                        $image = 'user.png';
-                    }
-
-                @endphp
-                <img src="/images/users/{{ $image }}" class="rounded-full">
-
-
-                <x-mains.menu />
-            </div>
-
-        </nav>
-
+        <x-mains.navbar/>
     </header>
+    {{-- END HEADER --}}
 
-    <x-mains.menu-dropdown />
+    {{-- START MENU DROPDOWN --}}
+    <div class="absolute border border-dark block overflow-x-hidden right-0 w-0 z-10" id="dropdown">
 
-    <main>
+        @guest()
+            <x-links.link icon="bi bi-box-arrow-in-right" link="login/create">Log In</x-links.link>
 
-        {{-- {{ $slot }} --}}
-    </main>
+            <x-links.link icon="bi bi-person-add" link="register">Register</x-links.link>
+        @endguest
 
-    <div>
-        <x-mains.footer />
+        @auth()
+            <x-links.link icon="bi bi-sliders" link="banners/create">Cadastrar</x-links.link>
 
+            <form method="POST" action="/logout" id="form-logout">
+                @csrf
+                @method('DELETE')
+                <x-links.link icon="bi bi-box-arrow-left" :link="false" type="submit" for="form-logout">Log
+                    Out</x-links.link>
+            </form>
+
+            <x-links.link icon="bi bi-sliders" link="dashboard">Dashboard</x-links.link>
+        @endauth
     </div>
+    {{-- END MENU DROPDOWN --}}
+    
+    {{-- START CONTENT SITE --}}
+    {{ $slot }}
+    {{-- END CONTENT SITE --}}
 
-
+    {{-- START FOOTER --}}
+    <footer>
+        <div class="mt-8 w-full py-8 bg-blue-950">
+            <p class="text-white text-center">Copyright &copy;
+                <script>
+                    document.write(new Date().getFullYear());
+                </script> Todos os direitos Reservados
+                <br>|<br>
+                Este
+                template foi desenvolvido com <br> <i class="bi bi-heart"></i> <br> por <br> <span>KWservice</span>
+            </p>
+        </div>
+    </footer>
+    {{-- END FOOTER --}}
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-{{-- <section>
+<section>
     <div 
         class="bg-[url('/images/banners/{{ $banner->img_background }}')] bg-no-repeat bg-center bg-cover flex justify-center gap-6 flex-wrap md:flex-nowrap">
         <div class="flex flex-col items-center justify-center w-1/2 min-w-56 shrink-0 p-2">
@@ -19,4 +19,4 @@
         </div>
     </div>
 
-</section> --}}
+</section>

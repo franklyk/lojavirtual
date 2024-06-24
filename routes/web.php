@@ -5,10 +5,10 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterUserController;
+use App\Http\Controllers\SessionCotroller;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/', [HomeController::class, 'layout']);
+Route::get('/', HomeController::class);
 
 Route::get('/dashboard', DashboardController::class);
 
@@ -28,9 +28,9 @@ Route::put('/products/{product}',[ProductController::class, 'update']);
 Route::get('/register', [RegisterUserController::class, 'create']);
 Route::post('/register', [RegisterUserController::class, 'store']);
 
-Route::get('/login/create', [RegisterUserController::class, 'create'])->name('login');
-Route::post('/login', [RegisterUserController::class, 'store']);
+Route::get('/login/create', [SessionCotroller::class, 'create'])->name('login');
+Route::post('/login', [SessionCotroller::class, 'store']);
 
-Route::delete('/logout', [RegisterUserController::class, 'destroy']);
+Route::delete('/logout', [SessionCotroller::class, 'destroy']);
 
 
