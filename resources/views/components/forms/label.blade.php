@@ -2,7 +2,7 @@
 
 @php
     
-    $classes = 'inline-block text-lg font-medium leading-6 px-4';
+    $classes = 'inline-block text-gray-500 text-lg font-medium leading-6 px-4';
 
     $defaults = [
         'class' => $classes,

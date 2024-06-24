@@ -1,4 +1,4 @@
-<x-auth.layout-admin>
+<x-layout-admin>
 
     <x-mains.page-heading>Edit</x-mains.page-heading>
 
@@ -49,4 +49,4 @@
 
     </x-forms.form>
 
-</x-auth.layout-admin>
+</x-layout-admin>

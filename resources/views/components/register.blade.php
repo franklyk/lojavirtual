@@ -1,12 +1,12 @@
-<x-auth.layout-admin>
+<x-layout>
 
-    <x-mains.page-heading>Create</x-mains.page-heading>
-
-
-    <x-forms.error />
+    <x-mains.page-heading>Cadastrar</x-mains.page-heading>
 
 
-    <x-forms.form enctype="multipart/form-data" action="/banners" method="post" class="md:w-96 w-full border border-black"
+    {{-- <x-forms.error /> --}}
+
+
+    <x-forms.form enctype="multipart/form-data" action="/register" method="post" class="md:w-96 w-full"
         id="form-add-user">
 
         <div class="w-36 h-36 border border-gray-400 mx-auto rounded-full">
@@ -21,8 +21,9 @@
             <x-forms.input type="text" name="name" label="Nome" />
             <x-forms.input type="email" name="email" label="E-mail" />
             <x-forms.input type="text" name="phone" label="Telefone" />
-            <x-forms.input type="text" name="adress" label="Endereço" />
-            <x-forms.input type="password" name="password" label="Password" />
+            <x-forms.input type="text" name="address" label="Endereço" />
+            <x-forms.input type="password" name="password" label="Senha" />
+            <x-forms.input type="password" name="password_confirmation" label="Corfirme A Senha" />
         </div>
         <div class="flex gap-6 justify-end">
             <x-btns.btn-success type="submit">Cadastrar</x-btns.btn-success>
@@ -31,4 +32,4 @@
 
     </x-forms.form>
 
-</x-auth.layout-admin>
+</x-layout>

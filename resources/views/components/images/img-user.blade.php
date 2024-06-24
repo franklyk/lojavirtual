@@ -1,2 +1,14 @@
+@props(['image'=> '', 'whidth'])
 
-<x-images.image image="/images/users/user.png" width="w-14" class="md:w-14" />
+@php
+    $classes = 'w-14';
+
+    $defaults = [
+        'class' => $classes,
+    ];
+    if(!$image){
+        $image = '/images/users/user.png';
+    }
+@endphp
+
+<x-images.image :image $width class="{{ $attributes($defaults) }}" />

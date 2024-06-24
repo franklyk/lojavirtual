@@ -1,11 +1,9 @@
-<x-auth.layout-guest>
-    {{-- {{ dd($banners) }} --}}
+<x-layout>
 
     <x-forms.form action="" class="w-10/12 my-6 mx-auto md:w-2/4">
         <x-forms.input type="search" :label="false" name="search" />
     </x-forms.form>
 
-    {{-- <x-mains.banner /> --}}
     <section>
         @foreach ($banners as $banner)
         <div
@@ -34,4 +32,4 @@
 
     </main>
 
-</x-auth.layout-guest>
+</x-layout>

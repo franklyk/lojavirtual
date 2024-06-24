@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SessionCotroller extends Controller
 {
@@ -59,6 +60,8 @@ class SessionCotroller extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Auth::logout();
+
+        return redirect('/');
     }
 }

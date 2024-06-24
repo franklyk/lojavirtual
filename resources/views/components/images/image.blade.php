@@ -1,9 +1,4 @@
-@props(['image', 'width'])
+@props(['image'])
 
-@php
-    $defaults = [
-        'class' => $width,
-    ];
-@endphp
 
-<img src="{{ asset($image) }}" {{ $attributes($defaults)}} >
+<img src="{{ asset($image) }}">

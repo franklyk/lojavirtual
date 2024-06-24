@@ -4,7 +4,9 @@ import './custom';
 
 import './countdown';
 
-import './formatescript';
+import './images';
+
+import './pagenav';
 
 
 // $(() => {

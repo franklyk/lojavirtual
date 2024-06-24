@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterUserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'layout']);
 
 Route::get('/dashboard', DashboardController::class);
 
@@ -29,5 +30,7 @@ Route::post('/register', [RegisterUserController::class, 'store']);
 
 Route::get('/login/create', [RegisterUserController::class, 'create'])->name('login');
 Route::post('/login', [RegisterUserController::class, 'store']);
+
+Route::delete('/logout', [RegisterUserController::class, 'destroy']);
 
 
