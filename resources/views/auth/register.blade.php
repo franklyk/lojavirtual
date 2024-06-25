@@ -6,7 +6,7 @@
     {{-- <x-forms.error /> --}}
 
 
-    <x-forms.form enctype="multipart/form-data" action="/register" method="post" class="md:w-96 w-full"
+    <x-forms.form enctype="multipart/form-data" action="/register" method="post" class="md:w-96 w-full border border-gray-200"
         id="form-add-user">
 
         <div class="w-36 h-36 border border-gray-400 mx-auto rounded-full">

@@ -8,11 +8,6 @@
         'class' => $classes,
     ];
 
-    // if (! empty(Auth::user()->img_user) ) {
-    //     $image = Auth::user()->img_user;
-    // } else {
-    //     $image = 'user.png';
-    // }
 @endphp
 
 <div {{ $attributes($defaults) }}>

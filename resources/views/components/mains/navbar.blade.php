@@ -1,4 +1,4 @@
-<nav class="items-center flex justify-between ">
+<nav class="container items-center flex justify-between ">
     <x-images.logo />
    
     <x-mains.menu />

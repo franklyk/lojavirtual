@@ -7,7 +7,9 @@ use App\Http\Requests\StoreBannerRequest;
 use App\Http\Requests\UpdateBannerRequest;
 use Directory;
 use Exception;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class BannerController extends Controller
@@ -35,11 +37,28 @@ class BannerController extends Controller
     {
 
 
-        $request->validated();
+        $banner = $request->validated();
 
         try {
 
-            $directory =  'images/banners';
+
+            if ($request->hasFile('img_background') && ($request->file('img_background')->isValid())) {
+
+                $img_background = $request->file('img_background')->hashName();
+            }
+            if ($request->hasFile('img_banner') && ($request->file('img_banner')->isValid())) {
+
+                $img_banner = $request->file('img_banner')->hashName();
+            }
+
+            $banner = Banner::create([
+                'img_background' => $img_background,
+                'img_banner' => $img_banner,
+                'title' => $request->title,
+                'description' => $request->description,
+            ]);
+
+            $directory =  'images/banners/' . $banner->id;
 
             if (!file_exists($directory) && (!is_dir($directory))) {
 
@@ -51,27 +70,9 @@ class BannerController extends Controller
                 }
             }
 
-            if ($request->hasFile('img_background') && ($request->file('img_background')->isValid())) {
+            move_uploaded_file($request->img_banner, $directory . '/' . $img_banner);
+            move_uploaded_file($request->img_background, $directory . '/' . $img_background);
 
-                $img_background = $request->file('img_background')->hashName();
-
-                move_uploaded_file($request->img_background, $directory . '/' . $img_background);
-
-            }
-            if ($request->hasFile('img_banner') && ($request->file('img_banner')->isValid())) {
-
-                $img_banner = $request->file('img_banner')->hashName();
-
-                move_uploaded_file($request->img_banner, $directory . '/' . $img_banner);
-
-            }
-
-            Banner::create([
-                'img_background' => $img_background,
-                'img_banner' => $img_banner,
-                'title' => $request->title,
-                'description' => $request->description,
-            ]);
 
             return redirect('/')->with('success', 'Cadastrado Com Sucesso!');
         } catch (Exception $err) {
@@ -94,7 +95,6 @@ class BannerController extends Controller
      */
     public function edit(Banner $banner)
     {
-        // $img_background = imagecreatefromjpeg('images/banners/'.$banner->img_background);
 
         // dd($banner);
 
@@ -108,9 +108,53 @@ class BannerController extends Controller
     {
         $request->validated();
 
-        $banner->update($request->all());
+        $data = $request->all();
 
-        return redirect('/');
+        $old_data = Banner::find($request->id);
+
+        // dd($old_data['img_banner']);
+        
+        try {
+
+            $directory =  'images/banners/' . $old_data->id;
+
+
+            if ($request->hasFile('img_background') && ($request->file('img_background')->isValid())) {
+
+                $img_background = $request->file('img_background')->hashName();
+            }
+            if ($request->hasFile('img_banner') && ($request->file('img_banner')->isValid())) {
+
+                $img_banner = $request->file('img_banner')->hashName();
+            }
+
+            $data['img_background'] = $img_background;
+            $data['img_banner'] = $img_banner;
+
+            Banner::findOrFail($request->id)->update($data);
+
+            move_uploaded_file($request->img_background, $directory . '/' . $img_background);
+
+            move_uploaded_file($request->img_banner, $directory . '/' . $img_banner);
+
+            // dd($old_data);
+
+
+            if (file_exists($directory . '/' . $old_data['img_background'])) {
+
+                unlink($directory . '/' . $old_data['img_background']);
+            }
+            if (file_exists($directory . '/' . $old_data['img_banner'])) {
+
+                unlink($directory . '/' . $old_data['img_banner']);
+            } 
+
+            return redirect('/')->with('success', 'Cadastrado Com Sucesso!');
+        } catch (Exception $err) {
+            Log::info(['error' => $err->getMessage()]);
+
+            return back()->with('error', 'Cadastrado Falhou!');
+        }
     }
 
     /**

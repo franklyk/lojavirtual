@@ -46,7 +46,7 @@
     {{-- END CONTENT SITE --}}
 
     {{-- START FOOTER --}}
-    <footer>
+    <footer class="w-full">
         <div class="mt-8 w-full py-8 bg-blue-950">
             <p class="text-white text-center">Copyright &copy;
                 <script>

@@ -2,7 +2,7 @@
 
     <x-mains.page-heading>Login</x-mains.page-heading>
 
-    <x-forms.form enctype="multipart/form-data" action="/login" method="post" class="md:w-96 w-full"
+    <x-forms.form enctype="multipart/form-data" action="/login" method="post" class="md:w-96 w-full border border-gray-200"
         id="form-add-user">
 
         <div class="my-6">

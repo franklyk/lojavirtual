@@ -1,4 +1,4 @@
-<x-layout-admin>
+<x-layout>
 
     <x-mains.page-heading>Create</x-mains.page-heading>
 
@@ -6,8 +6,7 @@
     <x-forms.error />
 
 
-    <x-forms.form  enctype="multipart/form-data" action="/banners" method="post" class="md:w-3/5" id="form-banner-add">
-
+    <x-forms.form  enctype="multipart/form-data" action="/banners" method="post" class="md:w-3/5 border border-gray-200" id="form-banner-add">
 
         <div class="md:flex justify-center gap-6">
             <div>
@@ -32,7 +31,7 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="my-6">
             <x-forms.input type="text" name="title" label="Produto" />
             <x-forms.input type="text" name="description" label="Descrição" />
         </div>
@@ -44,4 +43,4 @@
 
     </x-forms.form>
 
-</x-layout-admin>
+</x-layout>
