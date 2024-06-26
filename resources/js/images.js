@@ -1,6 +1,5 @@
 // window.alert ("carregou");
 
-
 // FORMULÁRIO CADASTRAR USUARIO
 const formAddUser = document.querySelector('#form-add-user');
 if (formAddUser) {
@@ -38,8 +37,7 @@ if (formAddUser) {
     })
 }
 
-
-// FORMULÁRIO CADASTRAR PRODUTO
+// FORMULÁRIO CADASTRAR BANNER
 const formBannerAdd = document.querySelector('#form-banner-add');
 if (formBannerAdd) {
 
@@ -171,4 +169,43 @@ if (formEdit) {
 
     });
 }
+
+
+// FORMULÁRIO CADASTRAR PRODUTO
+const registerProductform = document.querySelector('#register-product-form');
+if (registerProductform) {
+
+    const productImageInput = document.querySelector('#product_image');
+    const productImageLabel = document.querySelector('#image_label');
+    const replaceImageProduct = '<i class="text-gray-500 text-7xl bi bi-camera-fill"></i>';
+
+    productImageLabel.innerHTML = replaceImageProduct;
+
+    productImageInput.addEventListener('change', function (e) {
+        const inputTarget = e.target;
+        const file = inputTarget.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.addEventListener('load', function (e) {
+                const readertTarget = e.target;
+
+                const img = document.createElement('img');
+
+                img.src = readertTarget.result;
+
+                img.classList.add('picture_img');
+                productImageLabel.innerHTML = '';
+                productImageLabel.appendChild(img);
+            });
+
+            reader.readAsDataURL(file)
+
+        } else {
+            productImageLabel.innerHTML = replaceImageProduct;
+        }
+    })
+}
+
 

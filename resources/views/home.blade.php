@@ -35,7 +35,7 @@
 
         <x-banners.week image="/images/banners/banner_bf1.png" />
 
-        <div class="border border-black grid justify-between grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <div class="grid justify-evenly grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
             @for ($i = 0; $i < 10; $i++)
 

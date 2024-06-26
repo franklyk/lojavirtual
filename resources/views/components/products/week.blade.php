@@ -1,11 +1,11 @@
 @props(['id','image', 'title', 'price'])
 
-<div class="flex flex-col items-center m-auto gap-3 border border-black w-28 sm:w-44">
+<div class="bg-gray-200 flex flex-col items-center mx-auto my-2 gap-3 w-40 sm:w-44">
     <a href="#">
 
         <img src="/images/products/tenis-10.jpg">
 
-        <div class="text-gray-600 text-center border border-black font-semibold">
+        <div class="text-gray-600 text-center font-semibold">
 
             <h2>Tenis Nike</h2>
 
