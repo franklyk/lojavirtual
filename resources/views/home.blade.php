@@ -35,23 +35,17 @@
 
         <x-banners.week image="/images/banners/banner_bf1.png" />
 
-        <div class="border border-black grid justify-between grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-
+        <div class="border border-black grid justify-between grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 
             @for ($i = 0; $i < 10; $i++)
-                <div class="flex flex-col items-center m-auto gap-3 border border-black w-32 md:w-44">
-                    <a href="">
-                        <x-products.week />
-                        <div class="text-gray-600 text-center border border-black font-semibold">
-                            <h2>Tenis Nike</h2>
-                            <h2>$99,99</h2>
-                        </div>
-                    </a>
-                </div>
+
+                <x-products.week />
+                
             @endfor
 
-
         </div>
+
+
 
     </main>
 

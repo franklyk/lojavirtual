@@ -7,7 +7,7 @@ $(window).on('load', function () {
             // window.alert('Carregou');
             if ($(window).width() <= 860) {
                 if ($('#dropdown').width() == 0) {
-                    $('#dropdown').animate(({ width: '250px' }));
+                    $('#dropdown').animate(({ width: '300px' }));
                     console.log($('#dropdown').width())
                 } else {
                     $('#dropdown').animate(({ width: '0px' }))
@@ -15,7 +15,7 @@ $(window).on('load', function () {
                 }
             } else {
                 if ($('#dropdown').width() == 0) {
-                    $('#dropdown').animate(({ width: '250px' }));
+                    $('#dropdown').animate(({ width: '300px' }));
                     // $('#search').animate(({ height: '0px' }))
                     console.log($('#dropdown').width())
                 } else {

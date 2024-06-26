@@ -8,9 +8,9 @@ export default {
   theme: {
     screens: {
       sm: '480px',
-      md: '768px',
-      lg: '976px',
-      xl: '1440px',
+      md: '650px',
+      lg: '850px',
+      xl: '1000px',
     },
     extend: {
       gridAutoColumns:{

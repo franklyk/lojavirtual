@@ -15,18 +15,18 @@
 
         <div {{ $attributes($defaults) }}>
 
-            <i class="{{ $icon }}"></i>
+            <i class="{{ 'text-3xl ' . $icon }}"></i>
 
-            <span>{{ $slot }}</span>
+            <span class="text-center w-full">{{ $slot }}</span>
         </div>
     </a>
 @else
     <button >
         <div {{ $attributes($defaults) }}>
 
-            <i class="{{ $icon }}"></i>
+            <i class="{{ 'text-3xl ' . $icon }}"></i>
 
-            <span>{{ $slot }}</span>
+            <span class="text-center w-full">{{ $slot }}</span>
         </div>
     </button>
 @endif
