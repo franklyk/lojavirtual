@@ -24,7 +24,7 @@
     <div {{ $attributes($defaults) }}>
 
         @if ($type == 'search')
-            <x-btns.btn-success type="submit"><i class="text-xl font-bold bi bi-search"></i></x-btns.btn-success>
+            <x-btns.btn-success type="submit" icon="bi bi-search" :label="false" class="text-xl font-bold " />
         @endif
 
         {{ $slot }}

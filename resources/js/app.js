@@ -2,7 +2,7 @@ import './bootstrap';
 
 import './custom';
 
-import './countdown';
+import './timedown';
 
 import './images';
 

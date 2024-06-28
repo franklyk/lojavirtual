@@ -1,4 +1,4 @@
-@props(['type' => 'a', 'link'])
+@props(['type' => 'a', 'link', 'icon', 'label'])
 
 @php
 
@@ -10,11 +10,13 @@
 @endphp
 
 @if ($type == 'a')
-    <a href="{{ $link }}" {{ $attributes($defaults)}} >
-        {{ $slot }}
+    <a href="{{ $link }}" {{ $attributes($defaults) }}>
+        <i class="{{ $icon }} text-2xl"></i>
+        <span class="font-bold">{{ $label }}</span>
     </a>
 @else
-    <button {{ $attributes($defaults)}}>
-        {{ $slot }}
+    <button {{ $attributes($defaults) }}>
+        <i class="{{ $icon }} text-2xl"></i>
+        <span class="font-bold">{{ $label }}</span>
     </button>
 @endif

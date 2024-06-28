@@ -5,11 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use App\Http\Requests\StoreBannerRequest;
 use App\Http\Requests\UpdateBannerRequest;
-use Directory;
 use Exception;
-use GuzzleHttp\Psr7\Request;
-use Illuminate\Auth\Events\Validated;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class BannerController extends Controller
@@ -36,7 +32,6 @@ class BannerController extends Controller
     public function store(StoreBannerRequest $request)
     {
 
-
         $banner = $request->validated();
 
         try {
@@ -44,7 +39,7 @@ class BannerController extends Controller
 
             if ($request->hasFile('img_background') && ($request->file('img_background')->isValid())) {
 
-                $img_background = $request->file('img_background')->hashName();
+                $img_background = $request->file('img_background')->getClientOriginalName();
             }
             if ($request->hasFile('img_banner') && ($request->file('img_banner')->isValid())) {
 
@@ -59,6 +54,7 @@ class BannerController extends Controller
             ]);
 
             $directory =  'images/banners/' . $banner->id;
+            $directory_root =  'images/banners/';
 
             if (!file_exists($directory) && (!is_dir($directory))) {
 
@@ -71,7 +67,7 @@ class BannerController extends Controller
             }
 
             move_uploaded_file($request->img_banner, $directory . '/' . $img_banner);
-            move_uploaded_file($request->img_background, $directory . '/' . $img_background);
+            move_uploaded_file($request->img_background, $directory_root . '/' . $img_background);
 
 
             return redirect('/')->with('success', 'Cadastrado Com Sucesso!');
@@ -96,7 +92,6 @@ class BannerController extends Controller
     public function edit(Banner $banner)
     {
 
-        // dd($banner);
 
         return view('banners.edit', ['banner' => $banner]);
     }
@@ -111,17 +106,17 @@ class BannerController extends Controller
         $data = $request->all();
 
         $old_data = Banner::find($request->id);
-
-        // dd($old_data['img_banner']);
         
         try {
 
             $directory =  'images/banners/' . $old_data->id;
+            $directory_root =  'images/banners/';
 
 
             if ($request->hasFile('img_background') && ($request->file('img_background')->isValid())) {
 
-                $img_background = $request->file('img_background')->hashName();
+                // $img_background = $request->file('img_background')->hashName();
+                $img_background = $request->file('img_background')->getClientOriginalName();
             }
             if ($request->hasFile('img_banner') && ($request->file('img_banner')->isValid())) {
 
@@ -133,12 +128,9 @@ class BannerController extends Controller
 
             Banner::findOrFail($request->id)->update($data);
 
-            move_uploaded_file($request->img_background, $directory . '/' . $img_background);
+            move_uploaded_file($request->img_background, $directory_root . '/' . $img_background);
 
             move_uploaded_file($request->img_banner, $directory . '/' . $img_banner);
-
-            // dd($old_data);
-
 
             if (file_exists($directory . '/' . $old_data['img_background'])) {
 
@@ -153,7 +145,7 @@ class BannerController extends Controller
         } catch (Exception $err) {
             Log::info(['error' => $err->getMessage()]);
 
-            return back()->with('error', 'Cadastrado Falhou!');
+            return back()->with('error', 'Cadastro Falhou!');
         }
     }
 

@@ -12,10 +12,12 @@
 
 @if ($type == 'a')
     <a href="{{ $link }}" {{ $attributes($defaults) }}>
-        {{ $slot }}
+        <i class="{{ $icon }} text-2xl"></i>
+        <span class="font-bold">{{ $label }}</span>
     </a>
 @else
     <button {{ $attributes($defaults) }}>
-        {{ $slot }}
+        <i class="{{ $icon }} text-2xl"></i>
+        <span class="font-bold">{{ $label }}</span>
     </button>
 @endif
