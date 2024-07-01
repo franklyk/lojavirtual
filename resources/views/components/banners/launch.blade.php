@@ -18,7 +18,7 @@
 
             </p>
             <div class="flex justify-center">
-                <x-btns.btn-info icon="bi bi-eye" link="/" label="Saiba Mais" />
+                <x-btns.button icon="bi bi-eye" link="/" label="Saiba Mais" color="info" />
             </div>
         </div>
     </div>

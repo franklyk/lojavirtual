@@ -10,8 +10,8 @@
             <x-forms.input type="password" name="password" label="Senha" />
         </div>
         <div class="flex gap-6 justify-end">
-            <x-btns.btn-success type="submit">Cadastrar</x-btns.btn-success>
-            <x-btns.btn-warning type="reset">Limpar</x-btns.btn-warning>
+            <x-btns.button type="submit" :icon="false" label="Cadastrar" color="success" />
+            <x-btns.button type="reset" :icon="false" label="Reset" color="warning" />
         </div>
 
     </x-forms.form>

@@ -5,7 +5,7 @@
         <x-forms.input type="search" :label="false" name="search" />
     </x-forms.form>
 
-    <section class="bg-[url('/images/banners/banner_bg.jpg')] bg-no-repeat bg-center bg-cover w-full h-dvh">
+    <section class="bg-[url('/images/banners/banner_bg.jpg')] bg-no-repeat bg-center bg-cover w-full">
         @foreach ($banners as $banner)
             {{-- {{ dd($banners) }} --}}
 
@@ -32,7 +32,10 @@
 
         <x-products.overstock />
 
-        <x-products.flash />
+        <div class="md:flex items-center justify-evenly gap-6">
+            <x-products.flash />
+            <x-products.slide />
+        </div>
 
     </main>
 

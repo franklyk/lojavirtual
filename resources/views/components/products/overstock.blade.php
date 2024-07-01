@@ -1,4 +1,4 @@
-<div class="grid gap-6 w-full">
+<div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full">
     
     <a href="">
         <div class="flex justify-center h-40 items-center w-full bg-[url('/images/products/overstock/overwide1.jpg')] bg-cover bg-no-repeat bg-center">
