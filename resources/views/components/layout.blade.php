@@ -24,7 +24,7 @@
         
         <x-mains.sidebar/>
     </div>
-
+    {{ $slot}}
 
 
 </body>

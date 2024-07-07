@@ -69,22 +69,61 @@ li {
 /* COLORS */
 :root {
   --white-color: #fff;
-  --bg-color: #fff;
+  --text-color: #808080;
   --danger-color: #ac0101;
   --info-color: #0202af;
   --success-color: #005100;
   --warning-color: #ff2600;
 }
 
-/* START DINAMIC MESSAGE */
 /* START GLOBALS CLASSES */
 .full-content {
   height: 100%;
   width: 100%;
 }
 
-/* START GLOBALS CLASSES */
-/* END DINAMIC MESSAGE */
+.b-shadow {
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.1803921569);
+}
+
+.radius {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/*  START BACKGROUND  */
+.bg-blue {
+  background: var(--info-color);
+}
+
+.bg-white {
+  background: var(--white-color);
+}
+
+/*  END BACKGROUND  */
+/*  START FONT COLORS  */
+.text-blue {
+  color: var(--info-color);
+}
+
+.text-white {
+  color: var(--white-color);
+}
+
+/*  END FONT COLORS  */
+/* START TEXT FORMAT */
+/* START FONT SIZE  */
+/*  END FONT SIZE  */
+/*  START  WEIGHT   */
+/*  END WEIGHT  */
+/* START ALIGN TEXT */
+/* END ALIGN TEXT */
+/* END TEXT FORMAT */
+/* START MARGIN FORMAT  */
+/* END MARGIN FORMAT   */
+/*  START BORDERS AND SHADOWS */
+/*  END BORDERS  */
 /* START BTN */
 .btn {
   align-items: center;
@@ -150,10 +189,12 @@ li {
 }
 
 /* END BTN */
+/* END GLOBALS CLASSES */
 /* START CONTENT */
+/*  START BLOCKS  */
 .container {
   display: grid;
-  grid-template-areas: "header header header" "navbar main main" "navbar footer footer";
+  grid-template-areas: "header" "main" "footer";
   position: absolute;
   width: 100%;
 }
@@ -162,62 +203,55 @@ li {
   width: 95%;
 }
 
-.b-shadow {
-  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.1803921569);
-}
-
-.radius {
+/* START BTN-MENU */
+.btn-menu {
+  align-items: center;
   border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  justify-content: space-evenly;
+  margin: 1px solid black;
+  transition: 0.5s;
+  width: 40px;
+}
+.btn-menu .line {
+  background: blue;
+  display: block;
+  height: 3px;
+  transform-origin: center;
+  transition: 0.5s;
+  width: 40px;
+}
+.btn-menu.active {
+  border: 1px solid red;
+}
+.btn-menu.active .line1 {
+  background: red;
+  transform: translateY(10px) rotate(-45deg);
+}
+.btn-menu.active .line2 {
+  width: 0px;
+}
+.btn-menu.active .line3 {
+  background: red;
+  transform: translateY(-10px) rotate(45deg);
 }
 
-/*  START BACKGROUND  */
-.bg-blue {
-  background: var(--info-color);
-}
-
-.bg-white {
-  background: var(--white-color);
-}
-
-/*  END BACKGROUND  */
-/*  START FONT COLORS  */
-.text-blue {
-  color: var(--info-color);
-}
-
-.text-white {
-  color: var(--white-color);
-}
-
-/*  END FONT COLORS  */
-/* START TEXT FORMAT */
-/* START FONT SIZE  */
-/*  END FONT SIZE  */
-/*  START  WEIGHT   */
-/*  END WEIGHT  */
-/* START ALIGN TEXT */
-/* END ALIGN TEXT */
-/* END TEXT FORMAT */
-/* START MARGIN FORMAT  */
-/* END MARGIN FORMAT   */
-/*  START BORDERS AND SHADOWS */
-/*  END BORDERS  */
-/*  START BLOCKS  */
+/* END BTN-MENU */
 /* START MENU-MOBILE */
 .menu-mobile {
-  backdrop-filter: blur(10px);
+  background: #1434b3;
   height: 0;
   left: 0;
   overflow: hidden;
   position: absolute;
-  top: 75px;
+  top: 70px;
   transition: 0.5s ease-in-out;
   width: 100%;
 }
 .menu-mobile.open {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 70px);
 }
 @media screen and (min-width: 400px) {
   .menu-mobile {
@@ -609,32 +643,19 @@ li {
   grid-area: header;
   justify-content: space-between;
   left: 0;
-  padding: 5px 30px;
+  padding: 10px;
   position: relative;
   top: 0;
   width: 100%;
   z-index: 100;
 }
-.header .container-btn-menu-logo {
+.header .container-start {
   align-items: center;
   display: flex;
   gap: 20px;
 }
-.header .container-btn-menu-logo .container-btn-menu {
-  background: none;
-  width: 100%;
-}
-.header .container-btn-menu-logo .container-btn-menu .btn-menu {
-  border: 1px solid black;
-  color: #1434b3;
-  cursor: pointer;
-  font-size: 45px;
-}
-.header .container-btn-menu-logo .logo {
-  width: 200px;
-}
-.header .container-btn-menu-logo .logo img {
-  width: 100%;
+.header .container-start .logo {
+  width: 120px;
 }
 
 .navbar {
@@ -649,14 +670,14 @@ li {
 }
 .navbar .container-avatar .user-email {
   display: none;
-  color: var(gray);
+  color: var(--text-color);
   font-size: 16px;
   font-weight: 500;
 }
 .navbar .container-avatar .avatar {
   border-radius: 50%;
   cursor: pointer;
-  width: 60px;
+  width: 40px;
 }
 .navbar .container-avatar .avatar img {
   height: 100%;

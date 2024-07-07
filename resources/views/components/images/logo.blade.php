@@ -1,18 +1,22 @@
-<div class="container-btn-menu-logo">
+<div class="container-start">
 
-    <div class="container-btn-menu" id="btn-menu">
+    <div class="btn-menu" id="btn-menu">
 
-        <i class="btn-menu bi bi-list"></i>
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
 
     </div>
 
-    <a href="/">
 
-        <div class="logo">
+    <div class="logo">
+
+        <a href="/">
 
             <img src="/images/logo/logo.png">
 
-        </div>
-    </a>
+        </a>
+
+    </div>
 
 </div>

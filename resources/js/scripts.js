@@ -9,8 +9,10 @@ const labelLink = document.querySelectorAll('.label-link')
 btnMenu.addEventListener('click', function(){
     if((window.screen.width) < 400){
         menuMobile.classList.toggle('open')
+        btnMenu.classList.toggle('active')
     }else{
         menuDeskTop.classList.toggle('open')
+        btnMenu.classList.toggle('active')
         labelLink.forEach((link)=>(
             link.classList.toggle('active')
         ))

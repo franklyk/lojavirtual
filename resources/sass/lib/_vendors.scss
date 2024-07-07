@@ -1,17 +1,65 @@
 @import "mixins";
 
-/* START DINAMIC MESSAGE */
-
 /* START GLOBALS CLASSES */
-
 
 .full-content{
     height: 100%;
     width: 100%;
 }
-/* START GLOBALS CLASSES */
 
-/* END DINAMIC MESSAGE */
+.b-shadow {
+    box-shadow: $box_shadow;
+}
+
+.radius {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+/*  START BACKGROUND  */
+.bg-blue{
+    background: var(--info-color);
+}
+.bg-white{
+    background: var(--white-color);
+}
+
+/*  END BACKGROUND  */
+
+/*  START FONT COLORS  */
+.text-blue{
+    color: var(--info-color);
+}
+.text-white{
+    color: var(--white-color);
+}
+
+/*  END FONT COLORS  */
+
+/* START TEXT FORMAT */
+
+/* START FONT SIZE  */
+
+/*  END FONT SIZE  */
+
+/*  START  WEIGHT   */
+
+/*  END WEIGHT  */
+
+/* START ALIGN TEXT */
+
+/* END ALIGN TEXT */
+
+/* END TEXT FORMAT */
+
+/* START MARGIN FORMAT  */
+
+/* END MARGIN FORMAT   */
+
+/*  START BORDERS AND SHADOWS */
+
+/*  END BORDERS  */
 
 /* START BTN */
 .btn {
@@ -36,11 +84,6 @@
         font-size: 20px;
     }
 }
-
-// .btn-menu {
-//     font-size: 2rem;
-//     font-weight: lighter;
-// }
 
 .btn-danger {
     background-color: var(--danger-color);
@@ -88,15 +131,19 @@
 
 /* END BTN */
 
+/* END GLOBALS CLASSES */
+
 /* START CONTENT */
+
+/*  START BLOCKS  */
 
 .container {
     // @include config;
     display: grid;
     grid-template-areas: 
-    'header header header'
-    'navbar main main'
-    'navbar footer footer'
+    'header'
+    'main'
+    'footer'
     ;
     position: absolute;
     width: 100%;
@@ -105,80 +152,62 @@
     width: 95%;
 }
 
-.b-shadow {
-    box-shadow: $box_shadow;
-}
-
-
-.radius {
+/* START BTN-MENU */
+.btn-menu{
+    align-items: center;
     border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    height: 40px;
+    justify-content: space-evenly;
+    margin: 1px solid black;
+    transition: .5s;
+    width: 40px;
+
+    .line{
+        background: blue;
+        display: block;
+        height: 3px;
+        transform-origin: center;
+        transition: .5s;
+        width: 40px;
+    }
+    
+    &.active{
+        border: 1px solid red;
+        .line1{
+            background: red;
+            transform: translateY(10px) rotate(-45deg);
+        }
+        .line2{
+            width: 0px;
+        }
+        .line3{
+            background: red;
+            transform: translateY(-10px) rotate(45deg);
+        }
+    }
+
 }
 
-/*  START BACKGROUND  */
-.bg-blue{
-    background: var(--info-color);
-}
-.bg-white{
-    background: var(--white-color);
-}
-
-/*  END BACKGROUND  */
-
-/*  START FONT COLORS  */
-.text-blue{
-    color: var(--info-color);
-}
-.text-white{
-    color: var(--white-color);
-}
-
-/*  END FONT COLORS  */
-
-
-/* START TEXT FORMAT */
-
-/* START FONT SIZE  */
-
-/*  END FONT SIZE  */
-
-/*  START  WEIGHT   */
-
-/*  END WEIGHT  */
-
-/* START ALIGN TEXT */
-
-/* END ALIGN TEXT */
-
-/* END TEXT FORMAT */
-
-/* START MARGIN FORMAT  */
-
-/* END MARGIN FORMAT   */
-
-/*  START BORDERS AND SHADOWS */
-
-/*  END BORDERS  */
-
-
-/*  START BLOCKS  */
+/* END BTN-MENU */
 
 /* START MENU-MOBILE */
 
 .menu-mobile {
     // @include config;
-    backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
+    background: #1434b3;
     height: 0;
     left: 0;
     overflow: hidden;
     position: absolute;
-    top: 75px;
+    top: 70px;
     transition: .5s ease-in-out;
     width: 100%;
 
     &.open{
-        height: calc(100vh - 80px);
+        height: calc(100vh - 70px);
     }
 
     @include sm{
