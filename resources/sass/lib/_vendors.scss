@@ -1,0 +1,630 @@
+@import "mixins";
+
+/* START DINAMIC MESSAGE */
+
+/* START GLOBALS CLASSES */
+
+
+.full-content{
+    height: 100%;
+    width: 100%;
+}
+/* START GLOBALS CLASSES */
+
+/* END DINAMIC MESSAGE */
+
+/* START BTN */
+.btn {
+    align-items: center;
+    border: 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: 100;
+    gap: 5px;
+    justify-content: center;
+    margin: 5px 0;
+    padding: 5px 10px;
+
+    @include breakpoint('<=mini') {
+        font-size: 14px;
+        padding: 5px;
+        width: 100%;
+    }
+
+    .icon {
+        font-size: 20px;
+    }
+}
+
+// .btn-menu {
+//     font-size: 2rem;
+//     font-weight: lighter;
+// }
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+    color: var(--white-color);
+
+    &:hover {
+        background: var(--white-color);
+        color: var(--danger-color);
+    }
+}
+
+.btn-info {
+    background-color: var(--info-color);
+    border-color: var(--info-color);
+    color: var(--white-color);
+
+    &:hover {
+        background-color: var(--info-color);
+        color: var(--info-color);
+    }
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+    color: var(--white-color);
+
+    &:hover {
+        background: var(--white-color);
+        color: var(--success-color);
+    }
+}
+
+.btn-warning {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: var(--white-color);
+
+    &:hover {
+        background: var(--white-color);
+        color: var(--warning-color);
+    }
+}
+
+/* END BTN */
+
+/* START CONTENT */
+
+.container {
+    // @include config;
+    display: grid;
+    grid-template-areas: 
+    'header header header'
+    'navbar main main'
+    'navbar footer footer'
+    ;
+    position: absolute;
+    width: 100%;
+}
+.wrapper{
+    width: 95%;
+}
+
+.b-shadow {
+    box-shadow: $box_shadow;
+}
+
+
+.radius {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+
+/* START TEXT FORMAT */
+
+/* START FONT SIZE  */
+
+/*  END FONT SIZE  */
+
+/*  START  WEIGHT   */
+
+/*  END WEIGHT  */
+
+/* START ALIGN TEXT */
+
+/* END ALIGN TEXT */
+
+
+/*  START COLORS  */
+
+/*  END COLORS  */
+
+/* END TEXT FORMAT */
+
+/*  START BACKGROUND  */
+
+/*  END BACKGROUND  */
+
+/* START MARGIN FORMAT  */
+
+/* END MARGIN FORMAT   */
+
+/*  START BORDERS AND SHADOWS */
+
+/*  END BORDERS  */
+
+
+/*  START BLOCKS  */
+
+/* START MENU-MOBILE */
+
+.menu-mobile {
+    // @include config;
+    backdrop-filter: blur(10px);
+    height: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 75px;
+    transition: .5s ease-in-out;
+    width: 100%;
+
+    &.open{
+        height: calc(100vh - 80px);
+    }
+
+    @include sm{
+        display: none;
+        height: 0;
+    }
+
+    .container-links {
+        height: 100%;
+        width: 100%;
+
+        .item-menu {
+            background: var(--info-color);
+            border-bottom: $border-light;
+            text-align: center;
+            transition: .2s;
+
+            &:hover {
+                background: #1434b3;
+                color: white;
+            }
+            a{
+                align-items: center;
+                color: var(--white-color);
+                display: flex;
+                font-size: 20px;
+                gap: 10px;
+                justify-content: center;
+                padding: 30px;
+                width: 100%;
+                .icon{
+                    font-size: 25px;
+                }
+
+            }
+        }
+    }
+}
+
+/* END MENU MOBILE */
+
+.container-form {
+    // @include config
+    border-radius: 5px;
+    margin-top: 70px;
+
+    justify-content: center;
+
+    .reader-form {
+        background: var(--active-color);
+        border: $border;
+        border-radius: 5px;
+        box-shadow: $box_shadow;
+        color: var(--text-color);
+        font-size: 25px;
+        letter-spacing: 3px;
+        padding: 10px 0;
+        text-align: center;
+
+        @include breakpoint('<=small') {
+            font-size: 18px;
+        }
+    }
+
+    .form {
+        // @include config
+        background: var(--active-color);
+        border: $border;
+        border-radius: $border;
+        box-shadow: $box_shadow;
+        margin-top: 30px;
+        padding: 30px;
+
+        .container-img-prod {
+            // @include config
+            border: $border;
+            border-radius: 6px;
+            margin-bottom: 50px;
+            padding: 30px;
+
+            @include breakpoint('<=small') {
+                padding: 0;
+            }
+
+            .row-input-image {
+                // @include config
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+
+                @include breakpoint('<=mini') {
+                    gap: 5px;
+                }
+
+                .field-input-image {
+                    // @include config
+                    align-items: center;
+                    display: flex;
+                    height: 300px;
+                    justify-content: center;
+                    margin: 0 auto 30px auto;
+                    width: 300px;
+
+                    @include breakpoint('<=mini') {
+                        width: 100%;
+                    }
+
+                    .input-image {
+                        display: none;
+                    }
+
+                    .label-input-image {
+                        // @include config
+                        align-items: center;
+                        border: $border;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        display: flex;
+                        height: 100%;
+                        justify-content: center;
+                        width: 100%;
+
+                        span {
+                            background: var(--bg-color);
+                            color: var(--main-color);
+                            font-size: 200px;
+                            
+
+                            @include breakpoint('<=mini') {
+                                font-size: 150px;
+                            }
+                        }
+                    }
+                }
+
+                .field-input-image-details {
+                    // @include config
+                    height: 100px;
+                    margin: auto;
+                    width: 100px;
+
+                    @include breakpoint('<=mini') {
+                        height: 80px;
+                        width: 80px;
+                    }
+
+                    .input-image-details {
+                        display: none;
+                    }
+
+                    .label-input-image-details {
+                        // @include config
+                        align-items: center;
+                        border: $border;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        display: flex;
+                        height: 100%;
+                        justify-content: center;
+                        width: 100%;
+
+                        span {
+                            // @include config
+                            align-items: center;
+                            background: var(--bg-color);
+                            border-radius: 6px;
+                            color: var(--main-color);
+                            display: flex;
+                            font-size: 50px;
+                            justify-content: center;
+                            height: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .row-input {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+            gap: 10px;
+            width: 100%;
+
+            @include breakpoint('<=mini') {
+                grid-template-columns: repeat(auto-fit, minmax(100%, auto));
+            }
+
+            .field-input {
+                // @include config
+                height: 40px;
+                margin-bottom: 25px;
+                position: relative;
+
+                .label-input {
+                    color: var(--text-color);
+                    bottom: 5px;
+                    left: 10px;
+                    position: absolute;
+                }
+
+                .input-data {
+                    background: var(--active-color);
+                    border: $border;
+                    border-radius: 6px;
+                    bottom: 0;
+                    font-size: 18px;
+                    height: 100%;
+                    left: 0;
+                    padding-left: 10px;
+                    position: absolute;
+                    width: 100%;
+
+                    &:focus~.label-input,
+                    &:valid~.label-input {
+                        background: inherit;
+                        border-radius: 6px;
+                        bottom: 40px;
+                        font-size: 15px;
+                        padding: 3px;
+                    }
+                }
+                .label-input-select{
+                    
+                    bottom: 40px;
+                    color: var(--text-color);
+                    padding-left: 10px;
+                    position: absolute;
+                }
+                select{
+                    // @include config;
+                    border: $border;
+                    border-radius: 6px;
+                    color: var(--text-color);
+                    font-size: 18px;
+                    height: 100%;
+                    position: absolute;
+                    width: 100%;
+                }
+            }
+
+            .input-pass {
+                .icon {
+                    color: var(--blur-color);
+                    font-size: 18px;
+                    right: 10px;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    position: absolute;
+                }
+            }
+        }
+        .row-input-obs{
+            // @include config
+            .label-input-obs{
+                color: var(--text-color);
+            }
+            textarea{
+                border: $border;
+                border-radius: 6px;
+                height: 120px;
+                resize: none;
+                width: 280px;
+                @include breakpoint('<=mini'){
+                    width: 100%;
+                }
+            }
+        }
+
+        .form-btn {
+            // @include config
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: end;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .links {
+            gap: 5px;
+
+            .link-acount,
+            .link-recpass {
+                // @include config
+                color: var(--info-color);
+                display: block;
+                font-size: 14px;
+                padding: 5px 0;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+    }
+}
+
+.container-table {
+    // @include config
+    padding: 0 10px;
+    justify-content: center;
+
+    .reader-table {
+        color: var(--text-color);
+        letter-spacing: 3px;
+        padding: 5px 0;
+        text-align: center;
+    }
+
+    .table {
+        // @include config
+        border-collapse: collapse;
+        color: var(--site-color);
+        margin-top: 40px;
+        padding: 10px;
+        text-align: center;
+
+        thead {
+            th {
+                background: var(--active-color);
+                padding: 10px 0;
+            }
+
+            th+th {
+                border-left: $border_light;
+            }
+        }
+
+        td {
+            padding: 5px;
+        }
+
+        td+td {
+            border-left: $border_light;
+        }
+
+        tr+tr {
+            td {
+                border-top: $border_light;
+                line-height: 30px;
+            }
+        }
+
+        tr:nth-child(odd) {
+            background: var(--bg-color);
+        }
+
+        tr:nth-child(even) {
+            background: var(--active-color);
+        }
+    }
+
+    .table-btn {
+        // @include config
+        justify-content: end;
+        gap: 10px;
+        margin: 20px 0;
+
+        @include breakpoint('<=mini') {
+            flex-direction: column;
+        }
+
+    }
+}
+
+
+.product-count {
+
+    .input-quantity {
+        // @include config
+        position: relative;
+    }
+
+    .product-quantity {
+        // @include config
+        border: $border_light;
+        font-size: 20px;
+    }
+
+    .increase {
+        right: 5%;
+        position: absolute;
+        top: 0;
+    }
+
+    .reduced {
+        right: 5%;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+/* start closing buy */
+.closeing {
+    // @include config
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 10px;
+    width: 300px;
+
+    @include breakpoint('<=mini') {
+        width: 100%;
+    }
+
+    span {
+        color: var(--danger-color);
+    }
+
+}
+
+.subtotal,
+.desc,
+.shipping,
+.value {
+    // @include config
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* end closing buy */
+
+
+.publicity {
+    // @include config
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(700px, auto));
+    gap: 10px;
+    margin-top: 30px;
+    justify-content: center;
+
+    @include breakpoint('<=small') {
+        grid-template-columns: repeat(auto-fit, minmax(100%, auto));
+    }
+
+    .anuncio {
+        // @include config
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+
+        .img-publicity {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+}
+
+/*  END BLOCKS  */
+
+
+/* END CONTENT */

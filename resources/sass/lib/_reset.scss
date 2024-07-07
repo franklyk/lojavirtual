@@ -1,0 +1,82 @@
+
+/* START RESET ALL */
+
+/* START RESET PROPERTIES */
+* {
+    border: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    // transition: .2s ease-in-out !important;
+    -moz-border-sizing: border-box;
+    -webkit-border-sizing: border-box;
+    -moz-border-sizing: border-box;
+}
+
+html {
+    // background: var(--bg-color);
+    // background: black;
+    overflow-x: hidden;
+    width: 100vw;
+}
+body{
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+input {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+/* END RESET PROPERTIES */
+
+/* START SCROLL BAR */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    width: 10px;
+    // &:hover{
+    //     background: $white;
+    // }
+}
+
+::-webkit-scrollbar-thumb {
+    // background: $white-light;
+    border: 1px solid #9b9b9ef6;
+    border-radius: 1px;
+    cursor: pointer;
+    width: 10px;
+
+    &:hover {
+        background: #8d8b8b88;
+    }
+}
+
+/* END SCROLL BAR */
+
+/* END RESET ALL */
+
+

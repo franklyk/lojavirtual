@@ -1,0 +1,38 @@
+@import "variables";
+
+@mixin config{
+  border: 1px solid black;
+}
+
+@mixin sm{
+  @include breakpoint('>=small'){
+    @content;
+  }
+}
+
+@mixin md{
+  @include breakpoint('>=md'){
+    @content;
+  }
+}
+
+@mixin lg{
+  @include breakpoint('>=lg'){
+    @content;
+  }
+}
+
+@mixin xl{
+  @include breakpoint('>=xl'){
+    @content;
+  }
+}
+
+@mixin xxl{
+  @include breakpoint('>=xxl'){
+    @content;
+  }
+}
+
+
+
