@@ -116,6 +116,26 @@
     -webkit-border-radius: 5px;
 }
 
+/*  START BACKGROUND  */
+.bg-blue{
+    background: var(--info-color);
+}
+.bg-white{
+    background: var(--white-color);
+}
+
+/*  END BACKGROUND  */
+
+/*  START FONT COLORS  */
+.text-blue{
+    color: var(--info-color);
+}
+.text-white{
+    color: var(--white-color);
+}
+
+/*  END FONT COLORS  */
+
 
 /* START TEXT FORMAT */
 
@@ -131,16 +151,7 @@
 
 /* END ALIGN TEXT */
 
-
-/*  START COLORS  */
-
-/*  END COLORS  */
-
 /* END TEXT FORMAT */
-
-/*  START BACKGROUND  */
-
-/*  END BACKGROUND  */
 
 /* START MARGIN FORMAT  */
 

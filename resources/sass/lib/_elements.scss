@@ -99,15 +99,15 @@
     .container-links {
         .item-menu {
             border-bottom: $border-light;
-            padding: 10px 0;
+            // padding: 10px 0;
             
-            a {
+            .link-menu {
                 align-items: center;
-                color: #1434b3;
+                // color: #1434b3;
                 display: flex;
                 line-height: 40px;
                 gap: 10px;
-                padding: 10px 4%;
+                padding: 20px 4%;
                 transition: .2s;
                 width: 100%;
                 &:hover{

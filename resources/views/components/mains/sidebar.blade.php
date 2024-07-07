@@ -1,40 +1,15 @@
 <nav class="sidebar" id="menu-desk-top">
     <ul class="container-links">
+        
+        <x-links.link link="/" icon="bi bi-house" label="Home" :active="request()->is('/')" />
 
-        <li class="item-menu">
-            <a href="#">
-                <div class="icon"><i class="bi bi-house"></i></div>
-                <span class="label-link">Home</span>
-            </a>
-        </li>
+        <x-links.link link="dashboard" icon="bi bi-columns-gap" label="Dashboard" :active="request()->is('dashboard')" />
 
-        <li class="item-menu">
-            <a href="#">
-                <div class="icon"><i class="bi bi-columns-gap"></i></div>
-                <span class="label-link">Dashboard</span>
-            </a>
-        </li>
+        <x-links.link link="user" icon="bi bi-person-fill" label="Usuário" :active="request()->is('user')" />
 
-        <li class="item-menu">
-            <a href="#">
-                <div class="icon"><i class="bi bi-person-fill"></i></div>
-                <span class="label-link">Usuário</span>
-            </a>
-        </li>
+        <x-links.link link="login" icon="bi bi-box-arrow-in-right" label="Entrar" :active="request()->is('login')" />
 
-        <li class="item-menu">
-            <a href="#">
-                <div class="icon"><i class="bi bi-box-arrow-in-right"></i></div>
-                <span class="label-link">Entrar</span>
-            </a>
-        </li>
-
-        <li class="item-menu">
-            <a href="#">
-                <div class="icon"><i class="bi bi-box-arrow-right"></i></div>
-                <span class="label-link">Logout</span>
-            </a>
-        </li>
+        <x-links.link type="submit" icon="bi bi-box-arrow-right" label="Logout" :active="request()->is('logout')" />
 
     </ul>
 
