@@ -7,12 +7,15 @@
     display: flex;
     grid-area: header;
     justify-content: space-between;
-    left: 0;
+    // left: 0;
     padding: 10px;
     position: relative;
-    top: 0;
+    // top: 0;
     width: 100%;
     z-index: 100;
+    @include sm{
+        padding: 10px 30px;
+    }
 
     .container-start {
         align-items: center;
@@ -57,6 +60,7 @@
 .sidebar {
     box-shadow: 3px 0 0 #1434b3;
     display: none;
+    // grid-area: sidebar;
     height: 100%;
     overflow-x: hidden;
     transition: .5s;
@@ -88,10 +92,11 @@
                 }
                 
                 .icon {
+                    align-items: center;
                     border-right: $border-light;
-                    display: block;
-                    font-size: 30px;
-                    // margin-left: 10px;
+                    display: flex;
+                    font-size: 40px;
+                    justify-content: center;
                     padding: 0 30px;
                     width: 80px;
                 }
@@ -890,87 +895,13 @@
     }
 }
 
-
-
 .footer {
-    background: var(--site-color);
-    color: var(--site-color);
+    background: var(--info-color);
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
     padding: 50px 0;
-
-    .main-footer {
-        background: var(--site-color);
-
-        padding: 30px 0;
-
-        .main-footer-top {
-            display: grid;
-            gap: 30px;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            justify-content: center;
-            margin: auto;
-            width: 90%;
-
-            .about {
-                width: 100%;
-            }
-
-            .news {
-                width: 100%;
-
-                .container-form-news {
-                    background: var(--active-color);
-                    border: 1px solid white;
-                    border-radius: 6px;
-                    padding: 2px;
-                    width: 100%;
-
-                    .form-news {
-                        width: 100%;
-
-                        .form-input-news {
-                            align-items: center;
-                            display: grid;
-                            grid-template-columns: auto 75%;
-                            width: 100%;
-
-                            .input-news {
-                                background: var(--site-color);
-                                color: var(--main-color);
-                                border-radius: 6px;
-                                font-size: 20px;
-                                padding: 10px;
-
-                            }
-
-                            .btn-news {
-                                display: flex;
-                                height: 100%;
-                                justify-content: center;
-                            }
-                        }
-
-
-                    }
-                }
-            }
-        }
-
-        .socials {
-            margin-top: 50px;
-            text-align: center;
-
-            .icon {
-                font-size: 35px;
-                margin: 10px;
-            }
-        }
-    }
-
-    .footer-bottom {
-        background: var(--fifth-color);
-        font-size: 14px;
-        line-height: 25px;
-        padding: 50px 10px;
+    .main-footer{
         text-align: center;
     }
 }

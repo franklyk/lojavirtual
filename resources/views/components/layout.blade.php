@@ -21,12 +21,29 @@
             </div>
             <x-mains.menu-mobile />
         </header>
-        
-        <x-mains.sidebar/>
+
+        <main class="main">
+            <x-mains.sidebar />
+
+            {{ $slot }}
+
+        </main>
+        {{-- START FOOTER --}}
+        <footer class="footer">
+            <div class="main-footer">
+                <p class="">Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script> Todos os direitos Reservados
+                    <br>|<br>
+                    Este
+                    template foi desenvolvido com <br> <i class="bi bi-heart"></i> <br> por <br> <span>KWservice</span>
+                </p>
+            </div>
+        </footer>
+        {{-- END FOOTER --}}
+
     </div>
-    {{ $slot}}
-
-
 </body>
 
 </html>

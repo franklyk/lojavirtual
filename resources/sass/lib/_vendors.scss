@@ -2,7 +2,7 @@
 
 /* START GLOBALS CLASSES */
 
-.full-content{
+.full-content {
     height: 100%;
     width: 100%;
 }
@@ -18,20 +18,22 @@
 }
 
 /*  START BACKGROUND  */
-.bg-blue{
+.bg-blue {
     background: var(--info-color);
 }
-.bg-white{
+
+.bg-white {
     background: var(--white-color);
 }
 
 /*  END BACKGROUND  */
 
 /*  START FONT COLORS  */
-.text-blue{
+.text-blue {
     color: var(--info-color);
 }
-.text-white{
+
+.text-white {
     color: var(--white-color);
 }
 
@@ -68,21 +70,16 @@
     border-radius: 5px;
     cursor: pointer;
     display: inline-flex;
-    font-weight: 100;
+    font-weight: 700;
     gap: 5px;
     justify-content: center;
     margin: 5px 0;
     padding: 5px 10px;
-
-    @include breakpoint('<=mini') {
-        font-size: 14px;
-        padding: 5px;
-        width: 100%;
-    }
-
-    .icon {
+    transition: .3s;
+    .icon{
         font-size: 20px;
     }
+
 }
 
 .btn-danger {
@@ -102,7 +99,7 @@
     color: var(--white-color);
 
     &:hover {
-        background-color: var(--info-color);
+        background-color: var(--white-color);
         color: var(--info-color);
     }
 }
@@ -138,24 +135,27 @@
 /*  START BLOCKS  */
 
 .container {
-    // @include config;
     display: grid;
-    grid-template-areas: 
-    'header'
-    'main'
-    'footer'
+    grid-template-areas:
+        'header'
+        'main'
+        'footer'
     ;
+    // grid-template-columns: minmax(80px, 300px), auto, auto;
     position: absolute;
     width: 100%;
 }
-.wrapper{
-    width: 95%;
+
+.main {
+    display: flex;
+    grid-area: main;
 }
 
 /* START BTN-MENU */
-.btn-menu{
+.btn-menu {
     align-items: center;
     border-radius: 5px;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     height: 40px;
@@ -164,7 +164,7 @@
     transition: .5s;
     width: 40px;
 
-    .line{
+    .line {
         background: blue;
         display: block;
         height: 3px;
@@ -172,17 +172,20 @@
         transition: .5s;
         width: 40px;
     }
-    
-    &.active{
+
+    &.active {
         border: 1px solid red;
-        .line1{
+
+        .line1 {
             background: red;
             transform: translateY(10px) rotate(-45deg);
         }
-        .line2{
+
+        .line2 {
             width: 0px;
         }
-        .line3{
+
+        .line3 {
             background: red;
             transform: translateY(-10px) rotate(45deg);
         }
@@ -206,11 +209,11 @@
     transition: .5s ease-in-out;
     width: 100%;
 
-    &.open{
+    &.open {
         height: calc(100vh - 70px);
     }
 
-    @include sm{
+    @include sm {
         display: none;
         height: 0;
     }
@@ -229,7 +232,8 @@
                 background: #1434b3;
                 color: white;
             }
-            a{
+
+            a {
                 align-items: center;
                 color: var(--white-color);
                 display: flex;
@@ -238,7 +242,8 @@
                 justify-content: center;
                 padding: 30px;
                 width: 100%;
-                .icon{
+
+                .icon {
                     font-size: 25px;
                 }
 
@@ -249,264 +254,384 @@
 
 /* END MENU MOBILE */
 
-.container-form {
-    // @include config
+/* START CONTAINER MENU */
+.fieldset {
     border-radius: 5px;
-    margin-top: 70px;
+    margin: 30px auto;
+}
 
-    justify-content: center;
-
-    .reader-form {
-        background: var(--active-color);
-        border: $border;
-        border-radius: 5px;
-        box-shadow: $box_shadow;
+legend {
+    h1 {
         color: var(--text-color);
-        font-size: 25px;
-        letter-spacing: 3px;
-        padding: 10px 0;
+        margin: 20px auto;
         text-align: center;
-
-        @include breakpoint('<=small') {
-            font-size: 18px;
-        }
     }
 
-    .form {
-        // @include config
-        background: var(--active-color);
-        border: $border;
-        border-radius: $border;
-        box-shadow: $box_shadow;
-        margin-top: 30px;
-        padding: 30px;
+    text-align: center;
+}
 
-        .container-img-prod {
-            // @include config
-            border: $border;
-            border-radius: 6px;
-            margin-bottom: 50px;
-            padding: 30px;
 
-            @include breakpoint('<=small') {
-                padding: 0;
-            }
+.form {
+    border: $border-light;
+    border-radius: 10px;
+    box-shadow: $box-shadow;
+    height: 100%;
+    padding: 30px;
+    width: 500px;
+}
 
-            .row-input-image {
-                // @include config
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                width: 100%;
 
-                @include breakpoint('<=mini') {
-                    gap: 5px;
-                }
+.row-column {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    margin: 10px auto;
+}
 
-                .field-input-image {
-                    // @include config
-                    align-items: center;
-                    display: flex;
-                    height: 300px;
-                    justify-content: center;
-                    margin: 0 auto 30px auto;
-                    width: 300px;
 
-                    @include breakpoint('<=mini') {
-                        width: 100%;
-                    }
+.field {
+    width: 100%;
+}
 
-                    .input-image {
-                        display: none;
-                    }
 
-                    .label-input-image {
-                        // @include config
-                        align-items: center;
-                        border: $border;
-                        border-radius: 6px;
-                        cursor: pointer;
-                        display: flex;
-                        height: 100%;
-                        justify-content: center;
-                        width: 100%;
+.label-input {
+    color: var(--text-color);
+    display: inline-block;
+    text-indent: 10px;
+    width: 100%;
+}
 
-                        span {
-                            background: var(--bg-color);
-                            color: var(--main-color);
-                            font-size: 200px;
-                            
+.input-data {
+    border: 1px solid #9c9c9c88;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 5px auto;
+    padding: 15px;
+    width: 100%;
+}
 
-                            @include breakpoint('<=mini') {
-                                font-size: 150px;
-                            }
-                        }
-                    }
-                }
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+}
 
-                .field-input-image-details {
-                    // @include config
-                    height: 100px;
-                    margin: auto;
-                    width: 100px;
 
-                    @include breakpoint('<=mini') {
-                        height: 80px;
-                        width: 80px;
-                    }
+.field-checkbox {
+    cursor: pointer;
+    transition: .3s;
 
-                    .input-image-details {
-                        display: none;
-                    }
-
-                    .label-input-image-details {
-                        // @include config
-                        align-items: center;
-                        border: $border;
-                        border-radius: 6px;
-                        cursor: pointer;
-                        display: flex;
-                        height: 100%;
-                        justify-content: center;
-                        width: 100%;
-
-                        span {
-                            // @include config
-                            align-items: center;
-                            background: var(--bg-color);
-                            border-radius: 6px;
-                            color: var(--main-color);
-                            display: flex;
-                            font-size: 50px;
-                            justify-content: center;
-                            height: 100%;
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-        }
-
-        .row-input {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-            gap: 10px;
-            width: 100%;
-
-            @include breakpoint('<=mini') {
-                grid-template-columns: repeat(auto-fit, minmax(100%, auto));
-            }
-
-            .field-input {
-                // @include config
-                height: 40px;
-                margin-bottom: 25px;
-                position: relative;
-
-                .label-input {
-                    color: var(--text-color);
-                    bottom: 5px;
-                    left: 10px;
-                    position: absolute;
-                }
-
-                .input-data {
-                    background: var(--active-color);
-                    border: $border;
-                    border-radius: 6px;
-                    bottom: 0;
-                    font-size: 18px;
-                    height: 100%;
-                    left: 0;
-                    padding-left: 10px;
-                    position: absolute;
-                    width: 100%;
-
-                    &:focus~.label-input,
-                    &:valid~.label-input {
-                        background: inherit;
-                        border-radius: 6px;
-                        bottom: 40px;
-                        font-size: 15px;
-                        padding: 3px;
-                    }
-                }
-                .label-input-select{
-                    
-                    bottom: 40px;
-                    color: var(--text-color);
-                    padding-left: 10px;
-                    position: absolute;
-                }
-                select{
-                    // @include config;
-                    border: $border;
-                    border-radius: 6px;
-                    color: var(--text-color);
-                    font-size: 18px;
-                    height: 100%;
-                    position: absolute;
-                    width: 100%;
-                }
-            }
-
-            .input-pass {
-                .icon {
-                    color: var(--blur-color);
-                    font-size: 18px;
-                    right: 10px;
-                    top: 50%;
-                    transform: translate(0, -50%);
-                    position: absolute;
-                }
-            }
-        }
-        .row-input-obs{
-            // @include config
-            .label-input-obs{
-                color: var(--text-color);
-            }
-            textarea{
-                border: $border;
-                border-radius: 6px;
-                height: 120px;
-                resize: none;
-                width: 280px;
-                @include breakpoint('<=mini'){
-                    width: 100%;
-                }
-            }
-        }
-
-        .form-btn {
-            // @include config
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: end;
-            gap: 10px;
-            margin: 20px 0;
-        }
-
-        .links {
-            gap: 5px;
-
-            .link-acount,
-            .link-recpass {
-                // @include config
-                color: var(--info-color);
-                display: block;
-                font-size: 14px;
-                padding: 5px 0;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-        }
-
+    &:hover {
+        color: #1434b3;
+        text-decoration: underline;
     }
 }
+
+.account {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: end;
+
+    a {
+        color: var(--text-color);
+        transition: .2s;
+
+        &:hover {
+            color: #1434b3;
+            text-decoration: underline;
+        }
+    }
+}
+
+.row-button {
+    max-width: max-content;
+}
+
+/* END CONTAINER MENU */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .container-form {
+//     // @include config
+//     border-radius: 5px;
+//     margin-top: 70px;
+
+//     justify-content: center;
+
+//     .reader-form {
+//         background: var(--active-color);
+//         border: $border;
+//         border-radius: 5px;
+//         box-shadow: $box_shadow;
+//         color: var(--text-color);
+//         font-size: 25px;
+//         letter-spacing: 3px;
+//         padding: 10px 0;
+//         text-align: center;
+
+//         @include breakpoint('<=small') {
+//             font-size: 18px;
+//         }
+//     }
+
+//     .form {
+//         // @include config
+//         background: black;
+//         border: $border;
+//         border-radius: 5px;
+//         box-shadow: $box_shadow;
+//         margin-top: 30px;
+//         padding: 30px;
+
+//         .container-img-prod {
+//             // @include config
+//             border: $border;
+//             border-radius: 6px;
+//             margin-bottom: 50px;
+//             padding: 30px;
+
+//             @include breakpoint('<=small') {
+//                 padding: 0;
+//             }
+
+//             .row-input-image {
+//                 // @include config
+//                 display: flex;
+//                 flex-wrap: wrap;
+//                 justify-content: center;
+//                 gap: 10px;
+//                 width: 100%;
+
+//                 @include breakpoint('<=mini') {
+//                     gap: 5px;
+//                 }
+
+//                 .field-input-image {
+//                     // @include config
+//                     align-items: center;
+//                     display: flex;
+//                     height: 300px;
+//                     justify-content: center;
+//                     margin: 0 auto 30px auto;
+//                     width: 300px;
+
+//                     @include breakpoint('<=mini') {
+//                         width: 100%;
+//                     }
+
+//                     .input-image {
+//                         display: none;
+//                     }
+
+//                     .label-input-image {
+//                         // @include config
+//                         align-items: center;
+//                         border: $border;
+//                         border-radius: 6px;
+//                         cursor: pointer;
+//                         display: flex;
+//                         height: 100%;
+//                         justify-content: center;
+//                         width: 100%;
+
+//                         span {
+//                             background: var(--bg-color);
+//                             color: var(--main-color);
+//                             font-size: 200px;
+
+
+//                             @include breakpoint('<=mini') {
+//                                 font-size: 150px;
+//                             }
+//                         }
+//                     }
+//                 }
+
+//                 .field-input-image-details {
+//                     // @include config
+//                     height: 100px;
+//                     margin: auto;
+//                     width: 100px;
+
+//                     @include breakpoint('<=mini') {
+//                         height: 80px;
+//                         width: 80px;
+//                     }
+
+//                     .input-image-details {
+//                         display: none;
+//                     }
+
+//                     .label-input-image-details {
+//                         // @include config
+//                         align-items: center;
+//                         border: $border;
+//                         border-radius: 6px;
+//                         cursor: pointer;
+//                         display: flex;
+//                         height: 100%;
+//                         justify-content: center;
+//                         width: 100%;
+
+//                         span {
+//                             // @include config
+//                             align-items: center;
+//                             background: var(--bg-color);
+//                             border-radius: 6px;
+//                             color: var(--main-color);
+//                             display: flex;
+//                             font-size: 50px;
+//                             justify-content: center;
+//                             height: 100%;
+//                             width: 100%;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+
+//         .row-input {
+//             display: grid;
+//             grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+//             gap: 10px;
+//             width: 100%;
+
+//             @include breakpoint('<=mini') {
+//                 grid-template-columns: repeat(auto-fit, minmax(100%, auto));
+//             }
+
+//             .field-input {
+//                 // @include config
+//                 height: 40px;
+//                 margin-bottom: 25px;
+//                 position: relative;
+
+//                 .label-input {
+//                     color: var(--text-color);
+//                     bottom: 5px;
+//                     left: 10px;
+//                     position: absolute;
+//                 }
+
+//                 .input-data {
+//                     background: var(--active-color);
+//                     border: $border;
+//                     border-radius: 6px;
+//                     bottom: 0;
+//                     font-size: 18px;
+//                     height: 100%;
+//                     left: 0;
+//                     padding-left: 10px;
+//                     position: absolute;
+//                     width: 100%;
+
+//                     &:focus~.label-input,
+//                     &:valid~.label-input {
+//                         background: inherit;
+//                         border-radius: 6px;
+//                         bottom: 40px;
+//                         font-size: 15px;
+//                         padding: 3px;
+//                     }
+//                 }
+//                 .label-input-select{
+
+//                     bottom: 40px;
+//                     color: var(--text-color);
+//                     padding-left: 10px;
+//                     position: absolute;
+//                 }
+//                 select{
+//                     // @include config;
+//                     border: $border;
+//                     border-radius: 6px;
+//                     color: var(--text-color);
+//                     font-size: 18px;
+//                     height: 100%;
+//                     position: absolute;
+//                     width: 100%;
+//                 }
+//             }
+
+//             .input-pass {
+//                 .icon {
+//                     color: var(--blur-color);
+//                     font-size: 18px;
+//                     right: 10px;
+//                     top: 50%;
+//                     transform: translate(0, -50%);
+//                     position: absolute;
+//                 }
+//             }
+//         }
+//         .row-input-obs{
+//             // @include config
+//             .label-input-obs{
+//                 color: var(--text-color);
+//             }
+//             textarea{
+//                 border: $border;
+//                 border-radius: 6px;
+//                 height: 120px;
+//                 resize: none;
+//                 width: 280px;
+//                 @include breakpoint('<=mini'){
+//                     width: 100%;
+//                 }
+//             }
+//         }
+
+//         .form-btn {
+//             // @include config
+//             display: flex;
+//             flex-wrap: wrap;
+//             justify-content: end;
+//             gap: 10px;
+//             margin: 20px 0;
+//         }
+
+//         .links {
+//             gap: 5px;
+
+//             .link-acount,
+//             .link-recpass {
+//                 // @include config
+//                 color: var(--info-color);
+//                 display: block;
+//                 font-size: 14px;
+//                 padding: 5px 0;
+
+//                 &:hover {
+//                     text-decoration: underline;
+//                 }
+//             }
+//         }
+
+//     }
+// }
 
 .container-table {
     // @include config

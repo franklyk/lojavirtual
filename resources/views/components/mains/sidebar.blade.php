@@ -5,7 +5,7 @@
 
         <x-links.link link="dashboard" icon="bi bi-columns-gap" label="Dashboard" :active="request()->is('dashboard')" />
 
-        <x-links.link link="user" icon="bi bi-person-fill" label="Usuário" :active="request()->is('user')" />
+        <x-links.link link="user" icon="bi bi-person" label="Usuário" :active="request()->is('user')" />
 
         <x-links.link link="login" icon="bi bi-box-arrow-in-right" label="Entrar" :active="request()->is('login')" />
 
