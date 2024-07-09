@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="options">
-                <div class="field-checkbox">
+                <div class="checkbox">
                     <input type="checkbox" class="remember" id="remember" name="remember">
                     <label for="remember">Remember</label>
                 </div>

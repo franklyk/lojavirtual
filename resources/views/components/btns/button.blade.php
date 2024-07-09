@@ -29,12 +29,12 @@
 
 @if ($type == 'a')
     <a href="{{ $link }}" {{ $attributes($defaults) }}>
-        <i class="{{ $icon }} "></i>
-        <span class="">{{ $label }}</span>
+        <i class="icon {{ $icon }} "></i>
+        <span class="label-button">{{ $label }}</span>
     </a>
 @else
     <button {{ $attributes($defaults) }}>
-        <i class="{{ $icon }}"></i>
-        <span class="">{{ $label }}</span>
+        <i class="icon {{ $icon }}"></i>
+        <span class="label-button">{{ $label }}</span>
     </button>
 @endif

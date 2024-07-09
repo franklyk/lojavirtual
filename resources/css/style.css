@@ -141,6 +141,10 @@ li {
 .btn .icon {
   font-size: 20px;
 }
+.btn .label-button {
+  font-size: 16px;
+  font-weight: 600;
+}
 
 .btn-danger {
   background-color: var(--danger-color);
@@ -235,6 +239,62 @@ li {
 }
 
 /* END BTN-MENU */
+/* START MENU DESKTOP*/
+.menu-desktop {
+  box-shadow: 3px 0 0 #1434b3;
+  display: none;
+  height: 100%;
+  overflow-x: hidden;
+  transition: 0.5s;
+  width: 80px;
+}
+@media screen and (min-width: 650px) {
+  .menu-desktop {
+    display: block;
+  }
+}
+.menu-desktop.open {
+  width: 300px;
+}
+.menu-desktop .container-links .item-menu {
+  border-bottom: 0.75px solid rgba(0, 0, 0, 0.1411764706);
+}
+.menu-desktop .container-links .item-menu .link-menu {
+  align-items: center;
+  display: flex;
+  line-height: 40px;
+  gap: 10px;
+  padding: 20px 4%;
+  transition: 0.2s;
+  width: 100%;
+}
+.menu-desktop .container-links .item-menu .link-menu:hover {
+  background: #1434b3;
+  color: var(--white-color);
+  transform: scale(1.02);
+}
+.menu-desktop .container-links .item-menu .link-menu .icon {
+  align-items: center;
+  border-right: 0.75px solid rgba(0, 0, 0, 0.1411764706);
+  display: flex;
+  font-size: 40px;
+  justify-content: center;
+  padding: 0 30px;
+  width: 80px;
+}
+.menu-desktop .container-links .item-menu .link-menu .label-link {
+  font-size: 20px;
+  font-weight: 200;
+  margin-left: 40px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.menu-desktop .container-links .item-menu .link-menu .label-link.active {
+  margin-left: 0px;
+  opacity: 1;
+}
+
+/* END MENU DESKTOP*/
 /* START MENU-MOBILE */
 .menu-mobile {
   background: #1434b3;
@@ -284,8 +344,10 @@ li {
 }
 
 /* END MENU MOBILE */
-/* START CONTAINER MENU */
+/* START FORMS */
+/* START CONTAINER FORM */
 .fieldset {
+  border: 1px solid black;
   border-radius: 5px;
   margin: 30px auto;
 }
@@ -305,7 +367,7 @@ legend h1 {
   box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.1803921569);
   height: 100%;
   padding: 30px;
-  width: 500px;
+  width: 100%;
 }
 
 .row-column {
@@ -341,11 +403,11 @@ legend h1 {
   margin: 20px auto;
 }
 
-.field-checkbox {
+.checkbox {
   cursor: pointer;
   transition: 0.3s;
 }
-.field-checkbox:hover {
+.checkbox:hover {
   color: #1434b3;
   text-decoration: underline;
 }
@@ -369,7 +431,40 @@ legend h1 {
   max-width: max-content;
 }
 
-/* END CONTAINER MENU */
+/* END CONTAINER FORM */
+/* START FORM LOGIN */
+.field-login {
+  width: 90%;
+}
+@media screen and (min-width: 650px) {
+  .field-login {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 760px) {
+  .field-login {
+    width: 500px;
+  }
+}
+
+/* START FORM LOGIN */
+/* START FORM REGISTER */
+.field-register {
+  width: 90%;
+}
+@media screen and (min-width: 650px) {
+  .field-register {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 760px) {
+  .field-register {
+    width: 700px;
+  }
+}
+
+/* START FORM REGISTER */
+/* END FORMS */
 .container-table {
   padding: 0 10px;
   justify-content: center;
@@ -543,60 +638,6 @@ legend h1 {
 .navbar .container-avatar .avatar img {
   height: 100%;
   width: 100%;
-}
-
-.sidebar {
-  box-shadow: 3px 0 0 #1434b3;
-  display: none;
-  height: 100%;
-  overflow-x: hidden;
-  transition: 0.5s;
-  width: 80px;
-}
-@media screen and (min-width: 400px) {
-  .sidebar {
-    display: block;
-  }
-}
-.sidebar.open {
-  width: 300px;
-}
-.sidebar .container-links .item-menu {
-  border-bottom: 0.75px solid rgba(0, 0, 0, 0.1411764706);
-}
-.sidebar .container-links .item-menu .link-menu {
-  align-items: center;
-  display: flex;
-  line-height: 40px;
-  gap: 10px;
-  padding: 20px 4%;
-  transition: 0.2s;
-  width: 100%;
-}
-.sidebar .container-links .item-menu .link-menu:hover {
-  background: #1434b3;
-  color: var(--white-color);
-  transform: scale(1.02);
-}
-.sidebar .container-links .item-menu .link-menu .icon {
-  align-items: center;
-  border-right: 0.75px solid rgba(0, 0, 0, 0.1411764706);
-  display: flex;
-  font-size: 40px;
-  justify-content: center;
-  padding: 0 30px;
-  width: 80px;
-}
-.sidebar .container-links .item-menu .link-menu .label-link {
-  font-size: 20px;
-  font-weight: 200;
-  margin-left: 40px;
-  opacity: 0;
-  transition: 0.5s;
-}
-.sidebar .container-links .item-menu .link-menu .label-link.active {
-  margin-left: 0px;
-  opacity: 1;
 }
 
 .banner-container {

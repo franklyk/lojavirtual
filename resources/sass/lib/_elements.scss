@@ -57,66 +57,6 @@
     }
 }
 
-.sidebar {
-    box-shadow: 3px 0 0 #1434b3;
-    display: none;
-    // grid-area: sidebar;
-    height: 100%;
-    overflow-x: hidden;
-    transition: .5s;
-    width: 80px;
-    @include sm{
-        display: block;
-    }
-    &.open{
-        width: 300px;
-    }
-
-    .container-links {
-        .item-menu {
-            border-bottom: $border-light;
-            
-            .link-menu {
-                align-items: center;
-                // color: #1434b3;
-                display: flex;
-                line-height: 40px;
-                gap: 10px;
-                padding: 20px 4%;
-                transition: .2s;
-                width: 100%;
-                &:hover{
-                    background: #1434b3;
-                    color: var(--white-color);
-                    transform: scale(1.02);
-                }
-                
-                .icon {
-                    align-items: center;
-                    border-right: $border-light;
-                    display: flex;
-                    font-size: 40px;
-                    justify-content: center;
-                    padding: 0 30px;
-                    width: 80px;
-                }
-                .label-link {
-                    font-size: 20px;
-                    font-weight: 200;
-                    margin-left: 40px;
-                    opacity: 0;
-                    transition: .5s;
-    
-                    &.active {
-                        margin-left: 0px;
-                        opacity: 1;
-                    }
-                }
-            }
-        }
-    }
-}
-
 .banner-container {
     background-image: url(../../assets/images/banner/banner_bg.jpg);
 

@@ -15,19 +15,20 @@
 
 @endphp
 
-<div class="row-column">
+{{-- <div> --}}
 
+
+
+<div {{ $attributes($defaults) }}>
     @if ($label)
-        <x-forms.label :$name :$label :$type/>
+        <x-forms.label :$name :$label :$type />
     @endif
 
-    <div {{ $attributes($defaults) }}>
+    @if ($type == 'search')
+        <x-btns.button type="submit" icon="bi bi-search" :label="false" color="success" />
+    @endif
 
-        @if ($type == 'search')
-            <x-btns.button type="submit" icon="bi bi-search" :label="false" color="success" />
-        @endif
+    {{ $slot }}
 
-        {{ $slot }}
-
-    </div>
 </div>
+{{-- </div> --}}

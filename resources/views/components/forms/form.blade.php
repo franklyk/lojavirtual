@@ -1,14 +1,13 @@
-@props(['name' => ''])
+@props(['name' => '', 'legend'])
 
 @php
 
-    $classes = 'form ';
+    $classes = 'form';
     $defaults = [
-        'class' => $classes, 
         'method' => 'GET',
+        'class' => $classes,
     ];
 @endphp
-
 <form {{ $attributes($defaults) }}>
 
     <span class="">

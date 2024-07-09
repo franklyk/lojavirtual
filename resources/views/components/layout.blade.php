@@ -8,7 +8,7 @@
 
     @vite('resources/js/app.js')
 
-    <title>Document</title>
+    <title>{{ env("APP_NAME")}}</title>
 
 </head>
 
@@ -23,7 +23,7 @@
         </header>
 
         <main class="main">
-            <x-mains.sidebar />
+            <x-mains.menu-desktop />
 
             {{ $slot }}
 

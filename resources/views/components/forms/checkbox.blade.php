@@ -3,17 +3,17 @@
 @php
     $defaults = [
         'type' => 'checkbox',
-        'id' => $name,
         'name' => $name,
-        'value' => old($name),
+        'id' => $name,
+        'checked' => true,
     ];
 @endphp
 
-<x-forms.field :$label :$name>
-    <div class="rounded-xl bg-white/10 border border-white/10 px-5 py-4 w-full">
-
-        <input {{ $attributes($defaults) }}>
-        <span class="pl-1">{{ $label }}</span>
-
-    </div>
-</x-forms.field>
+<div class="checkbox">
+    
+    <input {{ $attributes($defaults) }}>
+    <label for="{{ $name }}">{{ $label }}</label>
+    
+</div>
+{{-- <x-forms.field :$name :$label> --}}
+{{-- </x-forms.field> --}}
