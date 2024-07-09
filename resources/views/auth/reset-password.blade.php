@@ -1,19 +1,19 @@
 <x-layout>
-    <x-forms.fieldset legend="Login" class="field-login">
+    <x-forms.fieldset legend="New Password" class="field-login">
         <x-forms.form method="post" class="form-login" id="form-login">
+            <div class="row-column">
+                <x-forms.input type="hidden" name="token" :label="false" />
+            </div>
             <div class="row-column">
                 <x-forms.input type="email" name="email" label="E-mail" />
             </div>
             <div class="row-column">
                 <x-forms.input type="password" name="password" label="Password" />
             </div>
-            <div class="options">
-                <x-forms.checkbox name="remember" label="Remember Password" />
-                <div class="account">
-                    <a href="/register">Create Account</a>
-                    <a href="/forgot-password">Forgot password?</a>
-                </div>
+            <div class="row-column">
+                <x-forms.input type="password" name="password_confirmation" label="Confirm the Password" />
             </div>
+            
             <div class="row-button">
                 <x-btns.button type="submit" color="info" icon="bi bi-check-lg" label="Entrar"/>
             </div>
