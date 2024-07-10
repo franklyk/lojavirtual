@@ -15,6 +15,7 @@ class SessionController extends Controller
     
     public function store(Request $request)
     {
+        dd($request);
         $attributes = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required']
