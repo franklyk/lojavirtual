@@ -76,10 +76,12 @@
     margin: 5px 0;
     padding: 5px 10px;
     transition: .3s;
-    .icon{
+
+    .icon {
         font-size: 20px;
     }
-    .label-button{
+
+    .label-button {
         font-size: 16px;
         font-weight: 600;
     }
@@ -208,17 +210,19 @@
     overflow-x: hidden;
     transition: .5s;
     width: 80px;
-    @include md{
+
+    @include md {
         display: block;
     }
-    &.open{
+
+    &.open {
         width: 300px;
     }
 
     .container-links {
         .item-menu {
             border-bottom: $border-light;
-            
+
             .link-menu {
                 align-items: center;
                 // color: #1434b3;
@@ -228,12 +232,13 @@
                 padding: 20px 4%;
                 transition: .2s;
                 width: 100%;
-                &:hover{
+
+                &:hover {
                     background: #1434b3;
                     color: var(--white-color);
                     transform: scale(1.02);
                 }
-                
+
                 .icon {
                     align-items: center;
                     border-right: $border-light;
@@ -243,13 +248,14 @@
                     padding: 0 30px;
                     width: 80px;
                 }
+
                 .label-link {
                     font-size: 20px;
                     font-weight: 200;
                     margin-left: 40px;
                     opacity: 0;
                     transition: .5s;
-    
+
                     &.active {
                         margin-left: 0px;
                         opacity: 1;
@@ -322,15 +328,13 @@
 
 /* END MENU MOBILE */
 
-/* START FORMS */ 
+/* START FORMS */
 
 /* START CONTAINER FORM */
 
 .fieldset {
-    // @include config;
     border-radius: 5px;
     margin: 30px auto;
-    // width: 100%;
 }
 
 legend {
@@ -424,31 +428,60 @@ legend {
 /* END CONTAINER FORM */
 
 /* START FORM LOGIN */
-.field-login{
+.field-login {
     width: 90%;
-    @include md{
+
+    @include md {
         width: 80%;
     }
-    @include lg{
+
+    @include lg {
         width: 500px;
     }
 }
+
 /* START FORM LOGIN */
 
 /* START FORM REGISTER */
-.field-register{
+.field-register {
     width: 90%;
-    @include md{
+
+    @include md {
         width: 80%;
     }
-    @include lg{
+
+    @include lg {
         width: 700px;
     }
 }
+
 /* START FORM REGISTER */
 
 
 /* END FORMS */
+
+/* START NOTIFICATIONS */
+.verify-block {
+    box-shadow: $box-shadow;
+    height: auto;
+    margin: auto;
+    padding: 20px;
+    width: auto;
+
+    .title {
+        color: var(--text-color);
+        font-size: 30px;
+        text-align: center;
+    }
+    .message{
+        color: var(--text-color);
+        margin: 30px auto;
+        text-align: center;
+    }
+}
+
+/* START NOTIFICATIONS */
+
 
 
 

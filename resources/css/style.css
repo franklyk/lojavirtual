@@ -464,6 +464,26 @@ legend h1 {
 
 /* START FORM REGISTER */
 /* END FORMS */
+/* START NOTIFICATIONS */
+.verify-block {
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.1803921569);
+  height: auto;
+  margin: auto;
+  padding: 20px;
+  width: auto;
+}
+.verify-block .title {
+  color: var(--text-color);
+  font-size: 30px;
+  text-align: center;
+}
+.verify-block .message {
+  color: var(--text-color);
+  margin: 30px auto;
+  text-align: center;
+}
+
+/* START NOTIFICATIONS */
 .container-table {
   padding: 0 10px;
   justify-content: center;

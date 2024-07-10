@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -10,13 +11,15 @@ use Illuminate\Notifications\Notification;
 class EmailConfirmation extends Notification implements ShouldQueue
 {
     use Queueable;
+    
+    private $user;
 
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct(User $user)
     {
-        $this->onConnection('mysql');
+        $this->user = $user;
     }
 
     /**
@@ -26,6 +29,7 @@ class EmailConfirmation extends Notification implements ShouldQueue
      */
     public function via(object $notifiable): array
     {
+
         return $notifiable->prefers_sms ? ['vonage'] : ['mail', 'database'];
     }
 
@@ -34,10 +38,16 @@ class EmailConfirmation extends Notification implements ShouldQueue
      */
     public function toMail(object $notifiable): MailMessage
     {
+        $notifiable = $this->user;
+
+        $url = url('/login');
+
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->greeting('Bem-Vindo!')
+                    ->line('Seu Cadastro foi efetuado!')
+                    ->line($notifiable)
+                    ->action('Click para ativar', $url)
+                    ->line('Obrigado por fazer parte do nosso sistema!');
     }
 
     /**
