@@ -30,7 +30,7 @@ class EmailConfirmation extends Notification implements ShouldQueue
     public function via(object $notifiable): array
     {
 
-        return $notifiable->prefers_sms ? ['vonage'] : ['mail', 'database'];
+        return ['mail'];
     }
 
     /**
@@ -38,14 +38,12 @@ class EmailConfirmation extends Notification implements ShouldQueue
      */
     public function toMail(object $notifiable): MailMessage
     {
-        $notifiable = $this->user;
-
+        
         $url = url('/login');
 
         return (new MailMessage)
                     ->greeting('Bem-Vindo!')
                     ->line('Seu Cadastro foi efetuado!')
-                    ->line($notifiable)
                     ->action('Click para ativar', $url)
                     ->line('Obrigado por fazer parte do nosso sistema!');
     }

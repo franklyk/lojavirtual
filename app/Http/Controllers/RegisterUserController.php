@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Notifications\Notifiable;
 
+
+use App\Notifications\EmailConfirmation;
+
 class RegisterUserController extends Controller
 {
     use Notifiable;
@@ -29,16 +32,19 @@ class RegisterUserController extends Controller
                 'email' => $request->email,
                 'password' => $request->password,
             ]);
-            
-            event(new Registered($user));
+
+            Auth::user($user);
+
+            $user->notify(new EmailConfirmation($user));
+
+
+            // event(new Registered($user));
 
             return redirect('/email/verify');
-            
         } catch (Exception $err) {
             Log::info(['error' => $err->getMessage()]);
 
             return back()->with('error', 'Não foi possível efetuar o cadastro!!');
         }
     }
-    
 }
