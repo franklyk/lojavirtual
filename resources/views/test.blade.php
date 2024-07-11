@@ -5,3 +5,8 @@
         <p class="message">Caso não seja encontrada verifique sua caixa de SPAM!</p>
     </div>
 </x-layout>
+
+{{-- 
+<x-mail::button :url="''">
+Button Text
+</x-mail::button> --}}

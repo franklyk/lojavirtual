@@ -34,14 +34,19 @@
     width: 100%;
 
     .container-avatar {
+        align-items: center;
         display: flex;
+        gap: 10px;
         position: relative;
 
         .user-email {
             display: none;
-            color: var(--text-color);
-            font-size: 16px;
-            font-weight: 500;
+            color: var(--text-blue);
+            font-size: 15px;
+            font-weight: 100;
+            @include md{
+                display: flex;
+            }
         }
 
         .avatar {

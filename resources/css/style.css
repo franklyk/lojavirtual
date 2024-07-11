@@ -69,6 +69,7 @@ li {
 /* COLORS */
 :root {
   --white-color: #fff;
+  --text-blue: #4343ff90;
   --text-color: #808080;
   --danger-color: #ac0101;
   --info-color: #0202af;
@@ -640,14 +641,21 @@ legend h1 {
   width: 100%;
 }
 .navbar .container-avatar {
+  align-items: center;
   display: flex;
+  gap: 10px;
   position: relative;
 }
 .navbar .container-avatar .user-email {
   display: none;
-  color: var(--text-color);
-  font-size: 16px;
-  font-weight: 500;
+  color: var(--text-blue);
+  font-size: 15px;
+  font-weight: 100;
+}
+@media screen and (min-width: 650px) {
+  .navbar .container-avatar .user-email {
+    display: flex;
+  }
 }
 .navbar .container-avatar .avatar {
   border-radius: 50%;

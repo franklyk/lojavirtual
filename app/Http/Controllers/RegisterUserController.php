@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Notifications\Notifiable;
 
 
-use App\Notifications\EmailConfirmation;
 
 class RegisterUserController extends Controller
 {
@@ -24,6 +23,7 @@ class RegisterUserController extends Controller
     }
     public function store(RegisterUserRequest $request)
     {
+
         $request->validated();
 
         try {
@@ -35,12 +35,10 @@ class RegisterUserController extends Controller
 
             Auth::user($user);
 
-            $user->notify(new EmailConfirmation($user));
-
-
-            // event(new Registered($user));
+            event(new Registered($user));
 
             return redirect('/email/verify');
+            
         } catch (Exception $err) {
             Log::info(['error' => $err->getMessage()]);
 
