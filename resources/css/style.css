@@ -69,9 +69,11 @@ li {
 /* COLORS */
 :root {
   --light-color: #e5e5e5;
-  --white-color: #fff;
+  --site-color: #13133b;
+  --site-color-light: #121157;
   --text-blue: #4343ff90;
   --text-color: #808080;
+  --white-color: #fff;
   --danger-color: #ac0101;
   --info-color: #0202af;
   --success-color: #005100;
@@ -103,8 +105,12 @@ li {
 }
 
 /*  START BACKGROUND  */
-.bg-blue {
-  background: var(--info-color);
+.bg-site-color {
+  background: var(--site-color);
+}
+
+.bg-site-color-light {
+  background: var(--site-color-light);
 }
 
 .bg-white {
@@ -233,6 +239,7 @@ li {
 
 .main {
   display: flex;
+  grid-area: main;
 }
 
 /* START BTN-MENU */
@@ -249,7 +256,7 @@ li {
   width: 40px;
 }
 .btn-menu .line {
-  background: blue;
+  background: var(--site-color-light);
   display: block;
   height: 3px;
   transform-origin: center;
@@ -257,7 +264,7 @@ li {
   width: 40px;
 }
 .btn-menu.active {
-  border: 1px solid red;
+  border: 0.75px solid red;
 }
 .btn-menu.active .line1 {
   background: red;
@@ -297,20 +304,19 @@ li {
   display: flex;
   line-height: 40px;
   gap: 10px;
-  padding: 20px 4%;
-  transition: 0.2s;
+  padding: 10px 4%;
+  transition: 0.1s;
   width: 100%;
 }
 .menu-desktop .container-links .item-menu .link-menu:hover {
-  background: #1434b3;
-  color: var(--white-color);
+  background: var(--site-color-light);
   transform: scale(1.02);
 }
 .menu-desktop .container-links .item-menu .link-menu .icon {
   align-items: center;
-  border-right: 0.75px solid rgba(0, 0, 0, 0.1411764706);
+  border-right: 0.75px solid #fff;
   display: flex;
-  font-size: 30px;
+  font-size: 25px;
   justify-content: center;
   padding: 0 30px;
   width: 80px;
@@ -701,7 +707,7 @@ table tr:nth-child(even) {
 /* START ELMENNTS */
 .header {
   align-items: center;
-  box-shadow: 20px 20px 5px 10px rgba(224, 221, 221, 0.1803921569);
+  box-shadow: 0px 0px 22px -6px #000;
   display: flex;
   grid-area: header;
   justify-content: space-between;
@@ -1293,7 +1299,7 @@ table tr:nth-child(even) {
 }
 
 .footer {
-  background: var(--info-color);
+  background: var(--site-color);
   color: var(--white-color);
   display: flex;
   justify-content: center;

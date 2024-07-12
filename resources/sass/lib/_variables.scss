@@ -3,9 +3,11 @@
 
 :root {
     --light-color:       #e5e5e5;
-    --white-color:       #fff;
+    --site-color:        #13133b;
+    --site-color-light:  #121157;
     --text-blue:         #4343ff90;
     --text-color:        #808080;
+    --white-color:       #fff;
 
     --danger-color:      #ac0101;
     --info-color:        #0202af;
@@ -17,9 +19,13 @@
 $border:                  0.75px solid #5f5e5e7f;
 $border-light:            0.75px solid #00000024;
 $border-extra-light:      0.75px solid #909090cd;
+$border-white:            0.75px solid #fff;
+$border-dark:             0.75px solid #0000006f;
 
 
-$box-shadow:              20px 20px 5px 10px #e0dddd2e;  
+$box-shadow:              20px 20px 5px 10px #e0dddd2e; 
+
+$shadow-md:               0px 0px 22px -6px #000;  
 
 $text-shadow:             1px 1px 1px #0000005a;
 

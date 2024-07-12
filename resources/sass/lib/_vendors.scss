@@ -22,8 +22,11 @@
 }
 
 /*  START BACKGROUND  */
-.bg-blue {
-    background: var(--info-color);
+.bg-site-color {
+    background: var(--site-color);
+}
+.bg-site-color-light {
+    background: var(--site-color-light);
 }
 
 .bg-white {
@@ -176,6 +179,7 @@
 
 .main {
     display: flex;
+    grid-area: main;
 }
 
 /* START BTN-MENU */
@@ -192,7 +196,7 @@
     width: 40px;
 
     .line {
-        background: blue;
+        background: var(--site-color-light);
         display: block;
         height: 3px;
         transform-origin: center;
@@ -201,7 +205,7 @@
     }
 
     &.active {
-        border: 1px solid red;
+        border: 0.75px solid red;
 
         .line1 {
             background: red;
@@ -246,28 +250,28 @@
 
             .link-menu {
                 align-items: center;
-                // color: #1434b3;
                 display: flex;
                 line-height: 40px;
                 gap: 10px;
-                padding: 20px 4%;
-                transition: .2s;
+                padding: 10px 4%;
+                transition: .1s;
                 width: 100%;
 
                 &:hover {
-                    background: #1434b3;
-                    color: var(--white-color);
+                    background: var(--site-color-light);
                     transform: scale(1.02);
+                    
                 }
 
                 .icon {
                     align-items: center;
-                    border-right: $border-light;
+                    border-right: $border-white;
                     display: flex;
-                    font-size: 30px;
+                    font-size: 25px;
                     justify-content: center;
                     padding: 0 30px;
                     width: 80px;
+                    
                 }
 
                 .label-link {

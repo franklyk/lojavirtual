@@ -3,7 +3,7 @@
 /* START ELMENNTS */
 .header {
     align-items: center;
-    box-shadow: $box-shadow;
+    box-shadow: $shadow-md;
     display: flex;
     grid-area: header;
     justify-content: space-between;
@@ -842,7 +842,7 @@
 }
 
 .footer {
-    background: var(--info-color);
+    background: var(--site-color);
     color: var(--white-color);
     display: flex;
     justify-content: center;
