@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\SessionController;
@@ -37,12 +38,6 @@ Route::post('/email/verification-notification', function (Request $request) {
     return back()->with('message', 'Verification link sent!');
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-
-
-
-
-
-
 Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 
@@ -53,3 +48,11 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->mid
 
 Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])->middleware('guest')->name('password.reset');;
 Route::post('/reset-password', [ResetPasswordController::class, 'store'])->middleware('guest')->name('password.update');
+
+Route::get('/user', [ProfileUserController::class, 'index']);
+Route::get('/user/create', [ProfileUserController::class, 'create']);
+Route::post('/user', [ProfileUserController::class, 'store']);
+Route::get('/user/{user}', [ProfileUserController::class, 'show']);
+Route::get('/user{user}', [ProfileUserController::class, 'edit']);
+Route::patch('/user{user}', [ProfileUserController::class, 'update']);
+Route::delete('/user{user}', [ProfileUserController::class, 'destroy']);

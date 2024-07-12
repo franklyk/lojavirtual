@@ -12,11 +12,8 @@
 
         <form method="post" action="/logout">
             @csrf
-
             @method('DELETE')
-            
             <x-btns.link type="submit" icon="bi bi-box-arrow-right" label="Logout" />
-
         </form>
     </ul>
 

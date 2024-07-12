@@ -33,11 +33,18 @@ class RegisterUserController extends Controller
                 'password' => $request->password,
             ]);
             
-            event(new Registered($user));
-
+            
             Auth::login($user);
+            // dd(Auth::user()->id);
+            if(Auth::user()->id){
 
-            return redirect('/email/verify');
+                event(new Registered($user));
+                return redirect('/email/verify');
+
+            }else{
+                return back()->with(['error' => 'Naõ foi possivel fazer a conexão!']);
+            }
+
 
         } catch (Exception $err) {
             Log::info(['error' => $err->getMessage()]);

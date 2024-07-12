@@ -1,6 +1,6 @@
 <x-layout>
     <x-forms.fieldset legend="Register" class="field-register">
-        <x-forms.messages />
+        <x-forms.messages msg="" />
         <x-forms.form method="post" class="form-register" id="form-register">
             <div class="row-column">
                 <x-forms.input type="text" name="name" label="Nome" />

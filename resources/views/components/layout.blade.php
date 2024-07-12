@@ -19,11 +19,11 @@
                 <x-images.logo />
                 <x-images.avatar />
             </div>
-            <x-mains.menu-mobile />
+            <x-main.menu-mobile />
         </header>
 
         <main class="main">
-            <x-mains.menu-desktop />
+            <x-main.menu-desktop />
 
             {{ $slot }}
 

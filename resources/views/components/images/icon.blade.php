@@ -1,7 +1,7 @@
 @props(['icon'])
 
 @php
-    $classes = 'icon';
+    $classes = 'icon ';
 
     $defaults = [
         'class' => $classes . $icon,

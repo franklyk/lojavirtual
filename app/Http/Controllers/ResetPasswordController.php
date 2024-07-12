@@ -39,6 +39,6 @@ class ResetPasswordController extends Controller
 
         return $status === Password::PASSWORD_RESET
             ? redirect()->route('login')->with(['success' => 'Senha atualizada com sucesso!'])
-            : back()->with([ 'error' => __('Não foi possivel atualizar a sua senha!')]);
+            : back()->with([ 'error' => 'Não foi possivel atualizar a sua senha!']);
     }
 }
