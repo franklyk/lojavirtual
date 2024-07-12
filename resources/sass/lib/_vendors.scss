@@ -28,21 +28,37 @@
 
 /*  END BACKGROUND  */
 
-/*  START FONT COLORS  */
-.text-blue {
-    color: var(--info-color);
+
+
+/* START TEXT FORMAT */
+.my-10a {
+    margin: 10px auto;
 }
 
+/*  START FONT COLORS  */
+.text-danger{
+    color: var(--danger-color);
+}
+
+.text-info {
+    color: var(--info-color);
+}
+.text-success{
+    color: var(--success-color);
+}
 .text-white {
     color: var(--white-color);
+}
+.text-color{
+    color: var(--text-color);
 }
 
 /*  END FONT COLORS  */
 
-/* START TEXT FORMAT */
-
 /* START FONT SIZE  */
-
+.font-small{
+    font-size: small;
+}
 /*  END FONT SIZE  */
 
 /*  START  WEIGHT   */
@@ -50,7 +66,9 @@
 /*  END WEIGHT  */
 
 /* START ALIGN TEXT */
-
+.text-center{
+    text-align: center;
+}
 /* END ALIGN TEXT */
 
 /* END TEXT FORMAT */

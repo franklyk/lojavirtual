@@ -1,5 +1,6 @@
 <x-layout>
     <x-forms.fieldset legend="Register" class="field-register">
+        <x-forms.messages />
         <x-forms.form method="post" class="form-register" id="form-register">
             <div class="row-column">
                 <x-forms.input type="text" name="name" label="Nome" />
@@ -18,7 +19,7 @@
                 
             </div>
             <div class="row-button">
-                <x-btns.button type="submit" color="info" icon="bi bi-check-lg" label="Entrar"/>
+                <x-btns.button type="submit" color="info" icon="bi bi-check-lg" label="Cadastrar"/>
             </div>
         </x-forms.form>
     </x-forms.fieldset>

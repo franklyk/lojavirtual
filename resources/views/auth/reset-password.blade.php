@@ -1,8 +1,8 @@
 <x-layout>
     <x-forms.fieldset legend="New Password" class="field-login">
-        <x-forms.form method="post" class="form-login" id="form-login">
+        <x-forms.form method="post" action="/reset-password" class="form-login" id="form-login">
             <div class="row-column">
-                <x-forms.input type="hidden" name="token" :label="false" />
+                <x-forms.input type="hidden" name="token" :label="false" value="{{$token}}"/>
             </div>
             <div class="row-column">
                 <x-forms.input type="email" name="email" label="E-mail" />

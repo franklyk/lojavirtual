@@ -32,13 +32,13 @@ class RegisterUserController extends Controller
                 'email' => $request->email,
                 'password' => $request->password,
             ]);
-
-            Auth::user($user);
-
+            
             event(new Registered($user));
 
+            Auth::login($user);
+
             return redirect('/email/verify');
-            
+
         } catch (Exception $err) {
             Log::info(['error' => $err->getMessage()]);
 

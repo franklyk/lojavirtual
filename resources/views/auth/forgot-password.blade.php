@@ -1,6 +1,7 @@
 <x-layout>
     <x-forms.fieldset legend="Recover Password " class="field-login">
-        <x-forms.form method="post" class="form-login" id="form-login">
+        <x-forms.messages  msg="Enviaremos um E-mail para recuperar a sua senha"/>
+        <x-forms.form action="/forgot-password" method="post" class="form-login" id="form-login">
             <div class="row-column">
                 <x-forms.input type="email" name="email" label="E-mail" />
             </div>

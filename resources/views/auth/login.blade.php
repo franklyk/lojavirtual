@@ -1,5 +1,7 @@
 <x-layout>
+    {{-- {{Auth::user()->name}} --}}
     <x-forms.fieldset legend="Login" class="field-login">
+        <x-forms.messages msg="Faça o login para acessar a sua conta!" />
         <x-forms.form method="post" class="form-login" id="form-login">
             <div class="row-column">
                 <x-forms.input type="email" name="email" label="E-mail" />

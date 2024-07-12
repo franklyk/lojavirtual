@@ -20,7 +20,10 @@ class ForgotPasswordController extends Controller
         );
 
         return $status === Password::RESET_LINK_SENT
-            ? back()->with(['status' => __($status)])
-            : back()->withErrors(['email' => __($status)]);
+            ? back()->with(['success' => __('Enviamos um link de recuperação no E-mail informado.')])
+            : back()->with(['error' => __('Não foi possivel enviar o link!')]);
+        // return $status === Password::RESET_LINK_SENT
+        //     ? back()->with(['status' => __($status)])
+        //     : back()->withErrors(['email' => __($status)]);
     }
 }
