@@ -1,16 +1,19 @@
 @import "mixins";
 
 /* START GLOBALS CLASSES */
-.section-page{
+.section-page {
     padding: 20px;
 }
+
 .full-content {
     height: 100%;
     width: 100%;
 }
-.full-width{
+
+.full-width {
     width: 100%;
 }
+
 .b-shadow {
     box-shadow: $box-shadow;
 }
@@ -25,6 +28,7 @@
 .bg-site-color {
     background: var(--site-color);
 }
+
 .bg-site-color-light {
     background: var(--site-color-light);
 }
@@ -43,29 +47,37 @@
 }
 
 /*  START FONT COLORS  */
-.text-danger{
+.text-danger {
     color: var(--danger-color);
+}
+
+.text-site-color {
+    color: var(--site-color);
 }
 
 .text-info {
     color: var(--info-color);
 }
-.text-success{
+
+.text-success {
     color: var(--success-color);
 }
+
 .text-white {
     color: var(--white-color);
 }
-.text-color{
+
+.text-color {
     color: var(--text-color);
 }
 
 /*  END FONT COLORS  */
 
 /* START FONT SIZE  */
-.font-small{
+.font-small {
     font-size: small;
 }
+
 /*  END FONT SIZE  */
 
 /*  START  WEIGHT   */
@@ -73,9 +85,10 @@
 /*  END WEIGHT  */
 
 /* START ALIGN TEXT */
-.text-center{
+.text-center {
     text-align: center;
 }
+
 /* END ALIGN TEXT */
 
 /* END TEXT FORMAT */
@@ -92,6 +105,7 @@
 .btn {
     align-items: center;
     border: 1px solid;
+    border-color: inherit;
     border-radius: 5px;
     cursor: pointer;
     display: inline-flex;
@@ -115,7 +129,6 @@
 
 .btn-danger {
     background-color: var(--danger-color);
-    border-color: var(--danger-color);
     color: var(--white-color);
 
     &:hover {
@@ -126,7 +139,6 @@
 
 .btn-info {
     background-color: var(--info-color);
-    border-color: var(--info-color);
     color: var(--white-color);
 
     &:hover {
@@ -137,7 +149,6 @@
 
 .btn-success {
     background-color: var(--success-color);
-    border-color: var(--success-color);
     color: var(--white-color);
 
     &:hover {
@@ -148,7 +159,6 @@
 
 .btn-warning {
     background-color: var(--warning-color);
-    border-color: var(--warning-color);
     color: var(--white-color);
 
     &:hover {
@@ -260,7 +270,7 @@
                 &:hover {
                     background: var(--site-color-light);
                     transform: scale(1.02);
-                    
+
                 }
 
                 .icon {
@@ -271,7 +281,7 @@
                     justify-content: center;
                     padding: 0 30px;
                     width: 80px;
-                    
+
                 }
 
                 .label-link {
@@ -352,6 +362,61 @@
 }
 
 /* END MENU MOBILE */
+
+.page-heading {
+    margin: 30px auto;
+}
+
+
+
+/* START MENU CONFIG */
+.btn-dropdown-action {
+    position: relative;
+}
+
+.dropdown-action {
+    border: $border-light;
+    display: none;
+    margin: auto;
+    width: 150px;
+    right: 0;
+    position: absolute;
+    z-index: 10;
+
+    &.open {
+        display: block;
+    }
+
+    .container-links {
+        width: 100%;
+
+        .item-menu {
+            width: 100%;
+
+            .link-menu {
+                align-items: center;
+                border: $border-white;
+                display: flex;
+                gap: 10px;
+                padding: 10px;
+                width: 100%;
+
+                &:hover {
+                    background: var(--site-color-light);
+                }
+
+                .icon {
+                    border-right: $border-white;
+                    display: flex;
+                    justify-content: center;
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+
+/* END MENU CONFIG */
 
 /* START FORMS */
 
@@ -446,6 +511,43 @@ legend {
     }
 }
 
+
+.container-label-image {
+    width: 100%;
+
+    .label-image {
+        align-items: center;
+        display: flex;
+        background: var(--light-color);
+        border: $border;
+        border-radius: 6px;
+        height: 200px;
+        justify-content: center;
+        margin: auto;
+        padding: 1%;
+        width: 200px;
+
+        #preview-image {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            width: 100%;
+            padding: 1px;
+
+            img {
+                max-height: 100%;
+                max-width: 100%;
+
+            }
+        }
+    }
+}
+
+.input-file {
+    display: none;
+}
+
 .row-button {
     max-width: max-content;
 }
@@ -480,6 +582,21 @@ legend {
     }
 }
 
+.container-buttons {
+    @include config;
+    display: flex;
+    gap: 10px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+
+// .form-delete{
+
+// }
+
+
 /* START FORM REGISTER */
 
 
@@ -498,7 +615,8 @@ legend {
         font-size: 30px;
         text-align: center;
     }
-    .message{
+
+    .message {
         color: var(--text-color);
         margin: 30px auto;
         text-align: center;
@@ -514,25 +632,34 @@ table {
     box-shadow: $box-shadow;
     color: var(--text-color);
     margin: auto;
-    width: 100%;
-    th{
-        background: var(--info-color);
+    width: max-content;
+
+    th {
+        background: var(--site-color);
         border-bottom: 1px solid black;
         color: var(--white-color);
-        padding: 10px 0;
+        padding: 10px;
+    }
+
+    th+th {
+        border-left: $border-white;
     }
 
     tr {
         td {
             line-height: 20px;
-            padding: 10px 20px;
+            padding: 0px 20px;
             text-align: center;
-            .icon{
-                color: var(--info-color);
+
+            .icon {
                 font-size: 25px;
             }
-        }
 
+            &.actions {
+                display: flex;
+                gap: 5px;
+            }
+        }
     }
 
     tr:nth-child(odd) {
@@ -544,37 +671,62 @@ table {
     }
 }
 
-.show-user-image{
+.container-show-user {
     display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
     justify-content: center;
-    margin: 30px auto;
-    .image{
-        border: $border-light;
-        border-radius: 50%;
-        height: 100px;
-        padding: 1px;
-        width: 100px;
-    }
-}
-.show-user{
-    @include md{
-        border-radius: 6px;
+
+    .show-user-image {
+        align-items: center;
+        display: flex;
+        height: 250px;
+        justify-content: center;
         margin: auto;
-        width: 60%;
-    }
-    tr {
-        td {
-            text-align: left;
-            .icon{
-                color: var(--info-color);
-                font-size: 25px;
+        width: 250px;
+        
+        .image {
+            border: $border-light;
+            border-radius: 6px;
+            height: 100%;
+            padding: 1px;
+            width: 100%;
+
+            img {
+
+                height: 100%;
+                width: 100%;
             }
         }
+    }
 
+    .show-user {
+        padding: 0 20px;
+        width: 500px;
+
+        @include md {
+            border-radius: 6px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        tr {
+            td {
+                padding: 20px;
+                text-align: left;
+
+                .icon {
+                    color: var(--info-color);
+                    font-size: 25px;
+                }
+            }
+
+        }
     }
 }
-
-
 
 
 

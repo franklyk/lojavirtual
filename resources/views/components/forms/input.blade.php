@@ -5,7 +5,7 @@
     $classes = 'input-data';
 
     if ($type == 'file') {
-        $classes = 'input-search';
+        $classes = 'input-file';
     }
 
     $defaults = [

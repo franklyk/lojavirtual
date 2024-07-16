@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateProfileUserRequest;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ProfileUserController extends Controller
 {
@@ -31,7 +34,7 @@ class ProfileUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
     }
 
     /**
@@ -46,17 +49,61 @@ class ProfileUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        return view('user.edit');
+        return view('user.edit', ['user' => $user]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProfileUserRequest $request, User $user)
     {
-        //
+        $request->validated();
+
+        $data = $request->all();
+
+        try {
+
+            $old_data = User::find($request->id);
+
+            // dd($old_data->img_user);
+
+            $directory  = 'images/users/' . $old_data->id;
+
+            if (!file_exists($directory) && (!is_dir($directory))) {
+
+                mkdir($directory);
+
+                if (!file_exists($directory) && (!is_dir($directory))) {
+
+                    return back()->with('error', 'Falha ao criar diretório!');
+                }
+            }
+
+            if (file_exists($directory . '/' . $old_data['img_user'])) {
+
+                unlink($directory . '/' . $old_data['img_user']);
+            }
+
+            if ($request->hasFile('img_user') && ($request->file('img_user')->isValid())) {
+                $img_user = $request->file('img_user')->hashName();
+            } else {
+                $img_user = $old_data['img_user'];
+            }
+
+            $data['img_user'] = $img_user;
+
+            $user = User::findOrFail($request->id)->update($data);
+
+            move_uploaded_file($request->img_user, $directory . '/' . $data['img_user']);
+
+            return redirect()->route('user.show', ['user' => $user])->with('success', 'Usuário atualizado com sucesso!');
+        } catch (Exception $err) {
+            Log::info(['error' => $err->getMessage()]);
+
+            return back()->with('error', 'Não foi possível atualizar!');
+        }
     }
 
     /**

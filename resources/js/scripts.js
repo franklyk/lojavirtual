@@ -1,6 +1,6 @@
 // window.alert ("carregou");
 
-// BUTTON MENU
+/* START BUTTON MENU */
 const btnMenu = document.querySelector('#btn-menu')
 const menuMobile = document.querySelector('#menu-mobile')
 const menuDeskTop = document.querySelector('#menu-desk-top')
@@ -19,18 +19,61 @@ btnMenu.addEventListener('click', function(){
     }
 })
 
-// ACTIVATE MENU
-var itemMenu = document.querySelectorAll('.item-menu')
+/* END BUTTON MENU */
 
-function activeLink(){
-    itemMenu.forEach((item)=>
-        item.classList.remove('active')
-    )
-    this.classList.add('active')
-}
-itemMenu.forEach((item)=>
-    item.addEventListener('click', activeLink)
-)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // ACTIVATE MENU
+// var itemMenu = document.querySelectorAll('.item-menu')
+
+// function activeLink(){
+//     itemMenu.forEach((item)=>
+//         item.classList.remove('active')
+//     )
+//     this.classList.add('active')
+// }
+// itemMenu.forEach((item)=>
+//     item.addEventListener('click', activeLink)
+// )
 
 
 

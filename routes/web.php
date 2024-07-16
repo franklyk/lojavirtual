@@ -52,7 +52,7 @@ Route::post('/reset-password', [ResetPasswordController::class, 'store'])->middl
 Route::get('/user', [ProfileUserController::class, 'index']);
 Route::get('/user/create', [ProfileUserController::class, 'create']);
 Route::post('/user', [ProfileUserController::class, 'store']);
-Route::get('/user/{user}', [ProfileUserController::class, 'show']);
-Route::get('/user{user}', [ProfileUserController::class, 'edit']);
-Route::patch('/user{user}', [ProfileUserController::class, 'update']);
-Route::delete('/user{user}', [ProfileUserController::class, 'destroy']);
+Route::get('/user/{user}', [ProfileUserController::class, 'show'])->name('user.show');
+Route::get('/user/{user}/edit', [ProfileUserController::class, 'edit']);
+Route::patch('/user/{user}', [ProfileUserController::class, 'update']);
+Route::delete('/user/{user}', [ProfileUserController::class, 'destroy']);

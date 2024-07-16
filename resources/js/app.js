@@ -1,8 +1,8 @@
 import './bootstrap';
 
-// import './custom';
+import './custom';
 
-// import './images';
+import './images';
 
 // import './pagenav';
 
