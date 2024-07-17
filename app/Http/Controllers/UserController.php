@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UpdateProfileUserRequest;
 use App\Models\User;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+use App\Models\UserImage;
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
-class ProfileUserController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $users = User::all(['id', 'name', 'email']);
+        $users = User::all(['id', 'first_name', 'email']);
         // dd($users);
 
         return view('user.index', ['users' => $users]);
@@ -32,7 +33,7 @@ class ProfileUserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
         // 
     }
@@ -42,6 +43,7 @@ class ProfileUserController extends Controller
      */
     public function show(User $user)
     {
+        new UserImage();
 
         return view('user.show', ['user' => $user]);
     }
@@ -57,7 +59,7 @@ class ProfileUserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProfileUserRequest $request, User $user)
+    public function update(StoreUserRequest $request, User $user)
     {
         $request->validated();
 
@@ -66,8 +68,6 @@ class ProfileUserController extends Controller
         try {
 
             $old_data = User::find($request->id);
-
-            // dd($old_data->img_user);
 
             $directory  = 'images/users/' . $old_data->id;
 

@@ -3,9 +3,12 @@
 
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\ProfileUserController;
+use App\Http\Controllers\ProfileUserImageController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserImageController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -49,10 +52,18 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'store'])->mid
 Route::get('/reset-password/{token}', [ResetPasswordController::class, 'create'])->middleware('guest')->name('password.reset');;
 Route::post('/reset-password', [ResetPasswordController::class, 'store'])->middleware('guest')->name('password.update');
 
-Route::get('/user', [ProfileUserController::class, 'index']);
-Route::get('/user/create', [ProfileUserController::class, 'create']);
-Route::post('/user', [ProfileUserController::class, 'store']);
-Route::get('/user/{user}', [ProfileUserController::class, 'show'])->name('user.show');
-Route::get('/user/{user}/edit', [ProfileUserController::class, 'edit']);
-Route::patch('/user/{user}', [ProfileUserController::class, 'update']);
-Route::delete('/user/{user}', [ProfileUserController::class, 'destroy']);
+
+
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/create', [UserController::class, 'create']);
+Route::post('/user', [UserController::class, 'store']);
+Route::get('/user/{user}', [UserController::class, 'show'])->name('user.show');
+Route::get('/user/{user}/edit', [UserController::class, 'edit']);
+Route::patch('/user/{user}', [UserController::class, 'update']);
+Route::delete('/user/{user}', [UserController::class, 'destroy']);
+
+Route::get('/user/{user}/edit-image', [UserImageController::class, 'editImage']);
+Route::patch('/user/{user}', [UserImageController::class, 'updateImage'])->name('update.image');
+
+
+

@@ -12,19 +12,16 @@
                 @foreach ($users as $user)
                     <tr>
                         <td>{{ $user->id }}</td>
-                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->first_name }}</td>
                         <td>{{ $user->email }}</td>
                         <td class="actions">
-                            <x-btns.button link="/user/{{ $user->id }}" icon="bi bi-eye" :label="false"
+                            <x-btns.button link="/user/{{ $user->id }}" icon="bi bi-eye" label="Visualizar"
                                 color="info" class="btn-dropdown-action" id="{{ $user->id }}" />
-
-                            <x-btns.button link="/user/{{ $user->id }}/edit" icon="bi bi-pencil" :label="false"
-                                color="warning" class="btn-dropdown-action" id="{{ $user->id }}" />
 
                             <form action="/user" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <x-btns.button type="submit" icon="bi bi-trash" :label="false" color="danger"
+                                <x-btns.button type="submit" icon="bi bi-trash" label="Excluir" color="danger"
                                     class="btn-dropdown-action" id="{{ $user->id }}" />
                             </form>
 

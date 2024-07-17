@@ -11,13 +11,13 @@
 
                 <div class="image">
                     @php
-                        if(!empty($user->img_user)){
-                            $image = $user->id . '/' . $user->img_user;
-                        }else{
+                        if (($user->img_user) == null) {
                             $image = 'user.png';
+                        } else {
+                            $image = ($user->id . '/' . $user->img_user);
                         }
                     @endphp
-                    <img src="/images/users/{{$image}}" alt="">
+                    <img src="/images/users/{{ $image }}" alt="">
                 </div>
 
             </div>
@@ -29,7 +29,7 @@
                     </tr>
                     <tr>
                         <td>Nome:</td>
-                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->first_name . ' ' . $user->last_name }}</td>
                     </tr>
                     <tr>
                         <td>Email:</td>
@@ -51,8 +51,10 @@
             </div>
         </div>
         <div class="container-buttons">
+            <x-btns.button link="/user/{{ $user->id }}/edit-image" icon="bi bi-pencil" color="warning"
+                label="Editar Imagem" />
             <x-btns.button link="/user/{{ $user->id }}/edit" icon="bi bi-pencil" color="warning"
-                label="Editar Usuário" />
+                label="Editar Perfil" />
             <form action="" method="post" class="form-delete">
                 @csrf
 

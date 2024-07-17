@@ -77,7 +77,7 @@ li {
   --danger-color: #ff0000;
   --info-color: #0202af;
   --success-color: #005100;
-  --warning-color: #fe4502;
+  --warning-color: #eaa42b;
 }
 
 /* START GLOBALS CLASSES */
@@ -581,7 +581,6 @@ legend h1 {
 }
 
 .container-buttons {
-  border: 1px solid black;
   display: flex;
   gap: 10px;
   margin: 30px auto;
