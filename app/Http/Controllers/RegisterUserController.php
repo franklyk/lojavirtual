@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Notifications\Notifiable;
-
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rules\Password;
 
 class RegisterUserController extends Controller
 {
@@ -21,32 +21,48 @@ class RegisterUserController extends Controller
     {
         return view('auth.register');
     }
-    public function store(RegisterUserRequest $request)
+    public function store(Request $request)
     {
-
-        $request->validated();
+        $userAttributes = $request->validate([
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'email' => ['required', 'email', 'unique:users,email'],
+            'password' => ['required', 'confirmed', Password::min(8)],
+        ]);
 
         try {
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => $request->password,
-            ]);
-            
-            
-            Auth::login($user);
-            // dd(Auth::user()->id);
-            if(Auth::user()->id){
+            $user = User::create($userAttributes);
+            if ($user) {
 
-                event(new Registered($user));
-                return redirect('/email/verify');
+                Auth::login($user);
+                if (Auth::user()->id) {
 
-            }else{
-                return back()->with(['error' => 'Naõ foi possivel fazer a conexão!']);
+                    if ($request->hasFile('img_user') && ($request->file('img_user')->isValid())) {
+                        $img_user = $request->file('img_user')->hashName();
+                    }
+
+                    $user->userImage()->create([
+                        'img_user' => $img_user,
+                    ]);
+
+                    $directory =  'images/users/' . Auth::user()->id;
+
+                    if (!file_exists($directory) && (!is_dir($directory))) {
+                        mkdir($directory);
+                        if (!file_exists($directory) && (!is_dir($directory))) {
+                            return back()->with('error', 'Não foi possível criar o diretório"');
+                        }
+                    }
+                    move_uploaded_file($request->img_user, $directory . '/' . $img_user);
+
+                    event(new Registered($user));
+                    return redirect('/email/verify');
+                }
+            } else {
+                return back()->with(['error' => 'Não foi possivel fazer a conexão!']);
             }
-
-
         } catch (Exception $err) {
+
             Log::info(['error' => $err->getMessage()]);
 
             return back()->with('error', 'Não foi possível efetuar o cadastro!!');

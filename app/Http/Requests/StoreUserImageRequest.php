@@ -22,7 +22,7 @@ class StoreUserImageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'img_user' => ['nullable', 'mimes:jpg,jpeg,png,bmp,gif,svg,webp'],
         ];
     }
 }

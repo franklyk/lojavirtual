@@ -1,14 +1,26 @@
 <x-layout>
-    {{ dd($img_user) }}
+    {{-- {{ dd($img_user) }} --}}
     <x-forms.fieldset legend="Edit" class="field-register">
         <x-forms.messages msg="" />
-        <x-forms.form enctype="multipart/form-data" action="{{ route('update.image')->$img_user->id }}" method="post"
+        <x-forms.form enctype="multipart/form-data" action="/userimage/" method="post"
             class="form-edit" id="form-edit">
             @method('patch')
-            <x-forms.input type="hidden" name="id" :label="false" value="{{ $img_user->id }}" />
+            {{-- <x-forms.input type="hidden" name="id" :label="false" value="{{ $user->id }}" /> --}}
             <div class="container-label-image">
                 <label for="img_user" class="label-image" id="label-image">
-                    <span id="preview-image"></span>
+                    <span id="preview-image">
+                        @php
+                            
+                            if (($img_user) == null) {
+                                $image = 'user.png';
+                            } else {
+                                $image = $user->id . '/' . $img_user->img_user;
+                            }
+                            dd($image);
+                        @endphp
+
+                        <img src="/images/users/{{ $image }}" alt="">
+                    </span>
                 </label>
             </div>
 

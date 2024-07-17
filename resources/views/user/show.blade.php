@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="container-buttons">
-            <x-btns.button link="/user/{{ $user->id }}/edit-image" icon="bi bi-pencil" color="warning"
+            <x-btns.button link="/userimage/{{ $user->id }}/edit-image" icon="bi bi-pencil" color="warning"
                 label="Editar Imagem" />
             <x-btns.button link="/user/{{ $user->id }}/edit" icon="bi bi-pencil" color="warning"
                 label="Editar Perfil" />

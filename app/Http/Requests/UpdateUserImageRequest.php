@@ -11,7 +11,7 @@ class UpdateUserImageRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class UpdateUserImageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'img_user' => ['nullable', 'mimes:jpg,jpeg,png,bmp,gif,svg,webp'],
         ];
     }
 }

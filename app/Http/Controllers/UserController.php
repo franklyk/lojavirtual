@@ -7,6 +7,8 @@ use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\UserImage;
 use Exception;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
@@ -16,9 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all(['id', 'first_name', 'email']);
-        // dd($users);
-
+        $users = User::latest()->with(['userimage'])->get();
+        
         return view('user.index', ['users' => $users]);
     }
 
@@ -27,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        return view('auth.register');
     }
 
     /**
@@ -35,7 +36,30 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        // 
+        $request->validate();
+        dd($request);
+
+        try {
+            $user  = User::create([
+                'first_name' => $request->name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'password' =>$request->password,
+            ]);
+
+            Auth::login($user);
+
+            if(Auth::user()->id){
+                event(new Registered($user));
+                return redirect('/email/verify');
+            }else{
+                return back()->with(['error' => 'Conexão não efetuada! Tente novamente mais tarde!']);
+            }
+        } catch (Exception $err) {
+            Log::info(['error' => $err->getMessage()]);
+
+            return back()->with('error', 'Não foi possivel efetuar o cadastro!');
+        }
     }
 
     /**
@@ -43,9 +67,9 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        new UserImage();
+        
 
-        return view('user.show', ['user' => $user]);
+        return view('user.show', ['user' => $user, 'img_user']);
     }
 
     /**

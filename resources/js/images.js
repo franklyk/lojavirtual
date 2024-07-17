@@ -61,41 +61,41 @@ function previewImage(new_image) {
 
 // FORMULÁRIO CADASTRAR USUARIO
 
-// const formAddUser = document.querySelector('#form-add-user');
-// if (formAddUser) {
+const formRegister = document.querySelector('#form-register');
+if (formRegister) {
 
-//     const inputImgUser = document.querySelector('#img_user');
-//     const labelImageuser = document.querySelector('#image_user');
-//     const replaceImageUser = '<i class="text-gray-500 text-7xl bi bi-camera-fill"></i>';
+    const inputImgUser = document.querySelector('#img_user');
+    const previewImage = document.querySelector('#preview-image');
+    const replaceImageUser = '<i class="cam-img bi bi-camera-fill"></i>';
 
-//     labelImageuser.innerHTML = replaceImageUser;
+    previewImage.innerHTML = replaceImageUser;
 
-//     inputImgUser.addEventListener('change', function (e) {
-//         const inputTarget = e.target;
-//         const file = inputTarget.files[0];
+    inputImgUser.addEventListener('change', function (e) {
+        const inputTarget = e.target;
+        const file = inputTarget.files[0];
 
-//         if (file) {
-//             const reader = new FileReader();
+        if (file) {
+            const reader = new FileReader();
 
-//             reader.addEventListener('load', function (e) {
-//                 const readertTarget = e.target;
+            reader.addEventListener('load', function (e) {
+                const readertTarget = e.target;
 
-//                 const img = document.createElement('img');
+                const img = document.createElement('img');
 
-//                 img.src = readertTarget.result;
+                img.src = readertTarget.result;
 
-//                 img.classList.add('rounded-full');
-//                 labelImageuser.innerHTML = '';
-//                 labelImageuser.appendChild(img);
-//             });
+                img.classList.add('rounded-full');
+                previewImage.innerHTML = '';
+                previewImage.appendChild(img);
+            });
 
-//             reader.readAsDataURL(file)
+            reader.readAsDataURL(file)
 
-//         } else {
-//             labelImageuser.innerHTML = replaceImageUser;
-//         }
-//     })
-// }
+        } else {
+            previewImage.innerHTML = replaceImageUser;
+        }
+    })
+}
 
 // // FORMULÁRIO CADASTRAR BANNER
 // const formBannerAdd = document.querySelector('#form-banner-add');

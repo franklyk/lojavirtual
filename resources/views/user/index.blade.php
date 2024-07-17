@@ -1,4 +1,6 @@
 <x-layout>
+
+{{-- {{dd($users)}} --}}
     <section class="section-page full-width">
         <x-main.page-heading title="Usuários" />
         <table>
@@ -11,6 +13,8 @@
             <tbody>
                 @foreach ($users as $user)
                     <tr>
+                        
+                            {{-- <td><img src="/images/users/{{$user->id .'/'.$user->userImage->img_user}}" alt=""></td> --}}
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->first_name }}</td>
                         <td>{{ $user->email }}</td>

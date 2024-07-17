@@ -55,15 +55,20 @@ Route::post('/reset-password', [ResetPasswordController::class, 'store'])->middl
 
 
 Route::get('/user', [UserController::class, 'index']);
-Route::get('/user/create', [UserController::class, 'create']);
-Route::post('/user', [UserController::class, 'store']);
+
+// Route::get('/register', [UserController::class, 'create']);
+// Route::post('/register', [UserController::class, 'store']);
+
 Route::get('/user/{user}', [UserController::class, 'show'])->name('user.show');
+
 Route::get('/user/{user}/edit', [UserController::class, 'edit']);
+
 Route::patch('/user/{user}', [UserController::class, 'update']);
+
 Route::delete('/user/{user}', [UserController::class, 'destroy']);
 
-Route::get('/user/{user}/edit-image', [UserImageController::class, 'editImage']);
-Route::patch('/user/{user}', [UserImageController::class, 'updateImage'])->name('update.image');
+Route::get('/userimage/{user}/edit-image', [UserImageController::class, 'editImage'])->name('edit.image');
+Route::patch('/userimage/{user}', [UserImageController::class, 'updateImage']);
 
 
 

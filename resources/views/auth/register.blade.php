@@ -1,9 +1,20 @@
 <x-layout>
     <x-forms.fieldset legend="Register" class="field-register">
         <x-forms.messages msg="" />
-        <x-forms.form method="post" class="form-register" id="form-register">
+        <x-forms.form enctype="multipart/form-data" method="post" action="/register" class="form-register" id="form-register">
+
+            <div class="container-label-image">
+                <label for="img_user" class="label-image" id="label-image">
+                    <span id="preview-image">
+                        
+                    </span>
+                </label>
+            </div>
+            <x-forms.input type="file" name="img_user" :label="false" />
+
             <div class="row-column">
-                <x-forms.input type="text" name="name" label="Nome" />
+                <x-forms.input type="text" name="first_name" label="Nome" />
+                <x-forms.input type="text" name="last_name" label="Sobrenome" />
             </div>
             <div class="row-column">
                 <x-forms.input type="email" name="email" label="E-mail" />
