@@ -1,22 +1,30 @@
 <?php
 
-
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
-use App\Http\Controllers\ProfileUserController;
-use App\Http\Controllers\ProfileUserImageController;
+// use App\Http\Controllers\ProfileUserImageController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\UserImageController;
+// use App\Http\Controllers\UserImageController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
+
+// Vamos logar com o usuário de id 1 e dar permissão de admin
+// auth()->loginUsingId(1);
+// $user = User::find(1)->assignPermission('admin');
 
 Route::get('/', function () {
     return view('home');
 });
+
+
+Route::get('/dashboard', DashboardController::class)->middleware('auth');
+
 
 Route::get('/register', [RegisterUserController::class, 'create']);
 Route::post('/register', [RegisterUserController::class, 'store']);
@@ -52,13 +60,9 @@ Route::post('/reset-password', [ResetPasswordController::class, 'store'])->middl
 
 
 Route::get('/user', [UserController::class, 'index']);
-
 Route::get('/user/{user}', [UserController::class, 'show'])->name('user.show');
-
 Route::get('/user/{user}/edit', [UserController::class, 'edit']);
-
 Route::patch('/user/{user}', [UserController::class, 'update']);
-
 Route::delete('/user/{user}', [UserController::class, 'destroy']);
 
 
