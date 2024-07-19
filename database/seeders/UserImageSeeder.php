@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\UserImage;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class UserImageSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        UserImage::factory(9)->create();
     }
 }

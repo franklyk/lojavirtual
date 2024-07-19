@@ -1,11 +1,17 @@
 @props(['title'])
 
 @php
-    $classes = 'page-heading text-color text-center full-width';
+    $classes = 'page-heading';
 
     $defaults = [
         'class' => $classes,
     ];
 @endphp
+<div {{ $attributes($defaults) }}>
+    <h1 class="title-page">{{ $title }}</h1>
+    <div class="buttons-page">
 
-<h1 {{ $attributes($defaults)}}>{{ $title }}</h1>
+        {{ $slot }}
+
+    </div>
+</div>

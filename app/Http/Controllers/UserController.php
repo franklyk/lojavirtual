@@ -37,7 +37,6 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         $request->validate();
-        dd($request);
 
         try {
             $user  = User::create([
@@ -67,9 +66,10 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        
 
-        return view('user.show', ['user' => $user, 'img_user']);
+        // dd($user->userImage->img_user);
+        
+        return view('user.show', ['user' => $user]);
     }
 
     /**
@@ -77,7 +77,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('user.edit', ['user' => $user]);
+        $img_user = User::find($user->id)->userImage;
+
+        return view('user.edit', ['user' => $user, 'img_user' => $img_user]);
     }
 
     /**
@@ -133,8 +135,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(User $user)
     {
-        //
+        $user->delete();
+        
+        return back()->with('success', 'Usuário deletado com sucesso!');
     }
 }

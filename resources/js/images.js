@@ -4,7 +4,7 @@
 
 const formEdit = document.querySelector('#form-edit')
 const img_user = document.querySelector('#img_user')
-console.log(formEdit)
+// console.log(formEdit)
 
 
 if (formEdit) {

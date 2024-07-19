@@ -1,25 +1,34 @@
 <x-layout>
     <section class="section-page full-width">
-        <x-main.page-heading title="Perfil = {{ $user->name }}" />
+        <x-main.page-heading title="Perfil">
+            <x-btns.button link="/user/{{ $user->id }}/edit" icon="bi bi-eye" label="Editar Perfil" color="warning" />
+
+            <form action="user/{{ $user->id }}" method="post" class="form-delete">
+                @csrf
+
+                @method('DELETE')
+                <x-btns.button type="submit" icon="bi bi-pencil" color="danger" label="Excluir Usuário" />
+            </form>
+
+        </x-main.page-heading>
 
         <x-forms.messages msg="" />
 
-        {{-- {{dd($user)}} --}}
-
         <div class="container-show-user">
+
             <div class="show-user-image">
+                @php
+                    if (!empty($user->userImage->img_user)) {
 
-                <div class="image">
-                    @php
-                        if (($user->img_user) == null) {
-                            $image = 'user.png';
-                        } else {
-                            $image = ($user->id . '/' . $user->img_user);
-                        }
-                    @endphp
-                    <img src="/images/users/{{ $image }}" alt="">
-                </div>
+                        $image = '/'.'storage/'. $user->userImage->img_user;
 
+                    } else {
+
+                        $image = '/images/users/user.png';
+
+                    }
+                @endphp 
+                <img src="{{ $image }}" alt="">
             </div>
             <div class="show-user">
                 <table>
@@ -50,18 +59,6 @@
                 </table>
             </div>
         </div>
-        <div class="container-buttons">
-            <x-btns.button link="/userimage/{{ $user->id }}/edit-image" icon="bi bi-pencil" color="warning"
-                label="Editar Imagem" />
-            <x-btns.button link="/user/{{ $user->id }}/edit" icon="bi bi-pencil" color="warning"
-                label="Editar Perfil" />
-            <form action="" method="post" class="form-delete">
-                @csrf
-
-                @method('DELETE')
-                <x-btns.button link="/user/{{ $user->id }}/edit" icon="bi bi-pencil" color="danger"
-                    label="Excluir Usuário" />
-            </form>
-        </div>
+        
     </section>
 </x-layout>

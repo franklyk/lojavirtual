@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/test', function () {
-    return view('test');
-});
 
 Route::get('/register', [RegisterUserController::class, 'create']);
 Route::post('/register', [RegisterUserController::class, 'store']);
@@ -56,9 +53,6 @@ Route::post('/reset-password', [ResetPasswordController::class, 'store'])->middl
 
 Route::get('/user', [UserController::class, 'index']);
 
-// Route::get('/register', [UserController::class, 'create']);
-// Route::post('/register', [UserController::class, 'store']);
-
 Route::get('/user/{user}', [UserController::class, 'show'])->name('user.show');
 
 Route::get('/user/{user}/edit', [UserController::class, 'edit']);
@@ -66,9 +60,6 @@ Route::get('/user/{user}/edit', [UserController::class, 'edit']);
 Route::patch('/user/{user}', [UserController::class, 'update']);
 
 Route::delete('/user/{user}', [UserController::class, 'destroy']);
-
-Route::get('/userimage/{user}/edit-image', [UserImageController::class, 'editImage'])->name('edit.image');
-Route::patch('/userimage/{user}', [UserImageController::class, 'updateImage']);
 
 
 

@@ -26,8 +26,8 @@ a {
 }
 
 img {
-  max-height: 100%;
-  max-width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 input {
@@ -83,19 +83,51 @@ li {
 /* START GLOBALS CLASSES */
 .section-page {
   padding: 20px;
-}
-
-.full-content {
-  height: 100%;
   width: 100%;
 }
-
-.full-width {
-  width: 100%;
+.section-page .page-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+.section-page .page-heading .title-page {
+  color: var(--text-color);
+}
+.section-page .page-heading .buttons-page {
+  display: flex;
+  gap: 5px;
+  width: max-content;
 }
 
-.b-shadow {
+table {
+  border: 0.75px solid rgba(0, 0, 0, 0.1411764706);
+  border-collapse: collapse;
   box-shadow: 20px 20px 5px 10px rgba(224, 221, 221, 0.1803921569);
+  color: var(--text-color);
+  margin: auto;
+  width: 100%;
+}
+table th {
+  background: var(--site-color);
+  color: var(--white-color);
+  font-weight: 100;
+  padding: 10px;
+}
+table th + th {
+  border-left: 0.75px solid #fff;
+}
+table tr td {
+  margin: auto;
+  text-align: center;
+}
+table tr td .icon {
+  font-size: 25px;
+}
+table tr:nth-child(odd) {
+  background: var(--white-color);
+}
+table tr:nth-child(even) {
+  background: var(--light-color);
 }
 
 .radius {
@@ -181,19 +213,19 @@ li {
   border-radius: 5px;
   cursor: pointer;
   display: inline-flex;
-  font-weight: 700;
+  font-weight: 100;
   gap: 5px;
   justify-content: center;
-  margin: 5px 0;
-  padding: 5px 10px;
+  margin: auto;
+  padding: 5px;
   transition: 0.3s;
 }
 .btn .icon {
-  font-size: 20px;
+  font-size: medium;
 }
 .btn .label-button {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: small;
+  font-weight: 100;
 }
 
 .btn-danger {
@@ -389,10 +421,6 @@ li {
 }
 
 /* END MENU MOBILE */
-.page-heading {
-  margin: 30px auto;
-}
-
 /* START MENU CONFIG */
 .btn-dropdown-action {
   position: relative;
@@ -615,42 +643,6 @@ legend h1 {
 }
 
 /* START NOTIFICATIONS */
-table {
-  border: 0.75px solid rgba(0, 0, 0, 0.1411764706);
-  border-collapse: collapse;
-  box-shadow: 20px 20px 5px 10px rgba(224, 221, 221, 0.1803921569);
-  color: var(--text-color);
-  margin: auto;
-  width: max-content;
-}
-table th {
-  background: var(--site-color);
-  border-bottom: 1px solid black;
-  color: var(--white-color);
-  padding: 10px;
-}
-table th + th {
-  border-left: 0.75px solid #fff;
-}
-table tr td {
-  line-height: 20px;
-  padding: 0px 20px;
-  text-align: center;
-}
-table tr td .icon {
-  font-size: 25px;
-}
-table tr td.actions {
-  display: flex;
-  gap: 5px;
-}
-table tr:nth-child(odd) {
-  background: var(--white-color);
-}
-table tr:nth-child(even) {
-  background: var(--light-color);
-}
-
 .container-show-user {
   display: flex;
   flex-wrap: wrap;
@@ -1427,5 +1419,32 @@ table tr:nth-child(even) {
 }
 
 /* END ELMENNTS */
+/* START ADMIN ELEMENTS */
+.list-users {
+  margin: auto;
+  width: 100%;
+}
+.list-users td {
+  padding: 5px 0px;
+}
+.list-users .container-avatar {
+  width: 40px;
+}
+.list-users .container-avatar .list-users-avatar {
+  border-radius: 50%;
+  margin: auto;
+  width: 80%;
+}
+.list-users .container-avatar .list-users-avatar .img-avatar {
+  height: auto;
+  width: 50%;
+}
+.list-users .actions {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  width: 100px !important;
+}
 
 /*# sourceMappingURL=style.css.map */
