@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'franklin@email.com',
         ]);
         
-        $this->call(UserSeeder::class);
+        // $this->call(UserSeeder::class);
 
         // $this->call(UserImageSeeder::class);
 

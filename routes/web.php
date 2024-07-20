@@ -1,12 +1,16 @@
 <?php
 
+
+use App\Models\User;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\PermissionController;
 // use App\Http\Controllers\ProfileUserImageController;
 use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\UserController;
+use App\Models\Permission;
 // use App\Http\Controllers\UserImageController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -18,9 +22,27 @@ use Illuminate\Support\Facades\Route;
 // auth()->loginUsingId(1);
 // $user = User::find(1)->assignPermission('admin');
 
+// Route::get('/', function () {
+//     return view('home');
+// });
+
 Route::get('/', function () {
     return view('home');
 });
+
+// Vamos logar com o usuário de id 1 e dar permissão de admin
+// auth()->loginUsingId(1);
+// $user = User::find(1)->assignPermission('admin');
+
+Route::get('/test-permission', PermissionController::class)
+    ->name('test-permission')
+    ->middleware('auth', 'can:admin');
+
+// Route::get('/', function () {
+//     return view('welcome');
+// })->middleware('auth', 'can:default');
+
+Route::get('/teste-permission', PermissionController::class)->name('teste-permission');
 
 
 Route::get('/dashboard', DashboardController::class)->middleware('auth');
