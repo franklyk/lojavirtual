@@ -1,4 +1,8 @@
-@props(['label' => null, 'name', 'type' => null])
+@props([
+    'label' => null,
+    'name',
+    'type' => null,
+])
 
 @php
 
@@ -24,12 +28,25 @@
 
 <div class="form-field">
 
-    @if($label)
-        <label for="{{ $name }}" class="form-label">
+    @if ($label)
+
+        <label
+            for="{{ $name }}"
+            class="form-label"
+        >
             {{ $label }}
         </label>
+
     @endif
 
     <input {{ $attributes->merge($defaults) }}>
+
+    @error($name)
+
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+
+    @enderror
 
 </div>

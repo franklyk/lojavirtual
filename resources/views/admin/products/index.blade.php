@@ -17,23 +17,7 @@
                         <x-buttons.create label="Novo" data-bs-toggle="modal" data-bs-target="#modal-create" />
 
                     </div>
-                    <div class="listing-per-page">
 
-                        <label for="per-page">
-                            Itens por página
-                        </label>
-
-                        <select name="per_page" id="per-page" class="form-select">
-
-                            @foreach ([10, 15, 25, 50, 100] as $option)
-                                <option value="{{ $option }}" @selected(request('per_page', 15) == $option)>
-                                    {{ $option }}
-                                </option>
-                            @endforeach
-
-                        </select>
-
-                    </div>
 
                 </x-slot:actions>
 
@@ -51,9 +35,79 @@
                     ])
                 </div>
 
+
                 <aside class="listing-sidebar">
 
-                    <x-forms.form method="GET">
+
+
+                    <div class="listing-per-page">
+
+                        <label for="per-page">
+                            Por página
+                        </label>
+
+                        <select name="per_page" id="per-page" class="form-select">
+
+                            @foreach ([10, 15, 25, 50, 100] as $option)
+                                <option value="{{ $option }}" @selected(request('per_page', 15) == $option)>
+                                    {{ $option }}
+                                </option>
+                            @endforeach
+
+                        </select>
+
+                    </div>
+
+                    <x-forms.form class="listing-filters">
+
+                        <div class="listing-search">
+
+
+
+                            <input type="search" name="search" id="search" value="{{ request('search') }}"
+                                placeholder="Nome do produto">
+
+                            <label for="search" class="form-label">
+                                Pesquisar
+                            </label>
+
+                        </div>
+
+                        <div class="listing-sort">
+
+                            <label for="sort" class="form-label">
+                                Ordenar por
+                            </label>
+
+                            <select name="sort" id="sort" class="form-select">
+
+                                <option value="newest" @selected(request('sort', 'newest') === 'newest')>
+                                    Mais recentes
+                                </option>
+
+                                <option value="oldest" @selected(request('sort') === 'oldest')>
+                                    Mais antigos
+                                </option>
+
+                                <option value="name_asc" @selected(request('sort') === 'name_asc')>
+                                    Nome (A → Z)
+                                </option>
+
+                                <option value="name_desc" @selected(request('sort') === 'name_desc')>
+                                    Nome (Z → A)
+                                </option>
+
+                                <option value="price_asc" @selected(request('sort') === 'price_asc')>
+                                    Preço (menor → maior)
+                                </option>
+
+                                <option value="price_desc" @selected(request('sort') === 'price_desc')>
+                                    Preço (maior → menor)
+                                </option>
+
+                            </select>
+
+                        </div>
 
                         <div class="accordion" id="productFilters">
 
@@ -151,18 +205,19 @@
 
                         </div>
 
-                        <div class="d-flex justify-content-between gap-2 mt-3">
+                        {{-- <div class="d-flex justify-content-between gap-2 mt-3"> --}}
 
-                            <a href="{{ url()->current() }}" class="btn btn-sm btn-light">
+                        {{-- <a href="{{ url()->current() }}" class="btn btn-sm btn-light">
                                 Limpar
-                            </a>
+                            </a> --}}
 
-                            <x-buttons.button type="submit" color="primary" label="Aplicar" class="btn-sm" />
+                        {{-- <x-buttons.button type="submit" color="primary" label="Aplicar" class="btn-sm" /> --}}
 
-                        </div>
+                        {{-- </div> --}}
 
 
                     </x-forms.form>
+                </aside>
 
             </div>
             </div>
@@ -198,7 +253,8 @@
 
                             <x-forms.select name="collection_id" label="Coleção:" :options="$collections->pluck('name', 'id')->toArray()" :selected="old('collection_id')" />
 
-                            <x-forms.select name="supplier_id" label="Fornecedor:" :options="$suppliers->pluck('name', 'id')->toArray()" :selected="old('supplier_id')" />
+                            <x-forms.select name="supplier_id" label="Fornecedor:" :options="$suppliers->pluck('name', 'id')->toArray()"
+                                :selected="old('supplier_id')" />
 
                         </div>
 

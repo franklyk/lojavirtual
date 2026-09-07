@@ -30,15 +30,6 @@ class StatusSeeder extends Seeder
                 'is_default' => false,
                 'active' => true,
             ],
-            [
-                'domain' => 'product',
-                'name' => 'Em Homologação',
-                'slug' => 'homologation',
-                'color' => 'warning',
-                'sort_order' => 3,
-                'is_default' => false,
-                'active' => true,
-            ],
 
             // Brands
             [
@@ -56,15 +47,6 @@ class StatusSeeder extends Seeder
                 'slug' => 'inactive',
                 'color' => 'secondary',
                 'sort_order' => 2,
-                'is_default' => false,
-                'active' => true,
-            ],
-            [
-                'domain' => 'brand',
-                'name' => 'Em Homologação',
-                'slug' => 'homologation',
-                'color' => 'warning',
-                'sort_order' => 3,
                 'is_default' => false,
                 'active' => true,
             ],

@@ -27,8 +27,7 @@ class ProductController extends Controller
             'categories',
             'suppliers',
             'collections',
-        ])
-            ->orderByDesc('created_at');
+        ]);
 
         $perPage = (int) request('per_page', 15);
 
