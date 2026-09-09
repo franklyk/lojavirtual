@@ -3,39 +3,65 @@
     <x-menu.list>
 
         @can('view dashboard')
-            <x-menu.link href="{{ route('admin.dashboard') }}" label="Dashboard" />
+            <x-menu.link href="{{ route('admin.dashboard') }}">
+                <x-icons.dashboard />
+                Dashboard
+            </x-menu.link>
         @endcan
-
         @can('view products')
-            <x-menu.link href="{{ route('admin.products.index') }}" label="Produtos" />
+            <x-menu.link href="{{ route('admin.products.index') }}" label="">
+                <x-icons.package />
+                Produtos
+            </x-menu.link>
         @endcan
 
         @can('view categories')
-            <x-menu.link href="{{ route('admin.categories.index') }}" label="Categorias" />
+            <x-menu.link href="{{ route('admin.products.index') }}" label="">
+                <x-icons.tags />
+                Categorias
+            </x-menu.link>
         @endcan
 
         @can('view orders')
-            <x-menu.link href="{{ route('admin.orders.index') }}" label="Pedidos" />
+            <x-menu.link href="{{ route('admin.products.index') }}" label="">
+                <x-icons.shopingcart />
+                Pedidos
+            </x-menu.link>
         @endcan
 
         @can('view shipments')
-            <x-menu.link href="{{ route('admin.shipments.index') }}" label="Envios" />
+            <x-menu.link href="{{ route('admin.products.index') }}" label="">
+                <x-icons.truck />
+                Envios
+            </x-menu.link>
         @endcan
 
         @can('view users')
-            <x-menu.link href="{{ route('admin.users.index') }}" label="Usuários" />
+            <x-menu.link href="{{ route('admin.products.index') }}" label="">
+                <x-icons.user />
+                Usuários
+            </x-menu.link>
         @endcan
 
         @can('view suppliers')
-            <x-menu.link href="{{ route('admin.suppliers.index') }}" label="Fornecedores" />
+            <x-menu.link href="{{ route('admin.products.index') }}" label="">
+                <x-icons.building />
+                Fornecedores
+            </x-menu.link>
         @endcan
 
         @can('view collections')
-            <x-menu.link href="{{ route('admin.collections.index') }}" label="Coleções" />
+            <x-menu.link href="{{ route('admin.products.index') }}" label="">
+                <x-icons.layers />
+                Coleções
+            </x-menu.link>
         @endcan
 
         @can('view import batches')
-            <x-menu.link href="{{ route('admin.imports.index') }}" label="PDF" />
+            <x-menu.link href="{{ route('admin.products.index') }}" label="">
+                <x-icons.file-text />
+                PDF
+            </x-menu.link>
         @endcan
 
     </x-menu.list>

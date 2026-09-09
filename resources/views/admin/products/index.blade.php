@@ -42,9 +42,7 @@
 
                     <div class="listing-per-page">
 
-                        <label for="per-page">
-                            Por página
-                        </label>
+
 
                         <select name="per_page" id="per-page" class="form-select">
 
@@ -56,62 +54,112 @@
 
                         </select>
 
+                        <label for="per-page">
+                            Por página
+                        </label>
+
                     </div>
 
                     <x-forms.form class="listing-filters">
 
                         <div class="listing-search">
 
-
-
-                            <input type="search" name="search" id="search" value="{{ request('search') }}"
-                                placeholder="Nome do produto">
-
-                            <label for="search" class="form-label">
-                                Pesquisar
-                            </label>
+                            <x-forms.search name="search" id="search" placeholder="Pesquisar" />
 
                         </div>
 
-                        <div class="listing-sort">
+                        {{-- ORDENAR POR --}}
+                        <div class="accordion" data-filter="filtered">
+                            <div class="accordion-item">
 
-                            <label for="sort" class="form-label">
-                                Ordenar por
-                            </label>
+                                <h2 class="accordion-header" id="headingSort">
 
-                            <select name="sort" id="sort" class="form-select">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSort" aria-expanded="false" aria-controls="collapseSort">
+                                        Ordenar por
+                                    </button>
 
-                                <option value="newest" @selected(request('sort', 'newest') === 'newest')>
-                                    Mais recentes
-                                </option>
+                                </h2>
 
-                                <option value="oldest" @selected(request('sort') === 'oldest')>
-                                    Mais antigos
-                                </option>
+                                <div id="collapseSort" class="accordion-collapse collapse" aria-labelledby="headingSort">
 
-                                <option value="name_asc" @selected(request('sort') === 'name_asc')>
-                                    Nome (A → Z)
-                                </option>
+                                    <div class="accordion-body">
 
-                                <option value="name_desc" @selected(request('sort') === 'name_desc')>
-                                    Nome (Z → A)
-                                </option>
+                                        <x-forms.checkbox name="sort" label="Mais recentes" value="newest"
+                                            id="sort-newest" :checked="request('sort', 'newest') === 'newest'" />
 
-                                <option value="price_asc" @selected(request('sort') === 'price_asc')>
-                                    Preço (menor → maior)
-                                </option>
+                                        <x-forms.checkbox name="sort" label="Mais antigos" value="oldest"
+                                            id="sort-oldest" :checked="request('sort') === 'oldest'" />
 
-                                <option value="price_desc" @selected(request('sort') === 'price_desc')>
-                                    Preço (maior → menor)
-                                </option>
+                                        <x-forms.checkbox name="sort" label="Nome (A → Z)" value="name_asc"
+                                            id="sort-name-asc" :checked="request('sort') === 'name_asc'" />
 
-                            </select>
+                                        <x-forms.checkbox name="sort" label="Nome (Z → A)" value="name_desc"
+                                            id="sort-name-desc" :checked="request('sort') === 'name_desc'" />
 
+                                        <x-forms.checkbox name="sort" label="Preço (menor → maior)" value="price_asc"
+                                            id="sort-price-asc" :checked="request('sort') === 'price_asc'" />
+
+                                        <x-forms.checkbox name="sort" label="Preço (maior → menor)" value="price_desc"
+                                            id="sort-price-desc" :checked="request('sort') === 'price_desc'" />
+
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
 
-                        <div class="accordion" id="productFilters">
+                        {{-- DATA DE CADASTRO --}}
+                        <div class="accordion" data-filter="filtered">
+                            <div class="accordion-item">
 
-                            {{-- BRANDS --}}
+                                <h2 class="accordion-header" id="headingCreatedAt">
+
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseCreatedAt" aria-expanded="false"
+                                        aria-controls="collapseCreatedAt">
+                                        Data de cadastro
+                                    </button>
+
+                                </h2>
+
+                                <div id="collapseCreatedAt" class="accordion-collapse collapse"
+                                    aria-labelledby="headingCreatedAt">
+
+                                    <div class="accordion-body">
+
+                                        <div class="listing-date-field">
+
+                                            <label for="created-from" class="form-label">
+                                                De
+                                            </label>
+
+                                            <input type="date" name="created_from" id="created-from"
+                                                value="{{ request('created_from') }}" class="form-control">
+
+                                        </div>
+
+                                        <div class="listing-date-field">
+
+                                            <label for="created-to" class="form-label">
+                                                Até
+                                            </label>
+
+                                            <input type="date" name="created_to" id="created-to"
+                                                value="{{ request('created_to') }}" class="form-control">
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {{-- BRANDS --}}
+                        <div class="accordion" data-filter="filtered">
 
                             <div class="accordion-item">
 
@@ -140,20 +188,17 @@
                                 </div>
 
                             </div>
+                        </div>
 
-
-                            {{-- SUPPLIERS --}}
-
+                        {{-- SUPPLIERS --}}
+                        <div class="accordion" data-filter="filtered">
                             <div class="accordion-item">
-
                                 <h2 class="accordion-header" id="headingSuppliers">
-
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#collapseSuppliers" aria-expanded="false"
                                         aria-controls="collapseSuppliers">
                                         Fornecedores
                                     </button>
-
                                 </h2>
 
                                 <div id="collapseSuppliers" class="accordion-collapse collapse"
@@ -171,10 +216,10 @@
                                 </div>
 
                             </div>
+                        </div>
 
-
-                            {{-- STATUS --}}
-
+                        {{-- STATUS --}}
+                        <div class="accordion" data-filter="filtered">
                             <div class="accordion-item">
 
                                 <h2 class="accordion-header" id="headingStatus">
@@ -202,34 +247,14 @@
                                 </div>
 
                             </div>
-
                         </div>
-
-                        {{-- <div class="d-flex justify-content-between gap-2 mt-3"> --}}
-
-                        {{-- <a href="{{ url()->current() }}" class="btn btn-sm btn-light">
-                                Limpar
-                            </a> --}}
-
-                        {{-- <x-buttons.button type="submit" color="primary" label="Aplicar" class="btn-sm" /> --}}
-
-                        {{-- </div> --}}
-
-
                     </x-forms.form>
                 </aside>
 
             </div>
-            </div>
         @else
             <h1 class="text-center text-danger">Sem registros de Produtos</h1>
         @endif
-
-
-        {{-- ///////////////////////////////////////////////////////////////////////////////////////////////// --}}
-
-        {{-- Modal: Novo Produto --}}
-
         {{-- ///////////////////////////////////////////////////////////////////////////////////////////////// --}}
 
         {{-- Modal: Novo Produto --}}
@@ -247,8 +272,8 @@
                         <x-forms.input type="text" name="name" label="Produto:" :value="old('name')" />
 
                         <div class="auto-grid">
-                            <x-forms.input type="number" name="price" label="Preço:" :value="old('price')" step="0.01"
-                                min="0" />
+                            <x-forms.input type="number" name="price" label="Preço:" :value="old('price')"
+                                step="0.01" min="0" />
                             <x-forms.select name="brand_id" label="Marca:" :options="$brands->pluck('name', 'id')->toArray()" :selected="old('brand_id')" />
 
                             <x-forms.select name="collection_id" label="Coleção:" :options="$collections->pluck('name', 'id')->toArray()" :selected="old('collection_id')" />
