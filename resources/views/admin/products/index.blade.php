@@ -154,8 +154,8 @@
                                                 Nome
                                             </div>
 
-                                            <x-forms.radio name="sort_name" value="asc" label="A → Z" id="sort-name-asc"
-                                                :checked="request('sort_name', 'asc') === 'asc'" />
+                                            <x-forms.radio name="sort_name" value="asc" label="A → Z"
+                                                id="sort-name-asc" :checked="request('sort_name', 'asc') === 'asc'" />
 
                                             <x-forms.radio name="sort_name" value="desc" label="Z → A"
                                                 id="sort-name-desc" :checked="request('sort_name') === 'desc'" />
