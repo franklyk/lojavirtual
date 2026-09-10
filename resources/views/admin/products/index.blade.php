@@ -68,48 +68,6 @@
 
                         </div>
 
-                        {{-- ORDENAR POR --}}
-                        <div class="accordion" data-filter="filtered">
-                            <div class="accordion-item">
-
-                                <h2 class="accordion-header" id="headingSort">
-
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseSort" aria-expanded="false" aria-controls="collapseSort">
-                                        Ordenar por
-                                    </button>
-
-                                </h2>
-
-                                <div id="collapseSort" class="accordion-collapse collapse" aria-labelledby="headingSort">
-
-                                    <div class="accordion-body">
-
-                                        <x-forms.checkbox name="sort" label="Mais recentes" value="newest"
-                                            id="sort-newest" :checked="request('sort', 'newest') === 'newest'" />
-
-                                        <x-forms.checkbox name="sort" label="Mais antigos" value="oldest"
-                                            id="sort-oldest" :checked="request('sort') === 'oldest'" />
-
-                                        <x-forms.checkbox name="sort" label="Nome (A → Z)" value="name_asc"
-                                            id="sort-name-asc" :checked="request('sort') === 'name_asc'" />
-
-                                        <x-forms.checkbox name="sort" label="Nome (Z → A)" value="name_desc"
-                                            id="sort-name-desc" :checked="request('sort') === 'name_desc'" />
-
-                                        <x-forms.checkbox name="sort" label="Preço (menor → maior)" value="price_asc"
-                                            id="sort-price-asc" :checked="request('sort') === 'price_asc'" />
-
-                                        <x-forms.checkbox name="sort" label="Preço (maior → menor)" value="price_desc"
-                                            id="sort-price-desc" :checked="request('sort') === 'price_desc'" />
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-
                         {{-- DATA DE CADASTRO --}}
                         <div class="accordion" data-filter="filtered">
                             <div class="accordion-item">
@@ -150,6 +108,104 @@
                                                 value="{{ request('created_to') }}" class="form-control">
 
                                         </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        {{-- ORDENAR POR --}}
+                        <div class="accordion" data-filter="filtered">
+
+                            <div class="accordion-item">
+
+                                <h2 class="accordion-header" id="headingSort">
+
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSort" aria-expanded="false" aria-controls="collapseSort">
+                                        Ordenar por
+                                    </button>
+
+                                </h2>
+
+                                <div id="collapseSort" class="accordion-collapse collapse" aria-labelledby="headingSort">
+
+                                    <div class="accordion-body">
+
+                                        <div class="sort-group">
+
+                                            <div class="sort-group-title">
+                                                Data
+                                            </div>
+
+                                            <x-forms.radio name="sort_date" value="newest" label="Mais recentes"
+                                                id="sort-date-newest" :checked="request('sort_date', 'newest') === 'newest'" />
+
+                                            <x-forms.radio name="sort_date" value="oldest" label="Mais antigos"
+                                                id="sort-date-oldest" :checked="request('sort_date') === 'oldest'" />
+
+                                        </div>
+
+                                        <div class="sort-group">
+
+                                            <div class="sort-group-title">
+                                                Nome
+                                            </div>
+
+                                            <x-forms.radio name="sort_name" value="asc" label="A → Z" id="sort-name-asc"
+                                                :checked="request('sort_name', 'asc') === 'asc'" />
+
+                                            <x-forms.radio name="sort_name" value="desc" label="Z → A"
+                                                id="sort-name-desc" :checked="request('sort_name') === 'desc'" />
+
+                                        </div>
+
+                                        <div class="sort-group">
+
+                                            <div class="sort-group-title">
+                                                Preço
+                                            </div>
+
+                                            <x-forms.radio name="sort_price" value="asc" label="Menor → Maior"
+                                                id="sort-price-asc" :checked="request('sort_price', 'asc') === 'asc'" />
+
+                                            <x-forms.radio name="sort_price" value="desc" label="Maior → Menor"
+                                                id="sort-price-desc" :checked="request('sort_price') === 'desc'" />
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        {{-- STATUS --}}
+                        <div class="accordion" data-filter="filtered">
+                            <div class="accordion-item">
+
+                                <h2 class="accordion-header" id="headingStatus">
+
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseStatus" aria-expanded="false"
+                                        aria-controls="collapseStatus">
+                                        Status
+                                    </button>
+
+                                </h2>
+
+                                <div id="collapseStatus" class="accordion-collapse collapse"
+                                    aria-labelledby="headingStatus">
+
+                                    <div class="accordion-body">
+
+                                        @foreach ($statuses as $status)
+                                            <x-forms.radio name="status" label="{{ $status->name }}"
+                                                value="{{ $status->id }}" :id="'status-' . $status->id" :checked="(string) request('status') === (string) $status->id" />
+                                        @endforeach
 
                                     </div>
 
@@ -218,36 +274,8 @@
                             </div>
                         </div>
 
-                        {{-- STATUS --}}
-                        <div class="accordion" data-filter="filtered">
-                            <div class="accordion-item">
 
-                                <h2 class="accordion-header" id="headingStatus">
 
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseStatus" aria-expanded="false"
-                                        aria-controls="collapseStatus">
-                                        Status
-                                    </button>
-
-                                </h2>
-
-                                <div id="collapseStatus" class="accordion-collapse collapse"
-                                    aria-labelledby="headingStatus">
-
-                                    <div class="accordion-body">
-
-                                        @foreach ($statuses as $status)
-                                            <x-forms.checkbox name="status[]" label="{{ $status->name }}"
-                                                value="{{ $status->id }}" :id="'status-' . $status->id" :checked="in_array($status->id, request('status', []))" />
-                                        @endforeach
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
                     </x-forms.form>
                 </aside>
 

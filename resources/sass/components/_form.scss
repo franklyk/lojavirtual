@@ -141,3 +141,21 @@
     }
 
 }
+.sort-group {
+
+    padding: 5px 0 10px;
+
+    &:not(:last-child) {
+        border-bottom: var(--border-light);
+        margin-bottom: 10px;
+    }
+
+    .sort-group-title {
+        color: var(--site-color);
+        font-size: .75rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+    }
+
+}

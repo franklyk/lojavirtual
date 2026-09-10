@@ -10,49 +10,49 @@ class ProductFilterService
     {
         $this->applySorting(
             $query,
-            $filters['sort'] ?? 'newest'
+            $filters
         );
 
         return $query
 
             ->when(
                 $filters['search'] ?? null,
-                fn ($q, $search) => $this->filterSearch($q, $search)
+                fn($q, $search) => $this->filterSearch($q, $search)
             )
 
             ->when(
                 $filters['status'] ?? null,
-                fn ($q, $status) => $this->filterStatus($q, $status)
+                fn($q, $status) => $this->filterStatus($q, $status)
             )
 
             ->when(
                 $filters['brand'] ?? null,
-                fn ($q, $brand) => $this->filterBrand($q, $brand)
+                fn($q, $brand) => $this->filterBrand($q, $brand)
             )
 
             ->when(
                 $filters['category'] ?? null,
-                fn ($q, $category) => $this->filterCategory($q, $category)
+                fn($q, $category) => $this->filterCategory($q, $category)
             )
 
             ->when(
                 $filters['supplier'] ?? null,
-                fn ($q, $supplier) => $this->filterSupplier($q, $supplier)
+                fn($q, $supplier) => $this->filterSupplier($q, $supplier)
             )
 
             ->when(
                 $filters['collection'] ?? null,
-                fn ($q, $collection) => $this->filterCollection($q, $collection)
+                fn($q, $collection) => $this->filterCollection($q, $collection)
             )
 
             ->when(
                 $filters['created_from'] ?? null,
-                fn ($q, $date) => $this->filterCreatedFrom($q, $date)
+                fn($q, $date) => $this->filterCreatedFrom($q, $date)
             )
 
             ->when(
                 $filters['created_to'] ?? null,
-                fn ($q, $date) => $this->filterCreatedTo($q, $date)
+                fn($q, $date) => $this->filterCreatedTo($q, $date)
             );
     }
 
@@ -149,47 +149,25 @@ class ProductFilterService
 
     private function applySorting(
         Builder $query,
-        array|string|int $sort
+        array $filters
     ): void {
-        $sorts = [
 
-            'newest' => [
-                'column' => 'created_at',
-                'direction' => 'desc',
-            ],
+        $dateSort = $filters['sort_date'] ?? 'newest';
+        $nameSort = $filters['sort_name'] ?? 'asc';
+        $priceSort = $filters['sort_price'] ?? 'asc';
 
-            'oldest' => [
-                'column' => 'created_at',
-                'direction' => 'asc',
-            ],
-
-            'name_asc' => [
-                'column' => 'name',
-                'direction' => 'asc',
-            ],
-
-            'name_desc' => [
-                'column' => 'name',
-                'direction' => 'desc',
-            ],
-
-            'price_asc' => [
-                'column' => 'price',
-                'direction' => 'asc',
-            ],
-
-            'price_desc' => [
-                'column' => 'price',
-                'direction' => 'desc',
-            ],
-
-        ];
-
-        $order = $sorts[$sort] ?? $sorts['newest'];
-
-        $query->orderBy(
-            $order['column'],
-            $order['direction']
-        );
+        $query
+            ->orderBy(
+                'created_at',
+                $dateSort === 'oldest' ? 'asc' : 'desc'
+            )
+            ->orderBy(
+                'name',
+                $nameSort === 'desc' ? 'desc' : 'asc'
+            )
+            ->orderBy(
+                'price',
+                $priceSort === 'desc' ? 'desc' : 'asc'
+            );
     }
 }
